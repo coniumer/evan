@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "net.seinsturg.efac.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EvanEntityMovementMixin",
+    "EvanPlayerMovementMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
