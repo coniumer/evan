@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_clumb_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "efac:clumb_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "efac:clumb_materia"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_clumb_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "efac:clumb_materia"
+    ]
+  }
+}

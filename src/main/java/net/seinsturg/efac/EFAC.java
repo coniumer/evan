@@ -1,5 +1,9 @@
 package net.seinsturg.efac;
 
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.seinsturg.efac.block.EvansBlocks;
 import net.seinsturg.efac.util.EvansRegistries;
 import org.slf4j.Logger;
 
@@ -29,6 +33,13 @@ public class EFAC {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         LOGGER.info("HELLO EVAN WORLD");
+    }
+
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        //example of adding an item to an existing creative tab
+        //if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+        //    event.accept(EvansBlocks.CLUMB_BLOCK);
+        //}
     }
 
     @SubscribeEvent
