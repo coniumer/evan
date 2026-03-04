@@ -4,6 +4,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.seinsturg.efac.block.EvansBlocks;
+import net.seinsturg.efac.item.EvansCreativeTabs;
 import net.seinsturg.efac.util.EvansRegistries;
 import org.slf4j.Logger;
 
@@ -27,19 +28,13 @@ public class EFAC {
         NeoForge.EVENT_BUS.register(this);
 
         EvansRegistries.registerRegistries(eventBus);
-        eventBus.addListener(this::addCreative);
+        eventBus.addListener(EvansCreativeTabs::addCreative);
 
         modContainer.registerConfig(net.neoforged.fml.config.ModConfig.Type.COMMON, EFACConfig.SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
         LOGGER.info("HELLO EVAN WORLD");
-    }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(EvansBlocks.GRONE);
-        }
     }
 
     @SubscribeEvent

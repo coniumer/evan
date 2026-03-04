@@ -20,6 +20,7 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(EvansBlocks.CLUMB_BLOCK.get())
+                .add(EvansBlocks.COMPACT_DIRT.get())
                 .add(EvansBlocks.GRONE.get());
     }
 }

@@ -15,6 +15,7 @@ public class EvansBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(EvansBlocks.GRONE);
+        blockWithItem(EvansBlocks.COMPACT_DIRT);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

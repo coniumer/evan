@@ -40,7 +40,13 @@ public class EvansBlocks {
                 protected MapCodec<? extends FallingBlock> codec() {
                     return null;
                 }
-            });
+    });
+    public static final DeferredBlock<Block> COMPACT_DIRT = registerBlock(
+            "compact_dirt", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DIRT)
+                    .strength(0.5F)
+                    .sound(SoundType.GRAVEL)
+    ));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

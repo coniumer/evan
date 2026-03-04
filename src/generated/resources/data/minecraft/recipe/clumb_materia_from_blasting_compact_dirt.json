@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.3,
+  "group": "clumb_materia",
+  "ingredient": {
+    "item": "efac:compact_dirt"
+  },
+  "result": {
+    "count": 1,
+    "id": "efac:clumb_materia"
+  }
+}
