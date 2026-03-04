@@ -27,6 +27,7 @@ public class EFAC {
         NeoForge.EVENT_BUS.register(this);
 
         EvansRegistries.registerRegistries(eventBus);
+        eventBus.addListener(this::addCreative);
 
         modContainer.registerConfig(net.neoforged.fml.config.ModConfig.Type.COMMON, EFACConfig.SPEC);
     }
@@ -36,10 +37,9 @@ public class EFAC {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        //example of adding an item to an existing creative tab
-        //if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-        //    event.accept(EvansBlocks.CLUMB_BLOCK);
-        //}
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(EvansBlocks.GRONE);
+        }
     }
 
     @SubscribeEvent

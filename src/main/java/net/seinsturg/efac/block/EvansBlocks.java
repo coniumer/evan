@@ -1,14 +1,19 @@
 package net.seinsturg.efac.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.seinsturg.efac.EFAC;
+import net.seinsturg.efac.block.custom.ClumbBlock;
 import net.seinsturg.efac.item.EvansItems;
 
 import java.util.function.Supplier;
@@ -18,12 +23,24 @@ public class EvansBlocks {
         DeferredRegister.createBlocks(EFAC.MOD_ID);
 
     public static final DeferredBlock<Block> CLUMB_BLOCK = registerBlock(
-            "clumb_block", () -> new Block(BlockBehaviour.Properties.of()
+            "clumb_block", () -> new ClumbBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_WHITE)
                     .destroyTime(0.4f)
                     .explosionResistance(0.4f)
                     .sound(SoundType.SLIME_BLOCK)
-                    .lightLevel(state -> 7))
-    );
+    ));
+    public static final DeferredBlock<Block> GRONE = registerBlock(
+            "grone", () -> new FallingBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GREEN)
+                    .instrument(NoteBlockInstrument.SNARE)
+                    .strength(0.5F)
+                    .sound(SoundType.SAND)
+            ) {
+                @Override
+                protected MapCodec<? extends FallingBlock> codec() {
+                    return null;
+                }
+            });
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

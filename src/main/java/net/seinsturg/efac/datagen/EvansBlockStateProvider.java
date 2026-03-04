@@ -14,7 +14,7 @@ public class EvansBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(EvansBlocks.CLUMB_BLOCK);
+        blockWithItem(EvansBlocks.GRONE);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
