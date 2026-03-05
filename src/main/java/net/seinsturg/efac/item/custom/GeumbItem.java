@@ -7,6 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.seinsturg.efac.util.ClumbHelper;
 
+//todo implement refined variants
 public class GeumbItem extends Item {
     public GeumbItem(Properties properties) {
         super(properties);

@@ -19,6 +19,7 @@ import net.neoforged.neoforge.event.EventHooks;
 import net.seinsturg.efac.util.ClumbHelper;
 import net.seinsturg.efac.util.EvansDamage;
 
+//todo sounds, custom projectile entity
 public class WandItem extends TieredItem {
     private final WandTiers wandTier;
     public WandItem(Tier tier, WandTiers wandTier, Properties properties) {

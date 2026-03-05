@@ -40,10 +40,15 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.RANDOM_SAUCE);
                         //wands & swords
                         output.accept(EvansItems.CLUMBY_WAND);
+                        output.accept(EvansItems.CLUMBY_PULSAR);
                         output.accept(EvansItems.ALBY_WAND);
+                        output.accept(EvansItems.ALBY_PULSAR);
                         output.accept(EvansItems.CITRY_WAND);
+                        output.accept(EvansItems.CITRY_PULSAR);
                         output.accept(EvansItems.RUBIED_WAND);
+                        output.accept(EvansItems.RUBIED_PULSAR);
                         output.accept(EvansItems.PHILOSOPHERS_WAND);
+                        output.accept(EvansItems.PHILOSOPHERS_PULSAR);
                         //philosophers tools
                         output.accept(EvansItems.PHILOSOPHERS_SHOVEL);
                         output.accept(EvansItems.PHILOSOPHERS_PICKAXE);

@@ -8,6 +8,7 @@ import net.minecraft.world.level.Level;
 import net.seinsturg.efac.data.EvansData;
 import net.seinsturg.efac.util.ClumbHelper;
 
+//todo implement more of these
 public class ClumbRechargeItem extends Item {
     public ClumbRechargeItem(Properties properties) {
         super(properties);

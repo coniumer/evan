@@ -9,16 +9,26 @@
   "item.efac.geumb_shard": "Geumb Shard",
   "item.efac.random_sauce": "Random Sauce",
   "item.efac.clumby_wand": "Clumby Wand",
+  "item.efac.clumby_pulsar": "Clumby Pulsar",
   "item.efac.alby_wand": "Alby Wand",
+  "item.efac.alby_pulsar": "Alby Pulsar",
   "item.efac.citry_wand": "Citry Wand",
+  "item.efac.citry_pulsar": "Citry Pulsar",
   "item.efac.rubied_wand": "Rubied Wand",
+  "item.efac.rubied_pulsar": "Rubied Pulsar",
   "item.efac.philosophers_wand": "Philosophers Wand",
+  "item.efac.philosophers_pulsar": "Philosophers Pulsar",
   "item.efac.philosophers_shovel": "Philosophers Shovel",
   "item.efac.philosophers_pickaxe": "Philosophers Pickaxe",
   "item.efac.philosophers_axe": "Philosophers Axe",
   "item.efac.philosophers_hoe": "Philosophers Hoe",
 
   "death.attack.efac.clumb": "%1$s got freaking clumbed on!",
+
+  "tooltip.efac.pulsar_pulse.title": "Pulse Mode:",
+  "tooltip.efac.pulsar_pulse.desc": "Deals damage when attacking, at the cost of a clumb charge.",
+  "tooltip.efac.pulsar_charge.title": "Charge Mode:",
+  "tooltip.efac.pulsar_charge.desc": "Provides a chance to gain clumb charge on attacking.",
 
   "key.category.efac.evankeys": "Evan's Funnest Awesome Keys",
   "key.efac.clumb": "Clumb"

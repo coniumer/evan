@@ -18,10 +18,15 @@ public class EvansItemModelProvider extends ItemModelProvider {
         basicItem(EvansItems.GEUMB_SHARD.get());
 
         handheldItem(EvansItems.CLUMBY_WAND.get());
+        handheldItem(EvansItems.CLUMBY_PULSAR.get());
         handheldItem(EvansItems.ALBY_WAND.get());
+        handheldItem(EvansItems.ALBY_PULSAR.get());
         handheldItem(EvansItems.CITRY_WAND.get());
+        handheldItem(EvansItems.CITRY_PULSAR.get());
         handheldItem(EvansItems.RUBIED_WAND.get());
+        handheldItem(EvansItems.RUBIED_PULSAR.get());
         handheldItem(EvansItems.PHILOSOPHERS_WAND.get());
+        handheldItem(EvansItems.PHILOSOPHERS_PULSAR.get());
         handheldItem(EvansItems.PHILOSOPHERS_SHOVEL.get());
         handheldItem(EvansItems.PHILOSOPHERS_PICKAXE.get());
         handheldItem(EvansItems.PHILOSOPHERS_AXE.get());

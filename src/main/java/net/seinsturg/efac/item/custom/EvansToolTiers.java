@@ -10,7 +10,7 @@ import net.seinsturg.efac.util.EvansTags;
 import java.util.function.Supplier;
 
 public enum EvansToolTiers implements Tier {
-    PHILOSOPHERS(EvansTags.Blocks.INCORRECT_FOR_PHILOSOPHERS_TOOL, 4032, 16.0f, 6.0f, 18, () -> Ingredient.of(EvansItems.CLUMB_MATERIA)); //todo change repair ingredient
+    PHILOSOPHERS(EvansTags.Blocks.INCORRECT_FOR_PHILOSOPHERS_TOOL, 4032, 16.0f, 11.0f, 18, () -> Ingredient.of(EvansItems.CLUMB_MATERIA)); //todo change repair ingredient
 
     private final TagKey<Block> incorrectBlocksForDrops;
     private final int uses;

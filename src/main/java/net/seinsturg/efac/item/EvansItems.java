@@ -5,6 +5,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.seinsturg.efac.EFAC;
+import net.seinsturg.efac.component.EvansComponents;
+import net.seinsturg.efac.item.component.PulsarComponent;
 import net.seinsturg.efac.item.custom.*;
 
 public class EvansItems {
@@ -32,6 +34,31 @@ public class EvansItems {
             "philosophers_wand", () -> new WandItem(EvansToolTiers.PHILOSOPHERS, WandTiers.PHILOSOPHERS, new Item.Properties()
             .fireResistant().stacksTo(1)));
     //swords
+    public static final DeferredItem<Item> CLUMBY_PULSAR = ITEMS.register(
+            "clumby_pulsar", () -> new PulsarItem(Tiers.STONE,
+            PulsarTiers.CLUMBY, new Item.Properties().attributes(PulsarItem.createAttributes(
+            Tiers.STONE, 3.0f, -2.4f))
+            .component(EvansComponents.PULSAR_COMPONENT.value(), new PulsarComponent(false))));
+    public static final DeferredItem<Item> ALBY_PULSAR = ITEMS.register(
+            "alby_pulsar", () -> new PulsarItem(Tiers.IRON,
+            PulsarTiers.ALBY, new Item.Properties().attributes(PulsarItem.createAttributes(
+            Tiers.IRON, 3.0f, -2.4f))
+            .component(EvansComponents.PULSAR_COMPONENT.value(), new PulsarComponent(false))));
+    public static final DeferredItem<Item> CITRY_PULSAR = ITEMS.register(
+            "citry_pulsar", () -> new PulsarItem(Tiers.DIAMOND,
+            PulsarTiers.CITRY, new Item.Properties().attributes(PulsarItem.createAttributes(
+            Tiers.DIAMOND, 3.0f, -2.4f))
+            .component(EvansComponents.PULSAR_COMPONENT.value(), new PulsarComponent(false))));
+    public static final DeferredItem<Item> RUBIED_PULSAR = ITEMS.register(
+            "rubied_pulsar", () -> new PulsarItem(Tiers.NETHERITE,
+            PulsarTiers.RUBIED, new Item.Properties().attributes(PulsarItem.createAttributes(
+            Tiers.NETHERITE, 3.0f, -2.4f))
+            .component(EvansComponents.PULSAR_COMPONENT.value(), new PulsarComponent(false))));
+    public static final DeferredItem<Item> PHILOSOPHERS_PULSAR = ITEMS.register(
+            "philosophers_pulsar", () -> new PulsarItem(EvansToolTiers.PHILOSOPHERS,
+            PulsarTiers.PHILOSOPHERS, new Item.Properties().fireResistant().attributes(PulsarItem.createAttributes(
+            EvansToolTiers.PHILOSOPHERS, 3.0f, -2.4f))
+            .component(EvansComponents.PULSAR_COMPONENT.value(), new PulsarComponent(false))));
     //philosophers tools
     public static final DeferredItem<Item> PHILOSOPHERS_SHOVEL = ITEMS.register(
             "philosophers_shovel", () -> new ShovelItem(EvansToolTiers.PHILOSOPHERS,
