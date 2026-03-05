@@ -3,7 +3,6 @@ package net.seinsturg.efac.util;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.network.PacketDistributor;
-import net.neoforged.neoforge.network.payload.SyncAttachmentsPayload;
 import net.seinsturg.efac.data.EvansData;
 import net.seinsturg.efac.network.payload.SyncChargePayload;
 import net.seinsturg.efac.network.payload.SyncMaxChargePayload;
@@ -11,7 +10,7 @@ import net.seinsturg.efac.network.payload.SyncMaxChargePayload;
 public class ClumbHelper {
     public static int getCharge(Player player) { return player.getData(EvansData.CHARGES); }
     public static int getMaxCharge(Player player) { return player.getData(EvansData.MAX_CHARGES); }
-    public static boolean canClumb(Player player) { return getCharge(player) > 0; }
+    public static boolean canClumb(Player player) { return getCharge(player) > 0 || player.isCreative(); }
 
     public static void addCharges(Player player, int amt, int max) {
         int charges = getCharge(player);

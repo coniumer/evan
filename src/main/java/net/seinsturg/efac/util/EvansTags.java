@@ -1,6 +1,5 @@
 package net.seinsturg.efac.util;
 
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -10,6 +9,10 @@ import net.seinsturg.efac.EFAC;
 
 public class EvansTags {
     public static class Blocks {
+        public static final TagKey<Block> PROVIDES_CHARGE_RARE = createTag("provides_charge_rare");
+        public static final TagKey<Block> PROVIDES_CHARGE_COMMON = createTag("provides_charge_common");
+        public static final TagKey<Block> PROVIDES_CHARGE_ALWAYS = createTag("provides_charge_always");
+        public static final TagKey<Block> CONSUMES_CHARGE = createTag("consumes_charge");
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(EFAC.res(name));
         }
