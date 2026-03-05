@@ -25,6 +25,8 @@ public class EFACClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
+
+
         EFAC.LOGGER.info("HELLO EVAN CLIENT");
         EFAC.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }

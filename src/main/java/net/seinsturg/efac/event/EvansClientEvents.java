@@ -10,6 +10,7 @@ import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.seinsturg.efac.EFAC;
 import net.seinsturg.efac.client.EvansKeyMappings;
+import net.seinsturg.efac.util.ClumbHelper;
 
 public class EvansClientEvents {
     public static void clumbDash(Player player) {
@@ -23,7 +24,6 @@ public class EvansClientEvents {
 
     }
 
-
     @EventBusSubscriber(modid = EFAC.MOD_ID, value = Dist.CLIENT)
     public static class ClientEvents {
         @SubscribeEvent
@@ -32,7 +32,9 @@ public class EvansClientEvents {
                 Minecraft mc = Minecraft.getInstance();
                 if (mc.player == null) {return;}
                 Player player = mc.player;
-                clumbDash(player);
+                if (ClumbHelper.canClumb(player)) {
+                    clumbDash(player);
+                }
             }
         }
     }

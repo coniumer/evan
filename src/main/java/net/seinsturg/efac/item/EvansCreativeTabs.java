@@ -36,11 +36,12 @@ public class EvansCreativeTabs {
                         output.accept(EvansBlocks.CLUMB_BLOCK);
                         //items
                         output.accept(EvansItems.CLUMB_MATERIA);
+                        output.accept(EvansItems.RANDOM_SAUCE);
 
                     })
                     .build());
 
-    //to add second, use .withTabsBefore(ResourceLocation.fromNamespaceAndPath(EFAC.MOD_ID, "clumb_item_tab"))
+    //to add second, use .withTabsBefore(EFAC.res("clumb_item_tag"))
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);

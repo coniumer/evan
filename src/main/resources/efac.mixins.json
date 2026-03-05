@@ -7,6 +7,7 @@
     "EvanPlayerMovementMixin"
   ],
   "client": [
+    "HudMixin"
   ],
   "injectors": {
     "defaultRequire": 1

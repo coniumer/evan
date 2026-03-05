@@ -14,5 +14,6 @@ public class EvansItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         basicItem(EvansItems.CLUMB_MATERIA.get());
+        basicItem(EvansItems.RANDOM_SAUCE.get());
     }
 }

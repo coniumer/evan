@@ -6,6 +6,8 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.seinsturg.efac.EFAC;
+import net.seinsturg.efac.item.EvansItems;
+import net.seinsturg.efac.util.EvansTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -17,6 +19,7 @@ public class EvansItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-
+        tag(EvansTags.Items.ADD_CHARGE_ON_EAT)
+                .add(EvansItems.CLUMB_MATERIA.get());
     }
 }

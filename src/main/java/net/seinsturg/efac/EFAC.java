@@ -1,5 +1,6 @@
 package net.seinsturg.efac;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -22,6 +23,10 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 public class EFAC {
     public static final String MOD_ID = "efac";
     public static final Logger LOGGER = LogUtils.getLogger();
+    public static ResourceLocation res(String name) {
+        return ResourceLocation.fromNamespaceAndPath(EFAC.MOD_ID, name);
+    }
+
 
     public EFAC(IEventBus eventBus, ModContainer modContainer) {
         eventBus.addListener(this::commonSetup);
