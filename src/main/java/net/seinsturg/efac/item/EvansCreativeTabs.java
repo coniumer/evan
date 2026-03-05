@@ -36,6 +36,7 @@ public class EvansCreativeTabs {
                         output.accept(EvansBlocks.CLUMB_BLOCK);
                         //items
                         output.accept(EvansItems.CLUMB_MATERIA);
+                        output.accept(EvansItems.GEUMB_SHARD);
                         output.accept(EvansItems.RANDOM_SAUCE);
 
                     })

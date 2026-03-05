@@ -16,7 +16,8 @@ public class EvansData {
             "charges", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT).build()
     );
     public static final Supplier<AttachmentType<Integer>> MAX_CHARGES = ATTACHMENT_TYPES.register(
-            "max_charges", () -> AttachmentType.builder(() -> 5).serialize(Codec.INT).build()
+            "max_charges", () -> AttachmentType.builder(() -> 5).serialize(Codec.INT)
+            .copyOnDeath().build()
     );
 
     public static void register(IEventBus eventBus) {

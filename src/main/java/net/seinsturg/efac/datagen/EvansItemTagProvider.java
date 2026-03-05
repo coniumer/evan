@@ -19,7 +19,5 @@ public class EvansItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(EvansTags.Items.ADD_CHARGE_ON_EAT)
-                .add(EvansItems.CLUMB_MATERIA.get());
     }
 }

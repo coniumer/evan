@@ -5,8 +5,14 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import net.seinsturg.efac.EFAC;
+import net.seinsturg.efac.network.handler.AddChargeHandler;
+import net.seinsturg.efac.network.handler.RemoveChargeHandler;
 import net.seinsturg.efac.network.handler.SyncChargeHandler;
+import net.seinsturg.efac.network.handler.SyncMaxChargeHandler;
+import net.seinsturg.efac.network.payload.AddChargePayload;
+import net.seinsturg.efac.network.payload.RemoveChargePayload;
 import net.seinsturg.efac.network.payload.SyncChargePayload;
+import net.seinsturg.efac.network.payload.SyncMaxChargePayload;
 
 @EventBusSubscriber(modid = EFAC.MOD_ID)
 public class EvansMessages {
@@ -18,7 +24,18 @@ public class EvansMessages {
         registrar.playToClient(
                 SyncChargePayload.TYPE,
                 SyncChargePayload.STREAM_CODEC,
-                SyncChargeHandler::handle
-        );
+                SyncChargeHandler::handle);
+        registrar.playToClient(
+                SyncMaxChargePayload.TYPE,
+                SyncMaxChargePayload.STREAM_CODEC,
+                SyncMaxChargeHandler::handle);
+        registrar.playToServer(
+                AddChargePayload.TYPE,
+                AddChargePayload.STREAM_CODEC,
+                AddChargeHandler::handle);
+        registrar.playToServer(
+                RemoveChargePayload.TYPE,
+                RemoveChargePayload.STREAM_CODEC,
+                RemoveChargeHandler::handle);
     }
 }

@@ -15,5 +15,6 @@ public class EvansItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(EvansItems.CLUMB_MATERIA.get());
         basicItem(EvansItems.RANDOM_SAUCE.get());
+        basicItem(EvansItems.GEUMB_SHARD.get());
     }
 }

@@ -16,7 +16,6 @@ public class EvansTags {
     }
 
     public static class Items {
-        public static final TagKey<Item> ADD_CHARGE_ON_EAT = createTag("add_charge_on_eat");
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(EFAC.res(name));
         }

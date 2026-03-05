@@ -8,8 +8,10 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 import net.seinsturg.efac.EFAC;
 import net.seinsturg.efac.client.EvansKeyMappings;
+import net.seinsturg.efac.network.payload.RemoveChargePayload;
 import net.seinsturg.efac.util.ClumbHelper;
 
 public class EvansClientEvents {
@@ -34,6 +36,7 @@ public class EvansClientEvents {
                 Player player = mc.player;
                 if (ClumbHelper.canClumb(player)) {
                     clumbDash(player);
+                    PacketDistributor.sendToServer(new RemoveChargePayload(1));
                 }
             }
         }

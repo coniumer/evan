@@ -6,6 +6,7 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.network.payload.SyncAttachmentsPayload;
 import net.seinsturg.efac.data.EvansData;
 import net.seinsturg.efac.network.payload.SyncChargePayload;
+import net.seinsturg.efac.network.payload.SyncMaxChargePayload;
 
 public class ClumbHelper {
     public static int getCharge(Player player) { return player.getData(EvansData.CHARGES); }
@@ -26,6 +27,7 @@ public class ClumbHelper {
         int charges = getCharge(player);
         charges = Math.clamp(charges - amt, 0, max);
         player.setData(EvansData.CHARGES, charges);
+        PacketDistributor.sendToPlayer((ServerPlayer) player, new SyncChargePayload(getCharge(player)));
         System.out.println("Charges: " + getCharge(player));
     }
 
@@ -33,6 +35,7 @@ public class ClumbHelper {
         int maxCharges = player.getData(EvansData.MAX_CHARGES);
         maxCharges = Math.clamp(maxCharges + 1, 5, 40);
         player.setData(EvansData.MAX_CHARGES, maxCharges);
-        System.out.println("Max charges: " + getMaxCharge(player));
+        System.out.println("Max maxCharges: " + getMaxCharge(player));
+        PacketDistributor.sendToPlayer((ServerPlayer) player, new SyncMaxChargePayload(getMaxCharge(player)));
     }
 }
