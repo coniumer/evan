@@ -13,6 +13,10 @@
   "item.efac.citry_wand": "Citry Wand",
   "item.efac.rubied_wand": "Rubied Wand",
   "item.efac.philosophers_wand": "Philosophers Wand",
+  "item.efac.philosophers_shovel": "Philosophers Shovel",
+  "item.efac.philosophers_pickaxe": "Philosophers Pickaxe",
+  "item.efac.philosophers_axe": "Philosophers Axe",
+  "item.efac.philosophers_hoe": "Philosophers Hoe",
 
   "death.attack.efac.clumb": "%1$s got freaking clumbed on!",
 

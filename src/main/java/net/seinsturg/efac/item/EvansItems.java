@@ -1,7 +1,6 @@
 package net.seinsturg.efac.item;
 
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -19,8 +18,8 @@ public class EvansItems {
             "random_sauce", () -> new SauceItem(new Item.Properties().food(EvansFoodProperties.RANDOM_SAUCE)));
     public static final DeferredItem<Item> GEUMB_SHARD = ITEMS.register(
             "geumb_shard", () -> new GeumbItem(new Item.Properties().food(EvansFoodProperties.GEUMB)));
-    //wands
     //todo ingredients and recipes
+    //wands
     public static final DeferredItem<Item> CLUMBY_WAND = ITEMS.register(
             "clumby_wand", () -> new WandItem(Tiers.STONE, WandTiers.CLUMBY, new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> ALBY_WAND = ITEMS.register(
@@ -30,7 +29,26 @@ public class EvansItems {
     public static final DeferredItem<Item> RUBIED_WAND = ITEMS.register(
             "rubied_wand", () -> new WandItem(Tiers.NETHERITE, WandTiers.RUBIED, new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> PHILOSOPHERS_WAND = ITEMS.register(
-            "philosophers_wand", () -> new WandItem(EvansToolTiers.PHILOSOPHERS, WandTiers.PHILOSOPHERS, new Item.Properties().stacksTo(1)));
+            "philosophers_wand", () -> new WandItem(EvansToolTiers.PHILOSOPHERS, WandTiers.PHILOSOPHERS, new Item.Properties()
+            .fireResistant().stacksTo(1)));
+    //swords
+    //philosophers tools
+    public static final DeferredItem<Item> PHILOSOPHERS_SHOVEL = ITEMS.register(
+            "philosophers_shovel", () -> new ShovelItem(EvansToolTiers.PHILOSOPHERS,
+            new Item.Properties().fireResistant().attributes(ShovelItem.createAttributes(
+            EvansToolTiers.PHILOSOPHERS, 1.0f, -3.0f))));
+    public static final DeferredItem<Item> PHILOSOPHERS_PICKAXE = ITEMS.register(
+            "philosophers_pickaxe", () -> new PickaxeItem(EvansToolTiers.PHILOSOPHERS,
+            new Item.Properties().fireResistant().attributes(PickaxeItem.createAttributes(
+            EvansToolTiers.PHILOSOPHERS, 1.0f, -2.8f))));
+    public static final DeferredItem<Item> PHILOSOPHERS_AXE = ITEMS.register(
+            "philosophers_axe", () -> new AxeItem(EvansToolTiers.PHILOSOPHERS,
+            new Item.Properties().fireResistant().attributes(AxeItem.createAttributes(
+            EvansToolTiers.PHILOSOPHERS, 5.0f, -3.0f))));
+    public static final DeferredItem<Item> PHILOSOPHERS_HOE = ITEMS.register(
+            "philosophers_hoe", () -> new HoeItem(EvansToolTiers.PHILOSOPHERS,
+            new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(
+            EvansToolTiers.PHILOSOPHERS, 8.0f, -6.0f))));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

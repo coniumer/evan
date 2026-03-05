@@ -38,12 +38,18 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.CLUMB_MATERIA);
                         output.accept(EvansItems.GEUMB_SHARD);
                         output.accept(EvansItems.RANDOM_SAUCE);
-                        //wands
+                        //wands & swords
                         output.accept(EvansItems.CLUMBY_WAND);
                         output.accept(EvansItems.ALBY_WAND);
                         output.accept(EvansItems.CITRY_WAND);
                         output.accept(EvansItems.RUBIED_WAND);
                         output.accept(EvansItems.PHILOSOPHERS_WAND);
+                        //philosophers tools
+                        output.accept(EvansItems.PHILOSOPHERS_SHOVEL);
+                        output.accept(EvansItems.PHILOSOPHERS_PICKAXE);
+                        output.accept(EvansItems.PHILOSOPHERS_AXE);
+                        output.accept(EvansItems.PHILOSOPHERS_HOE);
+
 
                     })
                     .build());

@@ -22,5 +22,9 @@ public class EvansItemModelProvider extends ItemModelProvider {
         handheldItem(EvansItems.CITRY_WAND.get());
         handheldItem(EvansItems.RUBIED_WAND.get());
         handheldItem(EvansItems.PHILOSOPHERS_WAND.get());
+        handheldItem(EvansItems.PHILOSOPHERS_SHOVEL.get());
+        handheldItem(EvansItems.PHILOSOPHERS_PICKAXE.get());
+        handheldItem(EvansItems.PHILOSOPHERS_AXE.get());
+        handheldItem(EvansItems.PHILOSOPHERS_HOE.get());
     }
 }
