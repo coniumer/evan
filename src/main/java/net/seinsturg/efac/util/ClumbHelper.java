@@ -17,7 +17,6 @@ public class ClumbHelper {
         charges = Math.clamp(charges + amt, 0, max);
         player.setData(EvansData.CHARGES, charges);
         PacketDistributor.sendToPlayer((ServerPlayer) player, new SyncChargePayload(getCharge(player)));
-        System.out.println("Charges: " + getCharge(player));
     }
 
     public static void removeCharges(Player player, int amt, int max) {
@@ -27,14 +26,12 @@ public class ClumbHelper {
         charges = Math.clamp(charges - amt, 0, max);
         player.setData(EvansData.CHARGES, charges);
         PacketDistributor.sendToPlayer((ServerPlayer) player, new SyncChargePayload(getCharge(player)));
-        System.out.println("Charges: " + getCharge(player));
     }
 
     public static void addMaxCharges(Player player) {
         int maxCharges = player.getData(EvansData.MAX_CHARGES);
         maxCharges = Math.clamp(maxCharges + 1, 5, 40);
         player.setData(EvansData.MAX_CHARGES, maxCharges);
-        System.out.println("Max maxCharges: " + getMaxCharge(player));
         PacketDistributor.sendToPlayer((ServerPlayer) player, new SyncMaxChargePayload(getMaxCharge(player)));
     }
 }

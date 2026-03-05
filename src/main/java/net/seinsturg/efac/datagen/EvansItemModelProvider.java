@@ -16,5 +16,11 @@ public class EvansItemModelProvider extends ItemModelProvider {
         basicItem(EvansItems.CLUMB_MATERIA.get());
         basicItem(EvansItems.RANDOM_SAUCE.get());
         basicItem(EvansItems.GEUMB_SHARD.get());
+
+        handheldItem(EvansItems.CLUMBY_WAND.get());
+        handheldItem(EvansItems.ALBY_WAND.get());
+        handheldItem(EvansItems.CITRY_WAND.get());
+        handheldItem(EvansItems.RUBIED_WAND.get());
+        handheldItem(EvansItems.PHILOSOPHERS_WAND.get());
     }
 }
