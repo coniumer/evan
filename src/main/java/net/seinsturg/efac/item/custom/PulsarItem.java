@@ -2,6 +2,8 @@ package net.seinsturg.efac.item.custom;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
@@ -14,6 +16,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.seinsturg.efac.component.EvansComponents;
 import net.seinsturg.efac.item.component.PulsarComponent;
+import net.seinsturg.efac.sound.EvansSounds;
 import net.seinsturg.efac.util.ClumbHelper;
 import net.seinsturg.efac.util.EvansDamage;
 
@@ -38,12 +41,21 @@ public class PulsarItem extends SwordItem {
             if (ClumbHelper.canClumb(player)) {
                 target.hurt(pulseDamage(player), this.pulsarTier.getPulseDamage());
                 ClumbHelper.removeCharges(player, 1, ClumbHelper.getMaxCharge(player));
+
+                float pitch = (Math.abs(player.level().random.nextInt() % 10) > 5) ? 1f : 0.8f;
+                player.level().playSound(null, player.getOnPos(), EvansSounds.CLUMB_PULSE.get(), SoundSource.PLAYERS, 1f, pitch);
             } else {
                 player.hurt(pulseDamage(player), this.pulsarTier.getPulseDamage());
+
+                float pitch = (Math.abs(player.level().random.nextInt() % 10) > 5) ? 1f : 0.5f;
+                player.level().playSound(null, player.getOnPos(), EvansSounds.CLUMB_FAIL.get(), SoundSource.PLAYERS, 1f, pitch);
             }
         } else if (!pulsar.mode()  && !attacker.level().isClientSide && attacker instanceof Player player) {
             if (tryChargeAbsorption(attacker.level())) {
                 ClumbHelper.addCharges(player, 1, ClumbHelper.getMaxCharge(player));
+
+                float pitch = (Math.abs(player.level().random.nextInt() % 10) > 5) ? 1f : 0.8f;
+                player.level().playSound(null, player.getOnPos(), EvansSounds.CLUMB_CHARGE.get(), SoundSource.PLAYERS, 1f, pitch);
             }
         }
     }
@@ -58,7 +70,15 @@ public class PulsarItem extends SwordItem {
         PulsarComponent pulsar = itemStack.get(EvansComponents.PULSAR_COMPONENT);
         itemStack.set(EvansComponents.PULSAR_COMPONENT.get(), new PulsarComponent(!pulsar.mode()));
 
+        float pitch = (Math.abs(level.random.nextInt() % 10) > 5) ? 1f : 0.8f;
+        SoundEvent soundEvent = getSoundBasedOnMode(itemStack.get(EvansComponents.PULSAR_COMPONENT).mode());
+        level.playSound(player, player.getOnPos(), soundEvent, SoundSource.PLAYERS, 1f, pitch);
+
         return InteractionResultHolder.success(player.getItemInHand(usedHand));
+    }
+
+    private SoundEvent getSoundBasedOnMode(boolean mode) {
+        return (mode) ? EvansSounds.CLUMB_PULSE.get() : EvansSounds.CLUMB_CHARGE.get();
     }
 
     private static DamageSource pulseDamage(Player cause) {

@@ -1,6 +1,7 @@
 package net.seinsturg.efac.item.custom;
 
 import net.minecraft.core.registries.Registries;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -16,6 +17,7 @@ import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.event.EventHooks;
+import net.seinsturg.efac.sound.EvansSounds;
 import net.seinsturg.efac.util.ClumbHelper;
 import net.seinsturg.efac.util.EvansDamage;
 
@@ -63,9 +65,15 @@ public class WandItem extends TieredItem {
                                 : EquipmentSlot.MAINHAND;
                         stack.hurtAndBreak(1, player, equipmentslot);
                     }
+
+                    float pitch = (Math.abs(level.random.nextInt() % 10) > 5) ? 1f : 0.5f;
+                    level.playSound(null, player.getOnPos(), EvansSounds.CLUMB_SUCCESS.get(), SoundSource.PLAYERS, 1f, pitch);
                 }
             } else {
                 player.hurt(wandFailDamage(player), this.getTier().getAttackDamageBonus());
+
+                float pitch = (Math.abs(level.random.nextInt() % 10) > 5) ? 1f : 0.5f;
+                level.playSound(null, player.getOnPos(), EvansSounds.CLUMB_FAIL.get(), SoundSource.PLAYERS, 1f, pitch);
             }
         }
     }
