@@ -1,0 +1,35 @@
+{
+  "clumb_success": {
+    "sounds": [
+      "efac:clumb/succeed1",
+      "efac:clumb/succeed2",
+      "efac:clumb/succeed3"
+    ]
+  },
+  "clumb_fail": {
+    "sounds": [
+      "efac:clumb/fail"
+    ]
+  },
+  "clumb_dash": {
+    "sounds": [
+      "efac:clumb/dash"
+    ]
+  },
+  "clumb_charge": {
+    "sounds": [
+      "efac:clumb/charge1",
+      "efac:clumb/charge2",
+      "efac:clumb/charge3",
+      "efac:clumb/charge4"
+    ]
+  },
+  "clumb_pulse": {
+    "sounds": [
+      "efac:clumb/pulse1",
+      "efac:clumb/pulse2",
+      "efac:clumb/pulse3",
+      "efac:clumb/pulse4"
+    ]
+  }
+}
