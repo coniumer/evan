@@ -8,6 +8,9 @@ import net.seinsturg.efac.EFAC;
 import net.seinsturg.efac.component.EvansComponents;
 import net.seinsturg.efac.item.component.PulsarComponent;
 import net.seinsturg.efac.item.custom.*;
+import net.seinsturg.efac.item.custom.charms.DashCharm;
+import net.seinsturg.efac.item.custom.charms.LightningCharm;
+import net.seinsturg.efac.item.custom.charms.PhilosopherCharm;
 
 public class EvansItems {
     public static final DeferredRegister.Items ITEMS =
@@ -76,6 +79,13 @@ public class EvansItems {
             "philosophers_hoe", () -> new HoeItem(EvansToolTiers.PHILOSOPHERS,
             new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(
             EvansToolTiers.PHILOSOPHERS, 8.0f, -6.0f))));
+    //charms
+    public static final DeferredItem<Item> LIGHTNING_CHARM = ITEMS.register(
+            "lightning_charm", () -> new LightningCharm(new Item.Properties()));
+    public static final DeferredItem<Item> DASH_CHARM = ITEMS.register(
+            "dash_charm", () -> new DashCharm(new Item.Properties()));
+    public static final DeferredItem<Item> PHILOSOPHERS_CHARM = ITEMS.register(
+            "philosophers_charm", () -> new PhilosopherCharm(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

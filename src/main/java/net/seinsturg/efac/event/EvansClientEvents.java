@@ -1,8 +1,8 @@
 package net.seinsturg.efac.event;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -11,20 +11,11 @@ import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.seinsturg.efac.EFAC;
 import net.seinsturg.efac.client.EvansKeyMappings;
+import net.seinsturg.efac.item.custom.charms.CharmItem;
 import net.seinsturg.efac.network.payload.RemoveChargePayload;
 import net.seinsturg.efac.util.ClumbHelper;
 
 public class EvansClientEvents {
-    public static void clumbDash(Player player) {
-        Vec3 playerLookVec = player.getLookAngle();
-        Vec3 dashVec = new Vec3(
-                playerLookVec.x * 0.7f,
-                (player.getDeltaMovement().y * 0.3f) + playerLookVec.y * 0.7f,
-                playerLookVec.z * 0.7f
-        );
-        player.addDeltaMovement(dashVec);
-
-    }
 
     @EventBusSubscriber(modid = EFAC.MOD_ID, value = Dist.CLIENT)
     public static class ClientEvents {
@@ -35,9 +26,23 @@ public class EvansClientEvents {
                 if (mc.player == null) {return;}
                 Player player = mc.player;
                 if (ClumbHelper.canClumb(player)) {
-                    clumbDash(player);
+                    performClumbAction(player);
                     PacketDistributor.sendToServer(new RemoveChargePayload(1));
                 }
+            }
+        }
+    }
+
+    private static void performClumbAction(Player player) {
+        if (player.getItemInHand(InteractionHand.OFF_HAND).getItem() instanceof CharmItem charm) {
+            switch (charm.getDirection()) {
+                case SERVER -> charm.serverAction(player);
+                case CLIENT -> charm.clientAction(player);
+                case BIDIRECTIONAL -> {
+                    charm.serverAction(player);
+                    charm.clientAction(player);
+                }
+                default -> {}
             }
         }
     }

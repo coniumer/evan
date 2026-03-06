@@ -5,14 +5,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import net.seinsturg.efac.EFAC;
-import net.seinsturg.efac.network.handler.AddChargeHandler;
-import net.seinsturg.efac.network.handler.RemoveChargeHandler;
-import net.seinsturg.efac.network.handler.SyncChargeHandler;
-import net.seinsturg.efac.network.handler.SyncMaxChargeHandler;
-import net.seinsturg.efac.network.payload.AddChargePayload;
-import net.seinsturg.efac.network.payload.RemoveChargePayload;
-import net.seinsturg.efac.network.payload.SyncChargePayload;
-import net.seinsturg.efac.network.payload.SyncMaxChargePayload;
+import net.seinsturg.efac.network.handler.*;
+import net.seinsturg.efac.network.payload.*;
 
 @EventBusSubscriber(modid = EFAC.MOD_ID)
 public class EvansMessages {
@@ -37,5 +31,13 @@ public class EvansMessages {
                 RemoveChargePayload.TYPE,
                 RemoveChargePayload.STREAM_CODEC,
                 RemoveChargeHandler::handle);
+        registrar.playToServer(
+                LightningCharmPayload.TYPE,
+                LightningCharmPayload.STREAM_CODEC,
+                LightningCharmHandler::handle);
+        registrar.playToServer(
+                DashCharmPayload.TYPE,
+                DashCharmPayload.STREAM_CODEC,
+                DashCharmHandler::handle);
     }
 }

@@ -13,10 +13,12 @@ public class EvansItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        //ingredients
         basicItem(EvansItems.CLUMB_MATERIA.get());
         basicItem(EvansItems.RANDOM_SAUCE.get());
         basicItem(EvansItems.GEUMB_SHARD.get());
 
+        //tools
         handheldItem(EvansItems.CLUMBY_WAND.get());
         handheldItem(EvansItems.CLUMBY_PULSAR.get());
         handheldItem(EvansItems.ALBY_WAND.get());
@@ -31,5 +33,10 @@ public class EvansItemModelProvider extends ItemModelProvider {
         handheldItem(EvansItems.PHILOSOPHERS_PICKAXE.get());
         handheldItem(EvansItems.PHILOSOPHERS_AXE.get());
         handheldItem(EvansItems.PHILOSOPHERS_HOE.get());
+
+        //charms
+        handheldItem(EvansItems.DASH_CHARM.get());
+        handheldItem(EvansItems.LIGHTNING_CHARM.get());
+        handheldItem(EvansItems.PHILOSOPHERS_CHARM.get());
     }
 }

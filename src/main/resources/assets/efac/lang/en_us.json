@@ -1,5 +1,6 @@
 {
   "creativetab.efac.clumb_tab": "Clumbing",
+  "creativetab.efac.charm_tab": "Charms",
 
   "block.efac.clumb_block": "Clumb Block",
   "block.efac.grone": "Grone",
@@ -23,12 +24,20 @@
   "item.efac.philosophers_axe": "Philosophers Axe",
   "item.efac.philosophers_hoe": "Philosophers Hoe",
 
+  "item.efac.lightning_charm": "Lightning Charm",
+  "item.efac.dash_charm": "Dash Charm",
+  "item.efac.philosophers_charm": "Philosophers Charm",
+
   "death.attack.efac.clumb": "%1$s got freaking clumbed on!",
 
   "tooltip.efac.pulsar_pulse.title": "Pulse Mode:",
-  "tooltip.efac.pulsar_pulse.desc": "Deals damage when attacking, at the cost of a clumb charge.",
+  "tooltip.efac.pulsar_pulse.desc": "Extra damage, at the cost of a clumb charge.",
   "tooltip.efac.pulsar_charge.title": "Charge Mode:",
   "tooltip.efac.pulsar_charge.desc": "Provides a chance to gain clumb charge on attacking.",
+  "tooltip.efac.charm.title": "Clumb Charm:",
+  "tooltip.efac.charm.lightning.desc": "Summon lightning at look location.",
+  "tooltip.efac.charm.dash.desc": "Amplify current velocity.",
+  "tooltip.efac.charm.philosopher.desc": "Passively bypass removal of clumb charge.",
 
   "key.category.efac.evankeys": "Evan's Funnest Awesome Keys",
   "key.efac.clumb": "Clumb"

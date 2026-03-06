@@ -54,12 +54,18 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.PHILOSOPHERS_PICKAXE);
                         output.accept(EvansItems.PHILOSOPHERS_AXE);
                         output.accept(EvansItems.PHILOSOPHERS_HOE);
-
-
                     })
                     .build());
-
-    //to add second, use .withTabsBefore(EFAC.res("clumb_item_tag"))
+    public static final Supplier<CreativeModeTab> CHARM_TAB = CREATIVE_MODE_TAB.register("charm_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(EvansItems.PHILOSOPHERS_CHARM.get()))
+                    .title(Component.translatable("creativetab.efac.charm_tab"))
+                    .withTabsBefore(EFAC.res("clumb_item_tab"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(EvansItems.DASH_CHARM);
+                        output.accept(EvansItems.LIGHTNING_CHARM);
+                        output.accept(EvansItems.PHILOSOPHERS_CHARM);
+                    })
+                    .build());
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TAB.register(eventBus);
