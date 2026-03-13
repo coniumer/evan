@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -26,9 +27,10 @@ public class EvansHud extends Screen {
     private static final ResourceLocation CROSSHAIR_SPRITE = EFAC.res("hud/crosshair");
     private static final ResourceLocation HOTBAR_SPRITE = EFAC.res("hud/hotbar");
     private static final ResourceLocation HUD_BASE_SPRITE = EFAC.res("hud/base");
+    private static final ResourceLocation HUD_ATTACK_INDICATOR_EMPTY_SPRITE = EFAC.res("hud/attack_indicator_back");
+    private static final ResourceLocation HUD_ATTACK_INDICATOR_FULL_SPRITE = EFAC.res("hud/attack_indicator_full");
     private static final ResourceLocation HUD_EXPERIENCE_EMPTY_SPRITE = EFAC.res("hud/experience_empty");
     private static final ResourceLocation HUD_EXPERIENCE_FULL_SPRITE = EFAC.res("hud/experience_full");
-    private static final ResourceLocation HUD_CONNECTOR_SPRITE = EFAC.res("hud/connector");
     private static final ResourceLocation HUD_HEALTH_FULL_SPRITE = EFAC.res("hud/health_full");
     private static final ResourceLocation HUD_HEALTH_HALF_SPRITE = EFAC.res("hud/health_half");
     private static final ResourceLocation HUD_HEALTH_EMPTY_SPRITE = EFAC.res("hud/health_empty");
@@ -52,9 +54,8 @@ public class EvansHud extends Screen {
     public void draw(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
         drawCrosshair(guiGraphics);
         if (this.minecraft.gameMode.getPlayerMode() != GameType.SPECTATOR) {
-            drawConnectors(guiGraphics);
-            drawHotbar(guiGraphics, deltaTracker);
             drawBase(guiGraphics);
+            drawHotbar(guiGraphics, deltaTracker);
             drawHealth(guiGraphics);
             drawExperience(guiGraphics);
             drawCharges(guiGraphics);
@@ -65,19 +66,21 @@ public class EvansHud extends Screen {
     private void drawStats(GuiGraphics guiGraphics) {
         Player player = this.getCameraPlayer();
         String def = "DEF: " + player.getArmorValue();
-        int color = (player.getArmorValue() < 10) ? 9090900 : 9099990;
-        guiGraphics.drawString(this.minecraft.font, def, guiGraphics.guiWidth() - 306, guiGraphics.guiHeight() - 18, color, true);
+        float color = (player.getArmorValue() < 10) ? 1f : 0.2f;
+        guiGraphics.setColor(1f, color, color, 1f);
+        guiGraphics.drawString(this.minecraft.font, def, guiGraphics.guiWidth() - 240, guiGraphics.guiHeight() - 18, 9090900, true);
+        guiGraphics.setColor(1f, 1f, 1f, 1f);
     }
 
     private void drawCharges(GuiGraphics guiGraphics) {
         Player player = this.getCameraPlayer();
         for (int i = 0; i < 10; i++) {
             ResourceLocation slotTex = getChargeSlotSpriteToDraw(i + 1, player);
-            guiGraphics.blitSprite(slotTex, guiGraphics.guiWidth() - 116 - (i * 10), guiGraphics.guiHeight() - 19, 10, 10);
+            guiGraphics.blitSprite(slotTex, guiGraphics.guiWidth() - 104 - (i * 10), guiGraphics.guiHeight() - 19, 10, 10);
 
             if (ClumbHelper.getCharge(player) >= i + 1) {
                 ResourceLocation chargeTex = getChargeSpriteToDraw(i, player);
-                guiGraphics.blitSprite(chargeTex, guiGraphics.guiWidth() - 116 - (i * 10), guiGraphics.guiHeight() - 19, 10, 10);
+                guiGraphics.blitSprite(chargeTex, guiGraphics.guiWidth() - 104 - (i * 10), guiGraphics.guiHeight() - 19, 10, 10);
             }
         }
     }
@@ -141,19 +144,17 @@ public class EvansHud extends Screen {
         if (nextLevelXp > 0) {
             int k = (int)(this.minecraft.player.experienceProgress * 202.0F);
             RenderSystem.enableBlend();
-            guiGraphics.blitSprite(HUD_EXPERIENCE_EMPTY_SPRITE, guiGraphics.guiWidth() - 306, guiGraphics.guiHeight() - 8, 200, 3);
+            guiGraphics.blitSprite(HUD_EXPERIENCE_EMPTY_SPRITE, guiGraphics.guiWidth() - 294, guiGraphics.guiHeight() - 8, 200, 3);
             if (k > 0) {
-                guiGraphics.blitSprite(HUD_EXPERIENCE_FULL_SPRITE, guiGraphics.guiWidth() - 306, guiGraphics.guiHeight() - 8, 200, 3);
-                guiGraphics.blitSprite(HUD_EXPERIENCE_EMPTY_SPRITE, 200, 3, 0, 0, guiGraphics.guiWidth() - 306, guiGraphics.guiHeight() - 8, 200 - k, 3);
+                guiGraphics.blitSprite(HUD_EXPERIENCE_FULL_SPRITE, guiGraphics.guiWidth() - 294, guiGraphics.guiHeight() - 8, 200, 3);
+                guiGraphics.blitSprite(HUD_EXPERIENCE_EMPTY_SPRITE, 200, 3, 0, 0, guiGraphics.guiWidth() - 294, guiGraphics.guiHeight() - 8, 200 - k, 3);
 
             }
             RenderSystem.disableBlend();
         }
-        if (level > 0) {
-            String lvText = level + "";
-            int distance = (level < 99) ? 318 : 324;
-            guiGraphics.drawString(this.minecraft.font, lvText, guiGraphics.guiWidth() - distance, guiGraphics.guiHeight() - 8, 9999990, true);
-        }
+        String lvText = "LV: " + level;
+        guiGraphics.drawString(this.minecraft.font, lvText, guiGraphics.guiWidth() - 294, guiGraphics.guiHeight() - 18, 9999999, true);
+
         guiGraphics.setColor(1,1,1,1);
     }
 
@@ -163,7 +164,7 @@ public class EvansHud extends Screen {
             if (canFillSlot(player, i)) {
                 drawRightSlot(guiGraphics, player, i);
             } else {
-                guiGraphics.blitSprite(HUD_HEALTH_LOCKED_SPRITE, guiGraphics.guiWidth() - 116 - (i * 10), guiGraphics.guiHeight() - 5, 10, 5);
+                guiGraphics.blitSprite(HUD_HEALTH_LOCKED_SPRITE, guiGraphics.guiWidth() - 104 - (i * 10), guiGraphics.guiHeight() - 5, 10, 5);
             }
         }
     }
@@ -173,12 +174,12 @@ public class EvansHud extends Screen {
         if ((health / 2) > slot) {
             if (slot > (health / 2) - 1) {
                 ResourceLocation rightSprite = (health % 2 == 0) ? HUD_HEALTH_FULL_SPRITE : HUD_HEALTH_HALF_SPRITE;
-                guiGraphics.blitSprite(rightSprite, guiGraphics.guiWidth() - 116 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
+                guiGraphics.blitSprite(rightSprite, guiGraphics.guiWidth() - 104 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
             } else {
-                guiGraphics.blitSprite(HUD_HEALTH_FULL_SPRITE, guiGraphics.guiWidth() - 116 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
+                guiGraphics.blitSprite(HUD_HEALTH_FULL_SPRITE, guiGraphics.guiWidth() - 104 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
             }
         } else {
-            guiGraphics.blitSprite(HUD_HEALTH_EMPTY_SPRITE, guiGraphics.guiWidth() - 116 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
+            guiGraphics.blitSprite(HUD_HEALTH_EMPTY_SPRITE, guiGraphics.guiWidth() - 104 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
         }
     }
 
@@ -186,18 +187,15 @@ public class EvansHud extends Screen {
         return (player.getMaxHealth() / 2) > slot;
     }
 
-    private void drawConnectors(GuiGraphics guiGraphics) {
-        Player player = this.getCameraPlayer();
-        if (player != null) {
-            guiGraphics.blitSprite(HUD_CONNECTOR_SPRITE, guiGraphics.guiWidth() - 44, guiGraphics.guiHeight() - 34 - 22, 22, 22);
-            guiGraphics.blitSprite(HUD_CONNECTOR_SPRITE, guiGraphics.guiWidth() - 44, guiGraphics.guiHeight() - 22, 22, 22);
-        }
-    }
-
     private void drawBase(GuiGraphics guiGraphics) {
         Player player = this.getCameraPlayer();
         if (player != null) {
-            guiGraphics.blitSprite(HUD_BASE_SPRITE, guiGraphics.guiWidth() - 356, guiGraphics.guiHeight() - 66, 322, 66);
+            float progress = player.getAttackStrengthScale(0.0F);
+            int scaledProgress = (int) (progress * 66);
+            guiGraphics.blitSprite(HUD_ATTACK_INDICATOR_FULL_SPRITE, guiGraphics.guiWidth() - 344, guiGraphics.guiHeight() - 66, 322, 66);
+            guiGraphics.blitSprite(HUD_ATTACK_INDICATOR_EMPTY_SPRITE, 322, 66, 0, 0, guiGraphics.guiWidth() - 344, guiGraphics.guiHeight() - 66, 322,  scaledProgress * -1 + 66);
+            guiGraphics.blitSprite(HUD_BASE_SPRITE, guiGraphics.guiWidth() - 344, guiGraphics.guiHeight() - 66, 322, 66);
+            InventoryScreen.renderEntityInInventoryFollowsMouse(guiGraphics, guiGraphics.guiWidth() - 64, guiGraphics.guiHeight() - 48, guiGraphics.guiWidth() - 32, guiGraphics.guiHeight() + 30, 30, 0, guiGraphics.guiWidth() - 78, guiGraphics.guiHeight(), player);
         }
     }
 

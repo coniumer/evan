@@ -21,7 +21,7 @@ public class EvansKeyMappings {
 
     public static KeyMapping CHARM_CYCLE = new KeyMapping(
             CHARM_CYCLE_ID,
-            KeyConflictContext.IN_GAME,
+            KeyConflictContext.UNIVERSAL,
             InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_GRAVE_ACCENT,
             KEY_CATEGORY_EFAC_ID
@@ -29,7 +29,7 @@ public class EvansKeyMappings {
 
     public static KeyMapping MOUTH = new KeyMapping(
             MOUTH_ID,
-            KeyConflictContext.IN_GAME,
+            KeyConflictContext.UNIVERSAL,
             InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_M,
             KEY_CATEGORY_EFAC_ID
