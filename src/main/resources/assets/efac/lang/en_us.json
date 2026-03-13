@@ -40,5 +40,7 @@
   "tooltip.efac.charm.philosopher.desc": "Passively bypass removal of clumb charge.",
 
   "key.category.efac.evankeys": "Evan's Funnest Awesome Keys",
-  "key.efac.clumb": "Clumb"
+  "key.efac.clumb": "Clumb",
+  "key.efac.charm_cycle": "Cycle selected charm",
+  "key.efac.mouth": "Open mouth menu"
 }

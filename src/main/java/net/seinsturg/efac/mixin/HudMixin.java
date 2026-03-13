@@ -13,8 +13,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class HudMixin {
     private static final EvansHud HUD = new EvansHud();
 
+    @Inject(method = "render", at = @At("HEAD"))
+    private void preventHotbar(GuiGraphics p_316628_, DeltaTracker p_348543_, CallbackInfo ci) {
+        return;
+    }
+
     @Inject(method = "render", at = @At("RETURN"))
     private void tick(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
-        HUD.draw(guiGraphics);
+        HUD.draw(guiGraphics, deltaTracker);
     }
 }

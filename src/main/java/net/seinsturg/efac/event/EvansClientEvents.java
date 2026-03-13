@@ -52,6 +52,8 @@ public class EvansClientEvents {
         @SubscribeEvent
         public static void onKeyRegister(RegisterKeyMappingsEvent event) {
             event.register(EvansKeyMappings.CLUMB_KEY);
+            event.register(EvansKeyMappings.CHARM_CYCLE);
+            event.register(EvansKeyMappings.MOUTH);
         }
     }
 }
