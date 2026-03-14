@@ -1,6 +1,8 @@
 package net.seinsturg.efac.client;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.Util;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
@@ -10,6 +12,7 @@ import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -22,6 +25,7 @@ import net.seinsturg.efac.EFAC;
 import net.seinsturg.efac.util.ClumbHelper;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class EvansHud extends Screen {
     private static final ResourceLocation CROSSHAIR_SPRITE = EFAC.res("hud/crosshair");
@@ -46,14 +50,34 @@ public class EvansHud extends Screen {
     private static final ResourceLocation HUD_CHARGE_LOCKED_SPRITE = EFAC.res("hud/charge_locked");
     private static final ResourceLocation HOTBAR_OFFHAND_SPRITE = EFAC.res("hud/hotbar_offhand");
     private static final ResourceLocation HOTBAR_SELECTION_SPRITE = EFAC.res("hud/hotbar_selection");
+
+    private static final ResourceLocation BLOOD_0 = EFAC.res("hud/blood/blood_overlay_0");
+    private static final ResourceLocation BLOOD_1 = EFAC.res("hud/blood/blood_overlay_1");
+    private static final ResourceLocation BLOOD_2 = EFAC.res("hud/blood/blood_overlay_2");
+    private static final ResourceLocation BLOOD_3 = EFAC.res("hud/blood/blood_overlay_3");
+    private static final ResourceLocation BLOOD_4 = EFAC.res("hud/blood/blood_overlay_4");
+    private static final ResourceLocation BLOOD_5 = EFAC.res("hud/blood/blood_overlay_5");
+    private static final ResourceLocation BLOOD_6 = EFAC.res("hud/blood/blood_overlay_6");
+    private static final ResourceLocation BLOOD_7 = EFAC.res("hud/blood/blood_overlay_7");
+    private static final ResourceLocation BLOOD_8 = EFAC.res("hud/blood/blood_overlay_8");
+    private static final ResourceLocation BLOOD_9 = EFAC.res("hud/blood/blood_overlay_9");
+    private static final List<ResourceLocation> BLOOD_SPLATTERS = List.of(BLOOD_0, BLOOD_1, BLOOD_2, BLOOD_3, BLOOD_4, BLOOD_5, BLOOD_6, BLOOD_7, BLOOD_8, BLOOD_9);
+
+    private int lastHealth;
+    private long splatterTime = 0;
+    private int MAX_SPLATTER_TIME = 200;
+    private ResourceLocation splatterTex = BLOOD_0;
+
     public EvansHud() {
         super(Component.empty());
         this.minecraft = Minecraft.getInstance();
+        this.lastHealth = 20;
     }
 
     public void draw(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
         drawCrosshair(guiGraphics);
         if (this.minecraft.gameMode.getPlayerMode() != GameType.SPECTATOR) {
+            drawOverlays(guiGraphics);
             drawBase(guiGraphics);
             drawHotbar(guiGraphics, deltaTracker);
             drawHealth(guiGraphics);
@@ -61,6 +85,36 @@ public class EvansHud extends Screen {
             drawCharges(guiGraphics);
             drawStats(guiGraphics);
         }
+    }
+
+    private void drawOverlays(GuiGraphics guiGraphics) {
+        Player player = this.getCameraPlayer();
+        RenderSystem.enableBlend();
+
+        int health = Mth.ceil(player.getHealth());
+
+        if (health < this.lastHealth) {
+            this.splatterTex = getSplatter(player);
+            this.splatterTime = MAX_SPLATTER_TIME;
+        } else {
+            this.splatterTime = Mth.clamp(this.splatterTime - 1, 0, MAX_SPLATTER_TIME);
+            System.out.println("splatterTime: " + this.splatterTime);
+        }
+
+        this.lastHealth = health;
+
+        guiGraphics.setColor(1f, 1f, 1f, (float) this.splatterTime / MAX_SPLATTER_TIME);
+        if (splatterTime > 0) {
+            guiGraphics.blitSprite(this.splatterTex, 0, 0, 0, guiGraphics.guiWidth(), guiGraphics.guiHeight());
+        }
+        guiGraphics.setColor(1f, 1f, 1f, 1f);
+
+        RenderSystem.disableBlend();
+    }
+
+    private ResourceLocation getSplatter(Player player) {
+        int splatter = player.level().random.nextInt() % 10;
+        return BLOOD_SPLATTERS.get(Mth.clamp(splatter, 0, 9));
     }
 
     private void drawStats(GuiGraphics guiGraphics) {
@@ -212,7 +266,7 @@ public class EvansHud extends Screen {
             guiGraphics.pose().pushPose();
             guiGraphics.pose().translate(0.0F, 0.0F, -90.0F);
 
-            guiGraphics.blitSprite(HOTBAR_SPRITE, guiGraphics.guiWidth() - 22,  guiGraphics.guiHeight() - 34 - 182, 22, 182);
+            guiGraphics.blitSprite(HOTBAR_SPRITE, guiGraphics.guiWidth() - 44,  guiGraphics.guiHeight() - 34 - 182, 44, 182);
             guiGraphics.blitSprite(HOTBAR_OFFHAND_SPRITE, guiGraphics.guiWidth() - 22, guiGraphics.guiHeight() - 22, 22, 22);
 
             int l = 1;
