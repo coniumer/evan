@@ -39,5 +39,9 @@ public class EvansMessages {
                 DashCharmPayload.TYPE,
                 DashCharmPayload.STREAM_CODEC,
                 DashCharmHandler::handle);
+        registrar.playToServer(
+                ParryPayload.TYPE,
+                ParryPayload.STREAM_CODEC,
+                ParryHandler::handle);
     }
 }

@@ -18,6 +18,8 @@ public class EvansSounds {
     public static final Supplier<SoundEvent> CLUMB_DASH = registerSoundEvent("clumb_dash");
     public static final Supplier<SoundEvent> CLUMB_CHARGE = registerSoundEvent("clumb_charge");
     public static final Supplier<SoundEvent> CLUMB_PULSE = registerSoundEvent("clumb_pulse");
+    public static final Supplier<SoundEvent> TRY_PARRY = registerSoundEvent("try_parry");
+    public static final Supplier<SoundEvent> PARRY = registerSoundEvent("parry");
 
     private static Supplier<SoundEvent> registerSoundEvent(String name) {
         ResourceLocation location = EFAC.res(name);

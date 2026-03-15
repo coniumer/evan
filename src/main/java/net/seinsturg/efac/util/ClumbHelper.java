@@ -4,6 +4,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.seinsturg.efac.data.EvansData;
+import net.seinsturg.efac.network.payload.ParryPayload;
 import net.seinsturg.efac.network.payload.SyncChargePayload;
 import net.seinsturg.efac.network.payload.SyncMaxChargePayload;
 
@@ -33,5 +34,9 @@ public class ClumbHelper {
         maxCharges = Math.clamp(maxCharges + 1, 5, 40);
         player.setData(EvansData.MAX_CHARGES, maxCharges);
         PacketDistributor.sendToPlayer((ServerPlayer) player, new SyncMaxChargePayload(getMaxCharge(player)));
+    }
+
+    public static void parry(int duration) {
+        PacketDistributor.sendToServer(new ParryPayload(duration));
     }
 }

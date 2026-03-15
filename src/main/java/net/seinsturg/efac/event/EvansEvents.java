@@ -9,6 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -23,6 +24,17 @@ import net.seinsturg.efac.util.EvansTags;
 
 @EventBusSubscriber(modid = EFAC.MOD_ID)
 public class EvansEvents {
+    @SubscribeEvent
+    private static void preventDamage(LivingIncomingDamageEvent event) {
+        if (event.getEntity().getData(EvansData.DAMAGE_FLAG)) {
+            event.getEntity().level().playSound(null, event.getEntity().getOnPos(), EvansSounds.PARRY.get(), SoundSource.PLAYERS, 1f, 1f);
+            if (event.getSource().getEntity() != null && event.getSource().getEntity() != event.getEntity()) {
+                event.getSource().getEntity().hurt(clumbDamage((Player) event.getEntity()), event.getAmount());
+            }
+            event.setAmount(0f);
+        }
+    }
+
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
         int chance = getChance(event.getState());
@@ -47,11 +59,11 @@ public class EvansEvents {
         if (ClumbHelper.canClumb(player)) {
             ClumbHelper.removeCharges(player, 1, player.getData(EvansData.MAX_CHARGES));
         } else if (player.getHealth() > 1f) {
-            player.hurt(blockConsumptionDamage(player), 1);
+            player.hurt(clumbDamage(player), 1);
         }
     }
 
-    private static DamageSource blockConsumptionDamage(Player cause) {
+    private static DamageSource clumbDamage(Player cause) {
         return new DamageSource(cause.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
                 .getHolderOrThrow(EvansDamage.CLUMB_BYPASS), cause);
     }

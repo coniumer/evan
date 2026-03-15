@@ -44,6 +44,8 @@ public class EvansClientEvents {
                 }
                 default -> {}
             }
+        } else {
+            ClumbHelper.parry(4);
         }
     }
 

@@ -31,5 +31,17 @@
       "efac:clumb/pulse3",
       "efac:clumb/pulse4"
     ]
+  },
+  "try_parry": {
+    "sounds": [
+      "efac:clumb/try_parry"
+    ]
+  },
+  "parry": {
+    "sounds": [
+      "efac:clumb/parry1",
+      "efac:clumb/parry2",
+      "efac:clumb/parry3"
+    ]
   }
 }

@@ -98,7 +98,6 @@ public class EvansHud extends Screen {
             this.splatterTime = MAX_SPLATTER_TIME;
         } else {
             this.splatterTime = Mth.clamp(this.splatterTime - 1, 0, MAX_SPLATTER_TIME);
-            System.out.println("splatterTime: " + this.splatterTime);
         }
 
         this.lastHealth = health;

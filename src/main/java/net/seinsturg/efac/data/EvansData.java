@@ -19,6 +19,14 @@ public class EvansData {
             "max_charges", () -> AttachmentType.builder(() -> 5).serialize(Codec.INT)
             .copyOnDeath().build()
     );
+    public static final Supplier<AttachmentType<Integer>> PARRY_TIME = ATTACHMENT_TYPES.register(
+            "parry_time", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT)
+            .copyOnDeath().build()
+    );
+    public static final Supplier<AttachmentType<Boolean>> DAMAGE_FLAG = ATTACHMENT_TYPES.register(
+            "damage_flag", () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL)
+            .build()
+    );
 
     public static void register(IEventBus eventBus) {
         ATTACHMENT_TYPES.register(eventBus);
