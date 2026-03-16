@@ -17,6 +17,7 @@ public class EvansItemModelProvider extends ItemModelProvider {
         basicItem(EvansItems.CLUMB_MATERIA.get());
         basicItem(EvansItems.RANDOM_SAUCE.get());
         basicItem(EvansItems.GEUMB_SHARD.get());
+        basicItem(EvansItems.BLOOD_CANISTER.get());
 
         //tools
         handheldItem(EvansItems.CLUMBY_WAND.get());

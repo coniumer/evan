@@ -37,6 +37,7 @@ public class EvansCreativeTabs {
                         //items
                         output.accept(EvansItems.CLUMB_MATERIA);
                         output.accept(EvansItems.GEUMB_SHARD);
+                        output.accept(EvansItems.BLOOD_CANISTER);
                         output.accept(EvansItems.RANDOM_SAUCE);
                         //wands & swords
                         output.accept(EvansItems.CLUMBY_WAND);

@@ -23,6 +23,8 @@ public class EvansItems {
             "random_sauce", () -> new SauceItem(new Item.Properties().food(EvansFoodProperties.RANDOM_SAUCE)));
     public static final DeferredItem<Item> GEUMB_SHARD = ITEMS.register(
             "geumb_shard", () -> new GeumbItem(new Item.Properties().food(EvansFoodProperties.GEUMB)));
+    public static final DeferredItem<Item> BLOOD_CANISTER = ITEMS.register(
+            "blood_canister", () -> new BloodCanisterItem(new Item.Properties().food(EvansFoodProperties.BLOOD_CANISTER)));
     //todo ingredients and recipes
     //wands
     public static final DeferredItem<Item> CLUMBY_WAND = ITEMS.register(

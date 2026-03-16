@@ -10,4 +10,5 @@ public class EvansFoodProperties {
     public static final FoodProperties RANDOM_SAUCE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.2f).build();
     //add .usingConvertsTo when tiers are created
     public static final FoodProperties GEUMB = new FoodProperties.Builder().nutrition(0).saturationModifier(0f).alwaysEdible().fast().build();
+    public static final FoodProperties BLOOD_CANISTER = new FoodProperties.Builder().nutrition(2).saturationModifier(1.5f).alwaysEdible().fast().build();
 }
