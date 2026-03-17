@@ -5,6 +5,7 @@
   "mixins": [
     "EvanEntityMovementMixin",
     "EvanPlayerMovementMixin",
+    "LinearXpMixin",
     "ParryMixin"
   ],
   "client": [
