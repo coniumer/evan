@@ -11,7 +11,8 @@ import net.seinsturg.efac.network.payload.SyncMaxChargePayload;
 public class ClumbHelper {
     public static int getCharge(Player player) { return player.getData(EvansData.CHARGES); }
     public static int getMaxCharge(Player player) { return player.getData(EvansData.MAX_CHARGES); }
-    public static boolean canClumb(Player player) { return getCharge(player) > 0 || player.isCreative(); }
+    public static boolean canClumb(Player player) { return getCharge(player) > 0 || player.isCreative() || hasBypassItem(player); }
+    public static boolean hasBypassItem(Player player) { return player.getInventory().contains(EvansTags.Items.BYPASS_CHARGE_COST); }
 
     public static void addCharges(Player player, int amt, int max) {
         int charges = getCharge(player);
@@ -22,7 +23,7 @@ public class ClumbHelper {
 
     public static void removeCharges(Player player, int amt, int max) {
         //todo philosophers charm bypass
-        if (player.isCreative()) { return; }
+        if (player.isCreative() || hasBypassItem(player)) { return; }
         int charges = getCharge(player);
         charges = Math.clamp(charges - amt, 0, max);
         player.setData(EvansData.CHARGES, charges);

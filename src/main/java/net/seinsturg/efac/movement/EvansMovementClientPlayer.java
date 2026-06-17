@@ -319,6 +319,22 @@ public class EvansMovementClientPlayer {
         EvansMotions.setMotionHoriz(player, motionX, motionZ);
     }
 
+    private static void minecraft_SwingLimbsBasedOnMovement(Player player)
+    {
+       // double d0 = player.getX() - player.xo;
+       // double d1 = player.getZ() - player.zo;
+       // float f6 = Mth.sqrt((float) (d0 * d0 + d1 * d1)) * 4.0F;
+       // if(f6 > 1.0F) f6 = 1.0F;
+       // player.walkAnimation.setSpeed((f6 - player.walkAnimation.speed()) * 0.4F);
+
+        float partialTick = (float)Mth.length(player.getX() - player.xo, player.getY() - player.yo);
+        float f = Math.min(partialTick * 4.0F, 1.0F);
+        player.walkAnimation.update(f, 0.4F);
+
+        ///wtf how did this slide back in. OUT!!!!
+        //player.walkAnimation.position += player.walkAnimation.speed;
+    }
+
     private static void minecraft_WaterMove(Player player, float sidemove, float upmove, float forwardmove)
     {
         double d0 = player.getY();
@@ -431,6 +447,9 @@ public class EvansMovementClientPlayer {
             // HL2 code applies half gravity before acceleration and half after acceleration, but this seems to work fine
             minecraft_ApplyGravity(player);
         }
+
+        // swing arms
+        minecraft_SwingLimbsBasedOnMovement(player);
 
         return true;
     }

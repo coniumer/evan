@@ -20,6 +20,7 @@ public class EvansTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> BYPASS_CHARGE_COST = createTag("bypass_charge_cost");
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(EFAC.res(name));
         }

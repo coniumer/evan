@@ -19,5 +19,7 @@ public class EvansItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        tag(EvansTags.Items.BYPASS_CHARGE_COST)
+                .add(EvansItems.PHILOSOPHERS_CHARM.get());
     }
 }

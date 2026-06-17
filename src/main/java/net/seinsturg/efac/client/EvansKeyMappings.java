@@ -15,7 +15,7 @@ public class EvansKeyMappings {
             KEY_CLUMB_ID,
             KeyConflictContext.IN_GAME,
             InputConstants.Type.KEYSYM,
-            GLFW.GLFW_KEY_LEFT_CONTROL,
+            GLFW.GLFW_KEY_C,
             KEY_CATEGORY_EFAC_ID
     );
 
@@ -23,7 +23,7 @@ public class EvansKeyMappings {
             CHARM_CYCLE_ID,
             KeyConflictContext.UNIVERSAL,
             InputConstants.Type.KEYSYM,
-            GLFW.GLFW_KEY_GRAVE_ACCENT,
+            GLFW.GLFW_KEY_V,
             KEY_CATEGORY_EFAC_ID
     );
 
@@ -31,7 +31,7 @@ public class EvansKeyMappings {
             MOUTH_ID,
             KeyConflictContext.UNIVERSAL,
             InputConstants.Type.KEYSYM,
-            GLFW.GLFW_KEY_M,
+            GLFW.GLFW_KEY_R,
             KEY_CATEGORY_EFAC_ID
     );
 }
