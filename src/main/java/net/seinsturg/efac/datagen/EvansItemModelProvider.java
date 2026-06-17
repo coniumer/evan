@@ -15,8 +15,18 @@ public class EvansItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         //ingredients
         basicItem(EvansItems.CLUMB_MATERIA.get());
+        basicItem(EvansItems.ALBY_CLUMB_MATERIA.get());
+        basicItem(EvansItems.CITRY_CLUMB_MATERIA.get());
+        basicItem(EvansItems.RUBIED_CLUMB_MATERIA.get());
         basicItem(EvansItems.RANDOM_SAUCE.get());
+        basicItem(EvansItems.YUMMY_SAUCE.get());
+        basicItem(EvansItems.AWESOME_SAUCE.get());
+        basicItem(EvansItems.EPIC_SAUCE.get());
         basicItem(EvansItems.GEUMB_SHARD.get());
+        basicItem(EvansItems.CLUMBY_GEUMB_SHARD.get());
+        basicItem(EvansItems.ALBY_GEUMB_SHARD.get());
+        basicItem(EvansItems.CITRY_GEUMB_SHARD.get());
+        basicItem(EvansItems.RUBIED_GEUMB_SHARD.get());
         basicItem(EvansItems.BLOOD_CANISTER.get());
 
         //tools

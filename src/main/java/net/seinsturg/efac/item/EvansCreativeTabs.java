@@ -36,9 +36,19 @@ public class EvansCreativeTabs {
                         output.accept(EvansBlocks.CLUMB_BLOCK);
                         //items
                         output.accept(EvansItems.CLUMB_MATERIA);
+                        output.accept(EvansItems.ALBY_CLUMB_MATERIA);
+                        output.accept(EvansItems.CITRY_CLUMB_MATERIA);
+                        output.accept(EvansItems.RUBIED_CLUMB_MATERIA);
                         output.accept(EvansItems.GEUMB_SHARD);
+                        output.accept(EvansItems.CLUMBY_GEUMB_SHARD);
+                        output.accept(EvansItems.ALBY_GEUMB_SHARD);
+                        output.accept(EvansItems.CITRY_GEUMB_SHARD);
+                        output.accept(EvansItems.RUBIED_GEUMB_SHARD);
                         output.accept(EvansItems.BLOOD_CANISTER);
                         output.accept(EvansItems.RANDOM_SAUCE);
+                        output.accept(EvansItems.YUMMY_SAUCE);
+                        output.accept(EvansItems.AWESOME_SAUCE);
+                        output.accept(EvansItems.EPIC_SAUCE);
                         //wands & swords
                         output.accept(EvansItems.CLUMBY_WAND);
                         output.accept(EvansItems.CLUMBY_PULSAR);

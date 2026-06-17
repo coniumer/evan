@@ -13,7 +13,6 @@ public abstract class CharmItem extends Item {
     public CharmItem(CharmFunction function, Properties properties) {
         super(properties);
         this.function = function;
-        properties.stacksTo(1);
     }
 
     @Override
