@@ -1,4 +1,4 @@
-package net.seinsturg.efac.movement;
+package net.seinsturg.efac.util;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;

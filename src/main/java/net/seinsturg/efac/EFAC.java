@@ -5,6 +5,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.seinsturg.efac.block.EvansBlocks;
+import net.seinsturg.efac.event.EvansCommonEvents;
 import net.seinsturg.efac.item.EvansCreativeTabs;
 import net.seinsturg.efac.util.EvansRegistries;
 import org.slf4j.Logger;
@@ -27,8 +28,11 @@ public class EFAC {
         return ResourceLocation.fromNamespaceAndPath(EFAC.MOD_ID, name);
     }
 
+    public static EvansCommonEvents commonEvents;
+
 
     public EFAC(IEventBus eventBus, ModContainer modContainer) {
+        commonEvents = new EvansCommonEvents();
         eventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
 

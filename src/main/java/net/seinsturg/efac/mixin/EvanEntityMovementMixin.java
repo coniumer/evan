@@ -2,7 +2,7 @@ package net.seinsturg.efac.mixin;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
-import net.seinsturg.efac.movement.EvansMovementClientPlayer;
+import net.seinsturg.efac.util.EvansMovementClientPlayer;
 import net.seinsturg.efac.util.mixin_interface.EvanMovementInterfaceEntity;
 import org.spongepowered.asm.mixin.Implements;
 import org.spongepowered.asm.mixin.Interface;

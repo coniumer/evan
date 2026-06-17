@@ -23,6 +23,10 @@ public class EvansData {
             "parry_time", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT)
             .copyOnDeath().build()
     );
+    public static final Supplier<AttachmentType<Integer>> LAST_HUNGER = ATTACHMENT_TYPES.register(
+            "last_hunger", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT)
+            .copyOnDeath().build()
+    );
     public static final Supplier<AttachmentType<Boolean>> DAMAGE_FLAG = ATTACHMENT_TYPES.register(
             "damage_flag", () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL)
             .build()

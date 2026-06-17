@@ -8,10 +8,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.LogicalSide;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.seinsturg.efac.EFAC;
 import net.seinsturg.efac.data.EvansData;
@@ -21,9 +23,11 @@ import net.seinsturg.efac.sound.EvansSounds;
 import net.seinsturg.efac.util.ClumbHelper;
 import net.seinsturg.efac.util.EvansDamage;
 import net.seinsturg.efac.util.EvansTags;
+import net.seinsturg.efac.util.HungerPlayerHandler;
 
 @EventBusSubscriber(modid = EFAC.MOD_ID)
 public class EvansEvents {
+
     @SubscribeEvent
     private static void preventDamage(LivingIncomingDamageEvent event) {
         if (event.getEntity().getData(EvansData.DAMAGE_FLAG)) {
