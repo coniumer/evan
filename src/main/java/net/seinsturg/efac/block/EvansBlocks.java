@@ -12,11 +12,15 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.seinsturg.efac.EFAC;
+import net.seinsturg.efac.block.custom.BuddingGeumbBlock;
 import net.seinsturg.efac.block.custom.ClumbBlock;
+import net.seinsturg.efac.block.custom.GeumbBlock;
+import net.seinsturg.efac.block.custom.GeumbClusterBlock;
 import net.seinsturg.efac.item.EvansItems;
 
 import java.util.function.Supplier;
@@ -35,7 +39,7 @@ public class EvansBlocks {
 
     /// ores & resource blocks
     // todo: philosophers
-    // gems, todo: blocks
+    // gems, todo: blocks, associated recipes
     public static final DeferredBlock<Block> ALBY_ORE = registerBlock(
             "alby_ore", () -> new DropExperienceBlock(UniformInt.of(2, 8), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.STONE)
@@ -58,24 +62,57 @@ public class EvansBlocks {
                     .requiresCorrectToolForDrops()
                     .strength(3.0F, 3.0F)));
 
-    // geumbs
+    // geumbs, todo: recipes
     public static final DeferredBlock<Block> GEUMB_BLOCK = registerBlock(
-            "geumb_block", () -> new Block(BlockBehaviour.Properties.of()
+            "geumb_block", () -> new GeumbBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_ORANGE)
                     .sound(SoundType.AMETHYST)
                     .instrument(NoteBlockInstrument.CHIME)
                     .requiresCorrectToolForDrops()
                     .strength(2.5F, 2.0F)));
     public static final DeferredBlock<Block> BUDDING_GEUMB = registerBlock(
-            "budding_geumb", () -> new Block(BlockBehaviour.Properties.of()
+            "budding_geumb", () -> new BuddingGeumbBlock(BlockBehaviour.Properties.of()
+                    .randomTicks()
                     .mapColor(MapColor.COLOR_LIGHT_BLUE)
                     .sound(SoundType.AMETHYST)
                     .instrument(NoteBlockInstrument.CHIME)
                     .requiresCorrectToolForDrops()
                     .strength(2.5F, 2.0F)));
+    public static final DeferredBlock<Block> GEUMB_CLUSTER = registerBlock(
+            "geumb_cluster", () -> new GeumbClusterBlock(7, 3.0F, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .forceSolidOn()
+                    .noOcclusion()
+                    .sound(SoundType.AMETHYST_CLUSTER)
+                    .strength(1.5F)
+                    .pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> LARGE_GEUMB_BUD = registerBlock(
+            "large_geumb_bud", () -> new GeumbClusterBlock(5, 3.0F, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .forceSolidOn()
+                    .noOcclusion()
+                    .sound(SoundType.AMETHYST_CLUSTER)
+                    .strength(1.5F)
+                    .pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> MEDIUM_GEUMB_BUD = registerBlock(
+            "medium_geumb_bud", () -> new GeumbClusterBlock(4, 3.0F, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .forceSolidOn()
+                    .noOcclusion()
+                    .sound(SoundType.AMETHYST_CLUSTER)
+                    .strength(1.5F)
+                    .pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> SMALL_GEUMB_BUD = registerBlock(
+            "small_geumb_bud", () -> new GeumbClusterBlock(3, 4.0F, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .forceSolidOn()
+                    .noOcclusion()
+                    .sound(SoundType.AMETHYST_CLUSTER)
+                    .strength(1.5F)
+                    .pushReaction(PushReaction.DESTROY)));
 
-    // resources
-    // todo: item, planks, & variants
+    /// resources
+    // gelwood, todo: planks, variants, recipes
     public static final DeferredBlock<Block> GELWOOD_ORE = registerBlock(
             "gelwood_ore", () -> new DropExperienceBlock(UniformInt.of(0, 4), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_GREEN)
@@ -83,7 +120,7 @@ public class EvansBlocks {
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
                     .strength(3.0F, 3.0F)));
-    // todo: item, block
+    // slipulon, todo: block, recipes
     public static final DeferredBlock<Block> SLIPULON_ORE = registerBlock(
             "slipulon_ore", () -> new DropExperienceBlock(UniformInt.of(0, 6), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_BLUE)
@@ -91,7 +128,6 @@ public class EvansBlocks {
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
                     .strength(3.0F, 3.0F)));
-    // todo: item
     public static final DeferredBlock<Block> BUTTER = registerBlock(
             "butter", () -> new DropExperienceBlock(UniformInt.of(0, 3), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_YELLOW)

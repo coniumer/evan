@@ -20,6 +20,7 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        ///charge tags
         tag(EvansTags.Blocks.PROVIDES_CHARGE_RARE)
                 .add(EvansBlocks.GRONE.get())
                 .add(EvansBlocks.ALBY_ORE.get())
@@ -41,6 +42,10 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.COMPACT_DIRT.get())
                 .add(EvansBlocks.GEUMB_BLOCK.get())
                 .add(EvansBlocks.BUDDING_GEUMB.get())
+                .add(EvansBlocks.GEUMB_CLUSTER.get())
+                .add(EvansBlocks.LARGE_GEUMB_BUD.get())
+                .add(EvansBlocks.MEDIUM_GEUMB_BUD.get())
+                .add(EvansBlocks.SMALL_GEUMB_BUD.get())
                 .add(Blocks.END_STONE);
 
         tag(EvansTags.Blocks.PROVIDES_CHARGE_ALWAYS)
@@ -50,6 +55,8 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(Blocks.SOUL_SAND)
                 .add(Blocks.SOUL_SOIL);
 
+        ///tool tags
+        //tool type
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(EvansBlocks.ALBY_ORE.get())
                 .add(EvansBlocks.CITRY_ORE.get())
@@ -57,6 +64,10 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.GELWOOD_ORE.get())
                 .add(EvansBlocks.SLIPULON_ORE.get())
                 .add(EvansBlocks.GEUMB_BLOCK.get())
+                .add(EvansBlocks.GEUMB_CLUSTER.get())
+                .add(EvansBlocks.LARGE_GEUMB_BUD.get())
+                .add(EvansBlocks.MEDIUM_GEUMB_BUD.get())
+                .add(EvansBlocks.SMALL_GEUMB_BUD.get())
                 .add(EvansBlocks.BUDDING_GEUMB.get());
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
@@ -65,11 +76,16 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.BUTTER.get())
                 .add(EvansBlocks.GRONE.get());
 
+        //tool teir
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(EvansBlocks.ALBY_ORE.get())
                 .add(EvansBlocks.GELWOOD_ORE.get())
                 .add(EvansBlocks.SLIPULON_ORE.get())
                 .add(EvansBlocks.GEUMB_BLOCK.get())
+                .add(EvansBlocks.GEUMB_CLUSTER.get())
+                .add(EvansBlocks.LARGE_GEUMB_BUD.get())
+                .add(EvansBlocks.MEDIUM_GEUMB_BUD.get())
+                .add(EvansBlocks.SMALL_GEUMB_BUD.get())
                 .add(EvansBlocks.BUDDING_GEUMB.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
