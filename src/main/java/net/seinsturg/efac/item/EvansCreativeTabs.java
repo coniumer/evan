@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -33,7 +34,7 @@ public class EvansCreativeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
 
 
-                        //wands & swords
+                        ///wands & swords
                         output.accept(EvansItems.CLUMBY_WAND);
                         output.accept(EvansItems.CLUMBY_PULSAR);
                         output.accept(EvansItems.ALBY_WAND);
@@ -44,17 +45,19 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.RUBIED_PULSAR);
                         output.accept(EvansItems.PHILOSOPHERS_WAND);
                         output.accept(EvansItems.PHILOSOPHERS_PULSAR);
-                        //philosophers tools
+                        ///philosophers tools
                         output.accept(EvansItems.PHILOSOPHERS_SHOVEL);
                         output.accept(EvansItems.PHILOSOPHERS_PICKAXE);
                         output.accept(EvansItems.PHILOSOPHERS_AXE);
                         output.accept(EvansItems.PHILOSOPHERS_HOE);
-                        //blocks
+                        ///blocks
                         output.accept(EvansBlocks.CLUMB_BLOCK);
                         output.accept(EvansBlocks.ALBY_ORE);
                         output.accept(EvansBlocks.CITRY_ORE);
                         output.accept(EvansBlocks.RUBY_ORE);
-                        //items
+                        output.accept(EvansBlocks.GEUMB_BLOCK);
+                        output.accept(EvansBlocks.BUDDING_GEUMB);
+                        ///items
                         output.accept(EvansItems.CLUMB_MATERIA);
                         output.accept(EvansItems.ALBY_CLUMB_MATERIA);
                         output.accept(EvansItems.CITRY_CLUMB_MATERIA);
@@ -64,7 +67,6 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.ALBY_GEUMB_SHARD);
                         output.accept(EvansItems.CITRY_GEUMB_SHARD);
                         output.accept(EvansItems.RUBIED_GEUMB_SHARD);
-                        output.accept(EvansItems.BLOOD_CANISTER);
                         output.accept(EvansItems.RANDOM_SAUCE);
                         output.accept(EvansItems.YUMMY_SAUCE);
                         output.accept(EvansItems.AWESOME_SAUCE);
@@ -72,6 +74,7 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.ALBY_GEM);
                         output.accept(EvansItems.CITRY_GEM);
                         output.accept(EvansItems.RUBY_GEM);
+                        output.accept(EvansItems.BLOOD_CANISTER);
                     })
                     .build());
     public static final Supplier<CreativeModeTab> CHARM_TAB = CREATIVE_MODE_TAB.register("charm_tab",
@@ -82,6 +85,24 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.DASH_CHARM);
                         output.accept(EvansItems.LIGHTNING_CHARM);
                         output.accept(EvansItems.PHILOSOPHERS_CHARM);
+                    })
+                    .build());
+    public static final Supplier<CreativeModeTab> ENVIRONMENT_TAB = CREATIVE_MODE_TAB.register("environment_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(EvansBlocks.GRONE.get()))
+                    .title(Component.translatable("creativetab.efac.environment_tab"))
+                    .withTabsBefore(EFAC.res("charm_tab"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(Blocks.GRAVEL);
+                        output.accept(Blocks.SAND);
+                        output.accept(Blocks.RED_SAND);
+                        output.accept(EvansBlocks.GRONE);
+                        output.accept(EvansBlocks.GELWOOD_ORE);
+                        output.accept(EvansItems.GELWOOD_ORB);
+                        output.accept(EvansBlocks.SLIPULON_ORE);
+                        output.accept(EvansItems.RAW_SLIPULON);
+                        output.accept(EvansItems.SLIPULON_INGOT);
+                        output.accept(EvansBlocks.BUTTER);
+                        output.accept(EvansItems.BUTTER_STICK);
                     })
                     .build());
 

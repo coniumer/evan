@@ -25,40 +25,81 @@ public class EvansBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
         DeferredRegister.createBlocks(EFAC.MOD_ID);
 
+
+    public static final DeferredBlock<Block> CLUMB_BLOCK = registerBlock(
+            "clumb_block", () -> new ClumbBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_WHITE)
+                    .destroyTime(0.4f)
+                    .explosionResistance(0.4f)
+                    .sound(SoundType.SLIME_BLOCK)));
+
+    /// ores & resource blocks
+    // todo: philosophers
+    // gems, todo: blocks
     public static final DeferredBlock<Block> ALBY_ORE = registerBlock(
             "alby_ore", () -> new DropExperienceBlock(UniformInt.of(2, 8), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.STONE)
                     .sound(SoundType.AMETHYST)
                     .instrument(NoteBlockInstrument.BELL)
                     .requiresCorrectToolForDrops()
-                    .strength(3.0F, 3.0F)
-
-    ));
+                    .strength(3.0F, 3.0F)));
     public static final DeferredBlock<Block> CITRY_ORE = registerBlock(
             "citry_ore", () -> new DropExperienceBlock(UniformInt.of(4, 8), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.STONE)
                     .sound(SoundType.AMETHYST)
                     .instrument(NoteBlockInstrument.BELL)
                     .requiresCorrectToolForDrops()
-                    .strength(3.0F, 3.0F)
-
-    ));
+                    .strength(3.0F, 3.0F)));
     public static final DeferredBlock<Block> RUBY_ORE = registerBlock(
             "ruby_ore", () -> new DropExperienceBlock(UniformInt.of(4, 12), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.STONE)
                     .sound(SoundType.AMETHYST)
                     .instrument(NoteBlockInstrument.BELL)
                     .requiresCorrectToolForDrops()
-                    .strength(3.0F, 3.0F)
+                    .strength(3.0F, 3.0F)));
 
-    ));
-    public static final DeferredBlock<Block> CLUMB_BLOCK = registerBlock(
-            "clumb_block", () -> new ClumbBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.TERRACOTTA_WHITE)
-                    .destroyTime(0.4f)
-                    .explosionResistance(0.4f)
+    // geumbs
+    public static final DeferredBlock<Block> GEUMB_BLOCK = registerBlock(
+            "geumb_block", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .sound(SoundType.AMETHYST)
+                    .instrument(NoteBlockInstrument.CHIME)
+                    .requiresCorrectToolForDrops()
+                    .strength(2.5F, 2.0F)));
+    public static final DeferredBlock<Block> BUDDING_GEUMB = registerBlock(
+            "budding_geumb", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                    .sound(SoundType.AMETHYST)
+                    .instrument(NoteBlockInstrument.CHIME)
+                    .requiresCorrectToolForDrops()
+                    .strength(2.5F, 2.0F)));
+
+    // resources
+    // todo: item, planks, & variants
+    public static final DeferredBlock<Block> GELWOOD_ORE = registerBlock(
+            "gelwood_ore", () -> new DropExperienceBlock(UniformInt.of(0, 4), BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_GREEN)
+                    .sound(SoundType.BAMBOO) // todo: sounds
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0F, 3.0F)));
+    // todo: item, block
+    public static final DeferredBlock<Block> SLIPULON_ORE = registerBlock(
+            "slipulon_ore", () -> new DropExperienceBlock(UniformInt.of(0, 6), BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0F, 3.0F)));
+    // todo: item
+    public static final DeferredBlock<Block> BUTTER = registerBlock(
+            "butter", () -> new DropExperienceBlock(UniformInt.of(0, 3), BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
                     .sound(SoundType.SLIME_BLOCK)
-    ));
+                    .instrument(NoteBlockInstrument.BIT)
+                    .strength(0.5F, 0.5F)));
+
+    /// environment blocks
     public static final DeferredBlock<Block> GRONE = registerBlock(
             "grone", () -> new FallingBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_GREEN)

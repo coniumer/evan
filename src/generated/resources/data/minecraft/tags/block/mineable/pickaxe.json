@@ -2,6 +2,10 @@
   "values": [
     "efac:alby_ore",
     "efac:citry_ore",
-    "efac:ruby_ore"
+    "efac:ruby_ore",
+    "efac:gelwood_ore",
+    "efac:slipulon_ore",
+    "efac:geumb_block",
+    "efac:budding_geumb"
   ]
 }

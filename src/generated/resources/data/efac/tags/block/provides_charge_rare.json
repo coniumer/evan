@@ -1,6 +1,10 @@
 {
   "values": [
     "efac:grone",
+    "efac:alby_ore",
+    "efac:citry_ore",
+    "efac:ruby_ore",
+    "efac:slipulon_ore",
     "minecraft:gravel",
     "minecraft:sand",
     "minecraft:red_sand",

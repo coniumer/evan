@@ -19,6 +19,11 @@ public class EvansBlockStateProvider extends BlockStateProvider {
         blockWithItem(EvansBlocks.ALBY_ORE);
         blockWithItem(EvansBlocks.CITRY_ORE);
         blockWithItem(EvansBlocks.RUBY_ORE);
+        blockWithItem(EvansBlocks.GEUMB_BLOCK);
+        blockWithItem(EvansBlocks.BUDDING_GEUMB);
+        blockWithItem(EvansBlocks.GELWOOD_ORE);
+        blockWithItem(EvansBlocks.SLIPULON_ORE);
+        blockWithItem(EvansBlocks.BUTTER);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

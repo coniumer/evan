@@ -1,6 +1,8 @@
 {
   "values": [
     "efac:compact_dirt",
+    "efac:geumb_block",
+    "efac:budding_geumb",
     "minecraft:end_stone"
   ]
 }

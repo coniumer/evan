@@ -32,12 +32,22 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(EvansBlocks.GRONE.get());
         dropSelf(EvansBlocks.COMPACT_DIRT.get());
 
+        dropWhenSilkTouch(EvansBlocks.BUDDING_GEUMB.get());
+
         add(EvansBlocks.ALBY_ORE.get(),
                 block -> createCustomOreDrop(EvansBlocks.ALBY_ORE.get(), EvansItems.ALBY_GEM.get(), 1, 5));
         add(EvansBlocks.CITRY_ORE.get(),
                 block -> createCustomOreDrop(EvansBlocks.CITRY_ORE.get(), EvansItems.CITRY_GEM.get(), 1, 5));
         add(EvansBlocks.RUBY_ORE.get(),
                 block -> createCustomOreDrop(EvansBlocks.RUBY_ORE.get(), EvansItems.RUBY_GEM.get(), 1, 5));
+        add(EvansBlocks.GEUMB_BLOCK.get(),
+                block -> createCustomOreDrop(EvansBlocks.GEUMB_BLOCK.get(), EvansItems.GEUMB_SHARD.get(), 3, 9));
+        add(EvansBlocks.GELWOOD_ORE.get(),
+                block -> createCustomOreDrop(EvansBlocks.GELWOOD_ORE.get(), EvansItems.GELWOOD_ORB.get(), 4, 4));
+        add(EvansBlocks.SLIPULON_ORE.get(),
+                block -> createCustomOreDrop(EvansBlocks.SLIPULON_ORE.get(), EvansItems.RAW_SLIPULON.get(), 3, 5));
+        add(EvansBlocks.BUTTER.get(),
+                block -> createCustomOreDrop(EvansBlocks.BUTTER.get(), EvansItems.BUTTER_STICK.get(), 1, 7));
     }
 
     protected LootTable.Builder createCustomOreDrop(Block block, Item item, int min, int max) {

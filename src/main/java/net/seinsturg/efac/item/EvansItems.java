@@ -49,9 +49,16 @@ public class EvansItems {
             "citry_gem", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> RUBY_GEM = ITEMS.register(
             "ruby_gem", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GELWOOD_ORB = ITEMS.register(
+            "gelwood_orb", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_SLIPULON = ITEMS.register(
+            "raw_slipulon", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> SLIPULON_INGOT = ITEMS.register(
+            "slipulon_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BUTTER_STICK = ITEMS.register(
+            "butter_stick", () -> new Item(new Item.Properties().food(EvansFoodProperties.BUTTER)));
     public static final DeferredItem<Item> BLOOD_CANISTER = ITEMS.register(
             "blood_canister", () -> new BloodCanisterItem(new Item.Properties().food(EvansFoodProperties.BLOOD_CANISTER)));
-    //todo ingredients and recipes
     //wands
     public static final DeferredItem<Item> CLUMBY_WAND = ITEMS.register(
             "clumby_wand", () -> new WandItem(Tiers.STONE, WandTiers.CLUMBY, new Item.Properties().stacksTo(1)));

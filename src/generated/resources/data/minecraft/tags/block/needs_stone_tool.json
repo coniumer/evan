@@ -1,5 +1,9 @@
 {
   "values": [
-    "efac:alby_ore"
+    "efac:alby_ore",
+    "efac:gelwood_ore",
+    "efac:slipulon_ore",
+    "efac:geumb_block",
+    "efac:budding_geumb"
   ]
 }
