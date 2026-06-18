@@ -1,9 +1,12 @@
 package net.seinsturg.efac.block;
 
 import com.mojang.serialization.MapCodec;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -22,6 +25,33 @@ public class EvansBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
         DeferredRegister.createBlocks(EFAC.MOD_ID);
 
+    public static final DeferredBlock<Block> ALBY_ORE = registerBlock(
+            "alby_ore", () -> new DropExperienceBlock(UniformInt.of(2, 8), BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .sound(SoundType.AMETHYST)
+                    .instrument(NoteBlockInstrument.BELL)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0F, 3.0F)
+
+    ));
+    public static final DeferredBlock<Block> CITRY_ORE = registerBlock(
+            "citry_ore", () -> new DropExperienceBlock(UniformInt.of(4, 8), BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .sound(SoundType.AMETHYST)
+                    .instrument(NoteBlockInstrument.BELL)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0F, 3.0F)
+
+    ));
+    public static final DeferredBlock<Block> RUBY_ORE = registerBlock(
+            "ruby_ore", () -> new DropExperienceBlock(UniformInt.of(4, 12), BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .sound(SoundType.AMETHYST)
+                    .instrument(NoteBlockInstrument.BELL)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0F, 3.0F)
+
+    ));
     public static final DeferredBlock<Block> CLUMB_BLOCK = registerBlock(
             "clumb_block", () -> new ClumbBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.TERRACOTTA_WHITE)

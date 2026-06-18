@@ -27,6 +27,9 @@ public class EvansItemModelProvider extends ItemModelProvider {
         basicItem(EvansItems.ALBY_GEUMB_SHARD.get());
         basicItem(EvansItems.CITRY_GEUMB_SHARD.get());
         basicItem(EvansItems.RUBIED_GEUMB_SHARD.get());
+        basicItem(EvansItems.ALBY_GEM.get());
+        basicItem(EvansItems.CITRY_GEM.get());
+        basicItem(EvansItems.RUBY_GEM.get());
         basicItem(EvansItems.BLOOD_CANISTER.get());
 
         //tools

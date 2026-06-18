@@ -32,23 +32,7 @@ public class EvansCreativeTabs {
                     .title(Component.translatable("creativetab.efac.clumb_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
 
-                        //blocks
-                        output.accept(EvansBlocks.CLUMB_BLOCK);
-                        //items
-                        output.accept(EvansItems.CLUMB_MATERIA);
-                        output.accept(EvansItems.ALBY_CLUMB_MATERIA);
-                        output.accept(EvansItems.CITRY_CLUMB_MATERIA);
-                        output.accept(EvansItems.RUBIED_CLUMB_MATERIA);
-                        output.accept(EvansItems.GEUMB_SHARD);
-                        output.accept(EvansItems.CLUMBY_GEUMB_SHARD);
-                        output.accept(EvansItems.ALBY_GEUMB_SHARD);
-                        output.accept(EvansItems.CITRY_GEUMB_SHARD);
-                        output.accept(EvansItems.RUBIED_GEUMB_SHARD);
-                        output.accept(EvansItems.BLOOD_CANISTER);
-                        output.accept(EvansItems.RANDOM_SAUCE);
-                        output.accept(EvansItems.YUMMY_SAUCE);
-                        output.accept(EvansItems.AWESOME_SAUCE);
-                        output.accept(EvansItems.EPIC_SAUCE);
+
                         //wands & swords
                         output.accept(EvansItems.CLUMBY_WAND);
                         output.accept(EvansItems.CLUMBY_PULSAR);
@@ -65,6 +49,29 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.PHILOSOPHERS_PICKAXE);
                         output.accept(EvansItems.PHILOSOPHERS_AXE);
                         output.accept(EvansItems.PHILOSOPHERS_HOE);
+                        //blocks
+                        output.accept(EvansBlocks.CLUMB_BLOCK);
+                        output.accept(EvansBlocks.ALBY_ORE);
+                        output.accept(EvansBlocks.CITRY_ORE);
+                        output.accept(EvansBlocks.RUBY_ORE);
+                        //items
+                        output.accept(EvansItems.CLUMB_MATERIA);
+                        output.accept(EvansItems.ALBY_CLUMB_MATERIA);
+                        output.accept(EvansItems.CITRY_CLUMB_MATERIA);
+                        output.accept(EvansItems.RUBIED_CLUMB_MATERIA);
+                        output.accept(EvansItems.GEUMB_SHARD);
+                        output.accept(EvansItems.CLUMBY_GEUMB_SHARD);
+                        output.accept(EvansItems.ALBY_GEUMB_SHARD);
+                        output.accept(EvansItems.CITRY_GEUMB_SHARD);
+                        output.accept(EvansItems.RUBIED_GEUMB_SHARD);
+                        output.accept(EvansItems.BLOOD_CANISTER);
+                        output.accept(EvansItems.RANDOM_SAUCE);
+                        output.accept(EvansItems.YUMMY_SAUCE);
+                        output.accept(EvansItems.AWESOME_SAUCE);
+                        output.accept(EvansItems.EPIC_SAUCE);
+                        output.accept(EvansItems.ALBY_GEM);
+                        output.accept(EvansItems.CITRY_GEM);
+                        output.accept(EvansItems.RUBY_GEM);
                     })
                     .build());
     public static final Supplier<CreativeModeTab> CHARM_TAB = CREATIVE_MODE_TAB.register("charm_tab",

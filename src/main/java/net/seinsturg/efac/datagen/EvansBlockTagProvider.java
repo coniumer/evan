@@ -44,9 +44,23 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(Blocks.SOUL_SAND)
                 .add(Blocks.SOUL_SOIL);
 
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(EvansBlocks.ALBY_ORE.get())
+                .add(EvansBlocks.CITRY_ORE.get())
+                .add(EvansBlocks.RUBY_ORE.get());
+
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(EvansBlocks.CLUMB_BLOCK.get())
                 .add(EvansBlocks.COMPACT_DIRT.get())
                 .add(EvansBlocks.GRONE.get());
+
+        tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(EvansBlocks.ALBY_ORE.get());
+
+        tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(EvansBlocks.CITRY_ORE.get());
+
+        tag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(EvansBlocks.RUBY_ORE.get());
     }
 }

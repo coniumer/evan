@@ -43,6 +43,12 @@ public class EvansItems {
             "citry_geumb_shard", () -> new GeumbItem(GeumbEnum.CITRY, new Item.Properties().food(EvansFoodProperties.GEUMB)));
     public static final DeferredItem<Item> RUBIED_GEUMB_SHARD = ITEMS.register(
             "rubied_geumb_shard", () -> new GeumbItem(GeumbEnum.RUBIED, new Item.Properties().food(EvansFoodProperties.GEUMB)));
+    public static final DeferredItem<Item> ALBY_GEM = ITEMS.register(
+            "alby_gem", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CITRY_GEM = ITEMS.register(
+            "citry_gem", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RUBY_GEM = ITEMS.register(
+            "ruby_gem", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> BLOOD_CANISTER = ITEMS.register(
             "blood_canister", () -> new BloodCanisterItem(new Item.Properties().food(EvansFoodProperties.BLOOD_CANISTER)));
     //todo ingredients and recipes

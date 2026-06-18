@@ -16,6 +16,9 @@ public class EvansBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(EvansBlocks.GRONE);
         blockWithItem(EvansBlocks.COMPACT_DIRT);
+        blockWithItem(EvansBlocks.ALBY_ORE);
+        blockWithItem(EvansBlocks.CITRY_ORE);
+        blockWithItem(EvansBlocks.RUBY_ORE);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
