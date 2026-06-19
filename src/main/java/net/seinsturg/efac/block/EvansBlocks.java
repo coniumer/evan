@@ -5,12 +5,11 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.FallingBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
@@ -38,7 +37,7 @@ public class EvansBlocks {
                     .sound(SoundType.SLIME_BLOCK)));
 
     /// ores & resource blocks
-    // philosophers, todo: tex, recipes, smithing upgrade
+    // philosophers, todo: smithing upgrade
     public static final DeferredBlock<Block> PHILOSOPHERS_ORE = registerBlock(
             "philosophers_ore", () -> new DropExperienceBlock(UniformInt.of(4, 16), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.STONE)
@@ -151,10 +150,58 @@ public class EvansBlocks {
     public static final DeferredBlock<Block> GELWOOD_ORE = registerBlock(
             "gelwood_ore", () -> new DropExperienceBlock(UniformInt.of(0, 4), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_GREEN)
-                    .sound(SoundType.BAMBOO) // todo: sounds
+                    .sound(SoundType.BAMBOO)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(3.0F, 3.0F)));
+                    .strength(2f)));
+    public static final DeferredBlock<Block> GELWOOD_PLANKS = registerBlock(
+            "gelwood_planks", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .sound(SoundType.BAMBOO_WOOD)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(2f)));
+    public static final DeferredBlock<StairBlock> GELWOOD_STAIRS = registerBlock("gelwood_stairs",
+            () -> new StairBlock(EvansBlocks.GELWOOD_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .sound(SoundType.BAMBOO_WOOD)
+                    .strength(2f)));
+    public static final DeferredBlock<SlabBlock> GELWOOD_SLAB = registerBlock("gelwood_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .sound(SoundType.BAMBOO_WOOD)
+                    .strength(2f)));
+    public static final DeferredBlock<PressurePlateBlock> GELWOOD_PRESSURE_PLATE = registerBlock("gelwood_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.IRON, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .sound(SoundType.BAMBOO_WOOD)
+                    .strength(2f)));
+    public static final DeferredBlock<ButtonBlock> GELWOOD_BUTTON = registerBlock("gelwood_button",
+            () -> new ButtonBlock(BlockSetType.IRON, 20, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .sound(SoundType.BAMBOO_WOOD)
+                    .strength(2f).noCollission()));
+    public static final DeferredBlock<FenceBlock> GELWOOD_FENCE = registerBlock("gelwood_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .sound(SoundType.BAMBOO_WOOD)
+                    .strength(2f)));
+    public static final DeferredBlock<FenceGateBlock> GELWOOD_FENCE_GATE = registerBlock("gelwood_fence_gate",
+            () -> new FenceGateBlock(WoodType.BAMBOO, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .sound(SoundType.BAMBOO_WOOD)
+                    .strength(2f)));
+    public static final DeferredBlock<DoorBlock> GELWOOD_DOOR = registerBlock("gelwood_door",
+            () -> new DoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .sound(SoundType.BAMBOO_WOOD)
+                    .strength(2f).noOcclusion()));
+    public static final DeferredBlock<TrapDoorBlock> GELWOOD_TRAPDOOR = registerBlock("gelwood_trapdoor",
+            () -> new TrapDoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .sound(SoundType.BAMBOO_WOOD)
+                    .strength(2f).noOcclusion()));
+
     public static final DeferredBlock<Block> SLIPULON_ORE = registerBlock(
             "slipulon_ore", () -> new DropExperienceBlock(UniformInt.of(0, 6), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_BLUE)
@@ -169,6 +216,7 @@ public class EvansBlocks {
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
                     .strength(3.0F, 4.0F)));
+
     public static final DeferredBlock<Block> BUTTER = registerBlock(
             "butter", () -> new DropExperienceBlock(UniformInt.of(0, 3), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_YELLOW)

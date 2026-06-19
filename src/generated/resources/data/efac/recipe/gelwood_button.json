@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "gelwood",
+  "ingredients": [
+    {
+      "item": "efac:gelwood_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:gelwood_button"
+  }
+}

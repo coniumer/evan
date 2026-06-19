@@ -58,6 +58,12 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(Blocks.SOUL_SAND)
                 .add(Blocks.SOUL_SOIL);
 
+        ///type tags
+        tag(BlockTags.FENCES)
+                .add(EvansBlocks.GELWOOD_FENCE.get());
+        tag(BlockTags.FENCE_GATES)
+                .add(EvansBlocks.GELWOOD_FENCE_GATE.get());
+
         ///tool tags
         //tool type
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
@@ -84,6 +90,17 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.COMPACT_DIRT.get())
                 .add(EvansBlocks.BUTTER.get())
                 .add(EvansBlocks.GRONE.get());
+
+        tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(EvansBlocks.GELWOOD_PLANKS.get())
+                .add(EvansBlocks.GELWOOD_STAIRS.get())
+                .add(EvansBlocks.GELWOOD_SLAB.get())
+                .add(EvansBlocks.GELWOOD_PRESSURE_PLATE.get())
+                .add(EvansBlocks.GELWOOD_BUTTON.get())
+                .add(EvansBlocks.GELWOOD_FENCE.get())
+                .add(EvansBlocks.GELWOOD_FENCE_GATE.get())
+                .add(EvansBlocks.GELWOOD_DOOR.get())
+                .add(EvansBlocks.GELWOOD_TRAPDOOR.get());
 
         //tool tier
         tag(BlockTags.NEEDS_STONE_TOOL)

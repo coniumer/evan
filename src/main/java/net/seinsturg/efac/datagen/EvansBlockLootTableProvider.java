@@ -36,6 +36,21 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(EvansBlocks.ALBY_BLOCK.get());
         dropSelf(EvansBlocks.CITRY_BLOCK.get());
         dropSelf(EvansBlocks.RUBY_BLOCK.get());
+        dropSelf(EvansBlocks.GELWOOD_PLANKS.get());
+
+        dropSelf(EvansBlocks.GELWOOD_STAIRS.get());
+        add(EvansBlocks.GELWOOD_SLAB.get(),
+                block -> createSlabItemTable(EvansBlocks.GELWOOD_SLAB.get()));
+
+        dropSelf(EvansBlocks.GELWOOD_PRESSURE_PLATE.get());
+        dropSelf(EvansBlocks.GELWOOD_BUTTON.get());
+
+        dropSelf(EvansBlocks.GELWOOD_FENCE.get());
+        dropSelf(EvansBlocks.GELWOOD_FENCE_GATE.get());
+        dropSelf(EvansBlocks.GELWOOD_TRAPDOOR.get());
+
+        add(EvansBlocks.GELWOOD_DOOR.get(),
+                block -> createDoorTable(EvansBlocks.GELWOOD_DOOR.get()));
 
         dropWhenSilkTouch(EvansBlocks.BUDDING_GEUMB.get());
         dropWhenSilkTouch(EvansBlocks.LARGE_GEUMB_BUD.get());

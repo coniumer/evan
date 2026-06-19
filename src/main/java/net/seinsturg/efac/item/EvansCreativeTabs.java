@@ -103,6 +103,15 @@ public class EvansCreativeTabs {
                         output.accept(Blocks.RED_SAND);
                         output.accept(EvansBlocks.GRONE);
                         output.accept(EvansBlocks.GELWOOD_ORE);
+                        output.accept(EvansBlocks.GELWOOD_PLANKS);
+                        output.accept(EvansBlocks.GELWOOD_STAIRS);
+                        output.accept(EvansBlocks.GELWOOD_SLAB);
+                        output.accept(EvansBlocks.GELWOOD_PRESSURE_PLATE);
+                        output.accept(EvansBlocks.GELWOOD_BUTTON);
+                        output.accept(EvansBlocks.GELWOOD_FENCE);
+                        output.accept(EvansBlocks.GELWOOD_FENCE_GATE);
+                        output.accept(EvansBlocks.GELWOOD_DOOR);
+                        output.accept(EvansBlocks.GELWOOD_TRAPDOOR);
                         output.accept(EvansItems.GELWOOD_ORB);
                         output.accept(EvansBlocks.SLIPULON_ORE);
                         output.accept(EvansBlocks.SLIPULON_BLOCK);

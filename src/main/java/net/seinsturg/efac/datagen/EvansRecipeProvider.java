@@ -104,6 +104,26 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
         smelting(recipeOutput, CLUMB_SMELTABLES, RecipeCategory.MISC, EvansItems.CLUMB_MATERIA, 0.3f, 200, "clumb_materia");
         blasting(recipeOutput, CLUMB_SMELTABLES, RecipeCategory.MISC, EvansItems.CLUMB_MATERIA, 0.3f, 100, "clumb_materia");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GELWOOD_PLANKS.get())
+                .pattern("OO")
+                .pattern("OO")
+                .define('O', EvansItems.GELWOOD_ORB)
+                .unlockedBy("has_gelwood_orb", has(EvansItems.GELWOOD_ORB)).save(recipeOutput);
+        stairBuilder(EvansBlocks.GELWOOD_STAIRS.get(), Ingredient.of(EvansBlocks.GELWOOD_PLANKS.get())).group("gelwood")
+                .unlockedBy("has_gelwood_planks", has(EvansBlocks.GELWOOD_PLANKS.get())).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GELWOOD_SLAB.get(), EvansBlocks.GELWOOD_PLANKS.get());
+        buttonBuilder(EvansBlocks.GELWOOD_BUTTON.get(), Ingredient.of(EvansBlocks.GELWOOD_PLANKS.get())).group("gelwood")
+                .unlockedBy("has_gelwood_planks", has(EvansBlocks.GELWOOD_PLANKS.get())).save(recipeOutput);
+        pressurePlate(recipeOutput, EvansBlocks.GELWOOD_PRESSURE_PLATE.get(), EvansBlocks.GELWOOD_PLANKS.get());
+        fenceBuilder(EvansBlocks.GELWOOD_FENCE.get(), Ingredient.of(EvansBlocks.GELWOOD_PLANKS.get())).group("gelwood")
+                .unlockedBy("has_gelwood_planks", has(EvansBlocks.GELWOOD_PLANKS.get())).save(recipeOutput);
+        fenceGateBuilder(EvansBlocks.GELWOOD_FENCE_GATE.get(), Ingredient.of(EvansBlocks.GELWOOD_PLANKS.get())).group("gelwood")
+                .unlockedBy("has_gelwood_planks", has(EvansBlocks.GELWOOD_PLANKS.get())).save(recipeOutput);
+        doorBuilder(EvansBlocks.GELWOOD_DOOR.get(), Ingredient.of(EvansBlocks.GELWOOD_PLANKS.get())).group("gelwood")
+                .unlockedBy("has_gelwood_planks", has(EvansBlocks.GELWOOD_PLANKS.get())).save(recipeOutput);
+        trapdoorBuilder(EvansBlocks.GELWOOD_TRAPDOOR.get(), Ingredient.of(EvansBlocks.GELWOOD_PLANKS.get())).group("gelwood")
+                .unlockedBy("has_gelwood_planks", has(EvansBlocks.GELWOOD_PLANKS.get())).save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, EvansItems.ALBY_CLUMB_MATERIA.get())
                 .requires(EvansItems.CLUMB_MATERIA)
                 .requires(EvansItems.ALBY_GEM)

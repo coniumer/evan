@@ -1,9 +1,13 @@
 package net.seinsturg.efac.datagen;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.seinsturg.efac.EFAC;
+import net.seinsturg.efac.block.EvansBlocks;
 import net.seinsturg.efac.item.EvansItems;
 
 public class EvansItemModelProvider extends ItemModelProvider {
@@ -57,5 +61,28 @@ public class EvansItemModelProvider extends ItemModelProvider {
         handheldItem(EvansItems.DASH_CHARM.get());
         handheldItem(EvansItems.LIGHTNING_CHARM.get());
         handheldItem(EvansItems.PHILOSOPHERS_CHARM.get());
+
+        //wood items
+        buttonItem(EvansBlocks.GELWOOD_BUTTON, EvansBlocks.GELWOOD_PLANKS);
+        fenceItem(EvansBlocks.GELWOOD_FENCE, EvansBlocks.GELWOOD_PLANKS);
+        basicItem(EvansBlocks.GELWOOD_DOOR.asItem());
+    }
+
+    public void buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
+                .texture("texture",  ResourceLocation.fromNamespaceAndPath(EFAC.MOD_ID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
+
+    public void fenceItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/fence_inventory"))
+                .texture("texture",  ResourceLocation.fromNamespaceAndPath(EFAC.MOD_ID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
+
+    public void wallItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/wall_inventory"))
+                .texture("wall",  ResourceLocation.fromNamespaceAndPath(EFAC.MOD_ID,
+                        "block/" + baseBlock.getId().getPath()));
     }
 }
