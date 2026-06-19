@@ -146,11 +146,11 @@ public class EvansBlocks {
                     .pushReaction(PushReaction.DESTROY)));
 
     /// resources
-    // gelwood, todo: planks, variants, recipes
+    // gelwood
     public static final DeferredBlock<Block> GELWOOD_ORE = registerBlock(
             "gelwood_ore", () -> new DropExperienceBlock(UniformInt.of(0, 4), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_GREEN)
-                    .sound(SoundType.BAMBOO)
+                    .sound(SoundType.BAMBOO_WOOD)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
                     .strength(2f)));
