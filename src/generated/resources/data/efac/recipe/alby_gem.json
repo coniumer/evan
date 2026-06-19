@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "efac:alby_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "efac:alby_gem"
+  }
+}

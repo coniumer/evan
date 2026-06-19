@@ -53,8 +53,11 @@ public class EvansCreativeTabs {
                         ///blocks
                         output.accept(EvansBlocks.CLUMB_BLOCK);
                         output.accept(EvansBlocks.ALBY_ORE);
+                        output.accept(EvansBlocks.ALBY_BLOCK);
                         output.accept(EvansBlocks.CITRY_ORE);
+                        output.accept(EvansBlocks.CITRY_BLOCK);
                         output.accept(EvansBlocks.RUBY_ORE);
+                        output.accept(EvansBlocks.RUBY_BLOCK);
                         output.accept(EvansBlocks.GEUMB_BLOCK);
                         output.accept(EvansBlocks.BUDDING_GEUMB);
                         ///items
@@ -99,6 +102,7 @@ public class EvansCreativeTabs {
                         output.accept(EvansBlocks.GELWOOD_ORE);
                         output.accept(EvansItems.GELWOOD_ORB);
                         output.accept(EvansBlocks.SLIPULON_ORE);
+                        output.accept(EvansBlocks.SLIPULON_BLOCK);
                         output.accept(EvansItems.RAW_SLIPULON);
                         output.accept(EvansItems.SLIPULON_INGOT);
                         output.accept(EvansBlocks.BUTTER);

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.3,
+  "group": "slipulon_ingot",
+  "ingredient": {
+    "item": "efac:raw_slipulon"
+  },
+  "result": {
+    "count": 1,
+    "id": "efac:slipulon_ingot"
+  }
+}

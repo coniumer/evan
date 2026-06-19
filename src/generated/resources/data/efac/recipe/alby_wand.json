@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "item": "efac:alby_clumb_materia"
+    },
+    "H": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "G",
+    "H"
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:alby_wand"
+  }
+}

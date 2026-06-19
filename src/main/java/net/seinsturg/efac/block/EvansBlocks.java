@@ -39,7 +39,7 @@ public class EvansBlocks {
 
     /// ores & resource blocks
     // todo: philosophers
-    // gems, todo: blocks, associated recipes
+    // gems
     public static final DeferredBlock<Block> ALBY_ORE = registerBlock(
             "alby_ore", () -> new DropExperienceBlock(UniformInt.of(2, 8), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.STONE)
@@ -47,6 +47,13 @@ public class EvansBlocks {
                     .instrument(NoteBlockInstrument.BELL)
                     .requiresCorrectToolForDrops()
                     .strength(3.0F, 3.0F)));
+    public static final DeferredBlock<Block> ALBY_BLOCK = registerBlock(
+            "alby_block", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_WHITE)
+                    .sound(SoundType.AMETHYST)
+                    .instrument(NoteBlockInstrument.BELL)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.5F, 4.0F)));
     public static final DeferredBlock<Block> CITRY_ORE = registerBlock(
             "citry_ore", () -> new DropExperienceBlock(UniformInt.of(4, 8), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.STONE)
@@ -54,6 +61,13 @@ public class EvansBlocks {
                     .instrument(NoteBlockInstrument.BELL)
                     .requiresCorrectToolForDrops()
                     .strength(3.0F, 3.0F)));
+    public static final DeferredBlock<Block> CITRY_BLOCK = registerBlock(
+            "citry_block", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .sound(SoundType.AMETHYST)
+                    .instrument(NoteBlockInstrument.BELL)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.5F, 4.0F)));
     public static final DeferredBlock<Block> RUBY_ORE = registerBlock(
             "ruby_ore", () -> new DropExperienceBlock(UniformInt.of(4, 12), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.STONE)
@@ -61,8 +75,15 @@ public class EvansBlocks {
                     .instrument(NoteBlockInstrument.BELL)
                     .requiresCorrectToolForDrops()
                     .strength(3.0F, 3.0F)));
+    public static final DeferredBlock<Block> RUBY_BLOCK = registerBlock(
+            "ruby_block", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .sound(SoundType.AMETHYST)
+                    .instrument(NoteBlockInstrument.BELL)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.5F, 4.0F)));
 
-    // geumbs, todo: recipes
+    // geumbs
     public static final DeferredBlock<Block> GEUMB_BLOCK = registerBlock(
             "geumb_block", () -> new GeumbBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_ORANGE)
@@ -120,7 +141,6 @@ public class EvansBlocks {
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
                     .strength(3.0F, 3.0F)));
-    // slipulon, todo: block, recipes
     public static final DeferredBlock<Block> SLIPULON_ORE = registerBlock(
             "slipulon_ore", () -> new DropExperienceBlock(UniformInt.of(0, 6), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_BLUE)
@@ -128,6 +148,13 @@ public class EvansBlocks {
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
                     .strength(3.0F, 3.0F)));
+    public static final DeferredBlock<Block> SLIPULON_BLOCK = registerBlock(
+            "slipulon_block", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                    .sound(SoundType.COPPER)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.0F, 4.0F)));
     public static final DeferredBlock<Block> BUTTER = registerBlock(
             "butter", () -> new DropExperienceBlock(UniformInt.of(0, 3), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_YELLOW)

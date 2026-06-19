@@ -31,6 +31,10 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(EvansBlocks.CLUMB_BLOCK.get());
         dropSelf(EvansBlocks.GRONE.get());
         dropSelf(EvansBlocks.COMPACT_DIRT.get());
+        dropSelf(EvansBlocks.SLIPULON_BLOCK.get());
+        dropSelf(EvansBlocks.ALBY_BLOCK.get());
+        dropSelf(EvansBlocks.CITRY_BLOCK.get());
+        dropSelf(EvansBlocks.RUBY_BLOCK.get());
 
         dropWhenSilkTouch(EvansBlocks.BUDDING_GEUMB.get());
         dropWhenSilkTouch(EvansBlocks.LARGE_GEUMB_BUD.get());

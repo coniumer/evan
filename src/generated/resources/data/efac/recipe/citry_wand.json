@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "item": "efac:citry_clumb_materia"
+    },
+    "H": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "G",
+    "H"
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:citry_wand"
+  }
+}

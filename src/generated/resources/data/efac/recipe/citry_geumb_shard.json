@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "efac:citry_clumb_materia"
+    },
+    {
+      "item": "efac:awesome_sauce"
+    },
+    {
+      "item": "efac:awesome_sauce"
+    },
+    {
+      "item": "efac:geumb_shard"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:citry_geumb_shard"
+  }
+}

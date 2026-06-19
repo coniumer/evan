@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "item": "efac:rubied_geumb_shard"
+    },
+    "H": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "G",
+    "G",
+    "H"
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:rubied_pulsar"
+  }
+}

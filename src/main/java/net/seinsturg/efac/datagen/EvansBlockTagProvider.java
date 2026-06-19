@@ -27,6 +27,7 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.CITRY_ORE.get())
                 .add(EvansBlocks.RUBY_ORE.get())
                 .add(EvansBlocks.SLIPULON_ORE.get())
+                .add(EvansBlocks.SLIPULON_BLOCK.get())
                 .add(Blocks.GRAVEL)
                 .add(Blocks.SAND)
                 .add(Blocks.RED_SAND)
@@ -63,6 +64,7 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.RUBY_ORE.get())
                 .add(EvansBlocks.GELWOOD_ORE.get())
                 .add(EvansBlocks.SLIPULON_ORE.get())
+                .add(EvansBlocks.SLIPULON_BLOCK.get())
                 .add(EvansBlocks.GEUMB_BLOCK.get())
                 .add(EvansBlocks.GEUMB_CLUSTER.get())
                 .add(EvansBlocks.LARGE_GEUMB_BUD.get())
@@ -79,8 +81,10 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
         //tool teir
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(EvansBlocks.ALBY_ORE.get())
+                .add(EvansBlocks.ALBY_BLOCK.get())
                 .add(EvansBlocks.GELWOOD_ORE.get())
                 .add(EvansBlocks.SLIPULON_ORE.get())
+                .add(EvansBlocks.SLIPULON_BLOCK.get())
                 .add(EvansBlocks.GEUMB_BLOCK.get())
                 .add(EvansBlocks.GEUMB_CLUSTER.get())
                 .add(EvansBlocks.LARGE_GEUMB_BUD.get())
@@ -89,9 +93,11 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.BUDDING_GEUMB.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(EvansBlocks.CITRY_ORE.get());
+                .add(EvansBlocks.CITRY_ORE.get())
+                .add(EvansBlocks.CITRY_BLOCK.get());
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(EvansBlocks.RUBY_ORE.get());
+                .add(EvansBlocks.RUBY_ORE.get())
+                .add(EvansBlocks.RUBY_BLOCK.get());
     }
 }

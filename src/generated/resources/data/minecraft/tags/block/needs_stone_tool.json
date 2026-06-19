@@ -1,8 +1,10 @@
 {
   "values": [
     "efac:alby_ore",
+    "efac:alby_block",
     "efac:gelwood_ore",
     "efac:slipulon_ore",
+    "efac:slipulon_block",
     "efac:geumb_block",
     "efac:geumb_cluster",
     "efac:large_geumb_bud",

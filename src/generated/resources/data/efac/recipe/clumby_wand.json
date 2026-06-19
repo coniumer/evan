@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "item": "efac:clumb_materia"
+    },
+    "H": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "G",
+    "H"
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:clumby_wand"
+  }
+}

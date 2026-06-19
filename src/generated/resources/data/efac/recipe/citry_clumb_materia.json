@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "efac:clumb_materia"
+    },
+    {
+      "item": "efac:citry_gem"
+    },
+    {
+      "item": "efac:butter_stick"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:citry_clumb_materia"
+  }
+}

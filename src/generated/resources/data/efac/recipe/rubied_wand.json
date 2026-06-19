@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "item": "efac:rubied_clumb_materia"
+    },
+    "H": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "G",
+    "H"
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:rubied_wand"
+  }
+}

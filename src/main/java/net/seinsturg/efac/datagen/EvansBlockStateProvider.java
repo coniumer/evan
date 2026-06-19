@@ -17,12 +17,16 @@ public class EvansBlockStateProvider extends BlockStateProvider {
         blockWithItem(EvansBlocks.GRONE);
         blockWithItem(EvansBlocks.COMPACT_DIRT);
         blockWithItem(EvansBlocks.ALBY_ORE);
+        blockWithItem(EvansBlocks.ALBY_BLOCK);
         blockWithItem(EvansBlocks.CITRY_ORE);
+        blockWithItem(EvansBlocks.CITRY_BLOCK);
         blockWithItem(EvansBlocks.RUBY_ORE);
+        blockWithItem(EvansBlocks.RUBY_BLOCK);
         blockWithItem(EvansBlocks.GEUMB_BLOCK);
         blockWithItem(EvansBlocks.BUDDING_GEUMB);
         blockWithItem(EvansBlocks.GELWOOD_ORE);
         blockWithItem(EvansBlocks.SLIPULON_ORE);
+        blockWithItem(EvansBlocks.SLIPULON_BLOCK);
         blockWithItem(EvansBlocks.BUTTER);
     }
 
