@@ -4,6 +4,8 @@
   "creativetab.efac.environment_tab": "Environment",
 
   "block.efac.clumb_block": "Clumb Block",
+  "block.efac.philosophers_ore": "Philosopher's Ore",
+  "block.efac.philosophers_block": "Philosopher's Block",
   "block.efac.alby_ore": "Alby Ore",
   "block.efac.alby_block": "Alby Block",
   "block.efac.citry_ore": "Citry Ore",
@@ -40,6 +42,7 @@
   "item.efac.alby_gem": "Alby Gem",
   "item.efac.citry_gem": "Citry Gem",
   "item.efac.ruby_gem": "Ruby Gem",
+  "item.efac.philosophers_stone": "Philosopher's Stone",
   "item.efac.gelwood_orb": "Gelwood Orb",
   "item.efac.raw_slipulon": "Raw Slipulon",
   "item.efac.slipulon_ingot": "Slipulon Ingot",

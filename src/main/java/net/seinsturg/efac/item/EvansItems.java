@@ -49,6 +49,8 @@ public class EvansItems {
             "citry_gem", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> RUBY_GEM = ITEMS.register(
             "ruby_gem", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PHILOSOPHERS_STONE = ITEMS.register(
+            "philosophers_stone", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> GELWOOD_ORB = ITEMS.register(
             "gelwood_orb", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> RAW_SLIPULON = ITEMS.register(

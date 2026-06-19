@@ -58,6 +58,8 @@ public class EvansCreativeTabs {
                         output.accept(EvansBlocks.CITRY_BLOCK);
                         output.accept(EvansBlocks.RUBY_ORE);
                         output.accept(EvansBlocks.RUBY_BLOCK);
+                        output.accept(EvansBlocks.PHILOSOPHERS_ORE);
+                        output.accept(EvansBlocks.PHILOSOPHERS_BLOCK);
                         output.accept(EvansBlocks.GEUMB_BLOCK);
                         output.accept(EvansBlocks.BUDDING_GEUMB);
                         ///items
@@ -77,6 +79,7 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.ALBY_GEM);
                         output.accept(EvansItems.CITRY_GEM);
                         output.accept(EvansItems.RUBY_GEM);
+                        output.accept(EvansItems.PHILOSOPHERS_STONE);
                         output.accept(EvansItems.BLOOD_CANISTER);
                     })
                     .build());

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "item": "efac:philosophers_stone"
+    },
+    "H": {
+      "item": "efac:rubied_geumb_shard"
+    }
+  },
+  "pattern": [
+    "G",
+    "H"
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:philosophers_wand"
+  }
+}

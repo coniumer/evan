@@ -38,7 +38,21 @@ public class EvansBlocks {
                     .sound(SoundType.SLIME_BLOCK)));
 
     /// ores & resource blocks
-    // todo: philosophers
+    // philosophers, todo: tex, recipes, smithing upgrade
+    public static final DeferredBlock<Block> PHILOSOPHERS_ORE = registerBlock(
+            "philosophers_ore", () -> new DropExperienceBlock(UniformInt.of(4, 16), BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .sound(SoundType.AMETHYST)
+                    .instrument(NoteBlockInstrument.BELL)
+                    .requiresCorrectToolForDrops()
+                    .strength(15.0F, 1200.0F)));
+    public static final DeferredBlock<Block> PHILOSOPHERS_BLOCK = registerBlock(
+            "philosophers_block", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .sound(SoundType.AMETHYST)
+                    .instrument(NoteBlockInstrument.BELL)
+                    .requiresCorrectToolForDrops()
+                    .strength(50.0F, 1200.0F)));
     // gems
     public static final DeferredBlock<Block> ALBY_ORE = registerBlock(
             "alby_ore", () -> new DropExperienceBlock(UniformInt.of(2, 8), BlockBehaviour.Properties.of()

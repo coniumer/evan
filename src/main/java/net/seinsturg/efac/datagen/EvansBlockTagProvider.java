@@ -50,6 +50,8 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(Blocks.END_STONE);
 
         tag(EvansTags.Blocks.PROVIDES_CHARGE_ALWAYS)
+                .add(EvansBlocks.PHILOSOPHERS_ORE.get())
+                .add(EvansBlocks.PHILOSOPHERS_BLOCK.get())
                 .add(EvansBlocks.CLUMB_BLOCK.get());
 
         tag(EvansTags.Blocks.CONSUMES_CHARGE)
@@ -59,9 +61,14 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
         ///tool tags
         //tool type
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(EvansBlocks.PHILOSOPHERS_ORE.get())
+                .add(EvansBlocks.PHILOSOPHERS_BLOCK.get())
                 .add(EvansBlocks.ALBY_ORE.get())
+                .add(EvansBlocks.ALBY_BLOCK.get())
                 .add(EvansBlocks.CITRY_ORE.get())
+                .add(EvansBlocks.CITRY_BLOCK.get())
                 .add(EvansBlocks.RUBY_ORE.get())
+                .add(EvansBlocks.RUBY_BLOCK.get())
                 .add(EvansBlocks.GELWOOD_ORE.get())
                 .add(EvansBlocks.SLIPULON_ORE.get())
                 .add(EvansBlocks.SLIPULON_BLOCK.get())
@@ -78,7 +85,7 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.BUTTER.get())
                 .add(EvansBlocks.GRONE.get());
 
-        //tool teir
+        //tool tier
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(EvansBlocks.ALBY_ORE.get())
                 .add(EvansBlocks.ALBY_BLOCK.get())
@@ -99,5 +106,21 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(EvansBlocks.RUBY_ORE.get())
                 .add(EvansBlocks.RUBY_BLOCK.get());
+
+        tag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
+                .add(EvansBlocks.PHILOSOPHERS_ORE.get())
+                .add(EvansBlocks.PHILOSOPHERS_BLOCK.get());
+        tag(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .add(EvansBlocks.PHILOSOPHERS_ORE.get())
+                .add(EvansBlocks.PHILOSOPHERS_BLOCK.get());
+        tag(BlockTags.INCORRECT_FOR_GOLD_TOOL)
+                .add(EvansBlocks.PHILOSOPHERS_ORE.get())
+                .add(EvansBlocks.PHILOSOPHERS_BLOCK.get());
+        tag(BlockTags.INCORRECT_FOR_STONE_TOOL)
+                .add(EvansBlocks.PHILOSOPHERS_ORE.get())
+                .add(EvansBlocks.PHILOSOPHERS_BLOCK.get());
+        tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL)
+                .add(EvansBlocks.PHILOSOPHERS_ORE.get())
+                .add(EvansBlocks.PHILOSOPHERS_BLOCK.get());
     }
 }

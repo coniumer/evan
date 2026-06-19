@@ -71,6 +71,16 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .requires(EvansBlocks.RUBY_BLOCK)
                 .unlockedBy("has_ruby_block", has(EvansBlocks.RUBY_BLOCK)).save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.PHILOSOPHERS_BLOCK.get())
+                .pattern("CCC")
+                .pattern("CCC")
+                .pattern("CCC")
+                .define('C', EvansItems.PHILOSOPHERS_STONE)
+                .unlockedBy("has_philosophers_stone", has(EvansItems.PHILOSOPHERS_STONE)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, EvansItems.PHILOSOPHERS_STONE.get(), 9)
+                .requires(EvansBlocks.PHILOSOPHERS_BLOCK)
+                .unlockedBy("has_philosophers_block", has(EvansBlocks.PHILOSOPHERS_BLOCK)).save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.SLIPULON_BLOCK.get())
                 .pattern("CCC")
                 .pattern("CCC")
@@ -159,6 +169,12 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .define('G', EvansItems.RUBIED_CLUMB_MATERIA)
                 .define('H', Items.DIAMOND)
                 .unlockedBy("has_rubied_clumb_materia", has(EvansItems.RUBIED_CLUMB_MATERIA)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, EvansItems.PHILOSOPHERS_WAND.get())
+                .pattern("G")
+                .pattern("H")
+                .define('G', EvansItems.PHILOSOPHERS_STONE)
+                .define('H', EvansItems.RUBIED_GEUMB_SHARD)
+                .unlockedBy("has_philosophers_stone", has(EvansItems.PHILOSOPHERS_STONE)).save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, EvansItems.CLUMBY_PULSAR.get())
                 .pattern("G")

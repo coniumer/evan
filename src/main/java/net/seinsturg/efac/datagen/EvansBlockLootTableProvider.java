@@ -32,6 +32,7 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(EvansBlocks.GRONE.get());
         dropSelf(EvansBlocks.COMPACT_DIRT.get());
         dropSelf(EvansBlocks.SLIPULON_BLOCK.get());
+        dropSelf(EvansBlocks.PHILOSOPHERS_BLOCK.get());
         dropSelf(EvansBlocks.ALBY_BLOCK.get());
         dropSelf(EvansBlocks.CITRY_BLOCK.get());
         dropSelf(EvansBlocks.RUBY_BLOCK.get());
@@ -41,6 +42,8 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
         dropWhenSilkTouch(EvansBlocks.MEDIUM_GEUMB_BUD.get());
         dropWhenSilkTouch(EvansBlocks.SMALL_GEUMB_BUD.get());
 
+        add(EvansBlocks.PHILOSOPHERS_ORE.get(),
+                block -> createCustomOreDrop(EvansBlocks.PHILOSOPHERS_ORE.get(), EvansItems.PHILOSOPHERS_STONE.get(), 1, 2));
         add(EvansBlocks.ALBY_ORE.get(),
                 block -> createCustomOreDrop(EvansBlocks.ALBY_ORE.get(), EvansItems.ALBY_GEM.get(), 1, 5));
         add(EvansBlocks.CITRY_ORE.get(),

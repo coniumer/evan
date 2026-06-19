@@ -30,6 +30,7 @@ public class EvansItemModelProvider extends ItemModelProvider {
         basicItem(EvansItems.ALBY_GEM.get());
         basicItem(EvansItems.CITRY_GEM.get());
         basicItem(EvansItems.RUBY_GEM.get());
+        basicItem(EvansItems.PHILOSOPHERS_STONE.get());
         basicItem(EvansItems.GELWOOD_ORB.get());
         basicItem(EvansItems.RAW_SLIPULON.get());
         basicItem(EvansItems.SLIPULON_INGOT.get());

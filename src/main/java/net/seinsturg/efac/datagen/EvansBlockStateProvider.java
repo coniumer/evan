@@ -18,6 +18,8 @@ public class EvansBlockStateProvider extends BlockStateProvider {
         blockWithItem(EvansBlocks.COMPACT_DIRT);
         blockWithItem(EvansBlocks.ALBY_ORE);
         blockWithItem(EvansBlocks.ALBY_BLOCK);
+        blockWithItem(EvansBlocks.PHILOSOPHERS_ORE);
+        blockWithItem(EvansBlocks.PHILOSOPHERS_BLOCK);
         blockWithItem(EvansBlocks.CITRY_ORE);
         blockWithItem(EvansBlocks.CITRY_BLOCK);
         blockWithItem(EvansBlocks.RUBY_ORE);

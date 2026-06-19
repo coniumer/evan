@@ -30,7 +30,7 @@ public class BuddingGeumbBlock extends GeumbBlock {
             } else if (blockstate.is(EvansBlocks.MEDIUM_GEUMB_BUD) && blockstate.getValue(GeumbClusterBlock.FACING) == direction) {
                 block = EvansBlocks.LARGE_GEUMB_BUD.get();
             } else if (blockstate.is(EvansBlocks.LARGE_GEUMB_BUD) && blockstate.getValue(GeumbClusterBlock.FACING) == direction) {
-                block = Blocks.AMETHYST_CLUSTER;
+                block = EvansBlocks.GEUMB_CLUSTER.get();
             }
 
             if (block != null) {
