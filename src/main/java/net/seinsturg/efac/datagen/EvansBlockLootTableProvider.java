@@ -29,6 +29,36 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(EvansBlocks.CLUMB_BLOCK.get());
         dropSelf(EvansBlocks.GRONE.get());
 
+        dropSelf(EvansBlocks.GEUMB_TILES.get());
+        dropSelf(EvansBlocks.GEUMB_TILE_STAIRS.get());
+        add(EvansBlocks.GEUMB_TILE_SLAB.get(),
+                block -> createSlabItemTable(EvansBlocks.GEUMB_TILE_SLAB.get()));
+        dropSelf(EvansBlocks.GEUMB_TILE_WALL.get());
+
+        dropSelf(EvansBlocks.CLUMBY_GEUMB_TILES.get());
+        dropSelf(EvansBlocks.CLUMBY_GEUMB_TILE_STAIRS.get());
+        add(EvansBlocks.CLUMBY_GEUMB_TILE_SLAB.get(),
+                block -> createSlabItemTable(EvansBlocks.CLUMBY_GEUMB_TILE_SLAB.get()));
+        dropSelf(EvansBlocks.CLUMBY_GEUMB_TILE_WALL.get());
+
+        dropSelf(EvansBlocks.ALBY_GEUMB_TILES.get());
+        dropSelf(EvansBlocks.ALBY_GEUMB_TILE_STAIRS.get());
+        add(EvansBlocks.ALBY_GEUMB_TILE_SLAB.get(),
+                block -> createSlabItemTable(EvansBlocks.ALBY_GEUMB_TILE_SLAB.get()));
+        dropSelf(EvansBlocks.ALBY_GEUMB_TILE_WALL.get());
+
+        dropSelf(EvansBlocks.CITRY_GEUMB_TILES.get());
+        dropSelf(EvansBlocks.CITRY_GEUMB_TILE_STAIRS.get());
+        add(EvansBlocks.CITRY_GEUMB_TILE_SLAB.get(),
+                block -> createSlabItemTable(EvansBlocks.CITRY_GEUMB_TILE_SLAB.get()));
+        dropSelf(EvansBlocks.CITRY_GEUMB_TILE_WALL.get());
+
+        dropSelf(EvansBlocks.RUBY_GEUMB_TILES.get());
+        dropSelf(EvansBlocks.RUBY_GEUMB_TILE_STAIRS.get());
+        add(EvansBlocks.RUBY_GEUMB_TILE_SLAB.get(),
+                block -> createSlabItemTable(EvansBlocks.RUBY_GEUMB_TILE_SLAB.get()));
+        dropSelf(EvansBlocks.RUBY_GEUMB_TILE_WALL.get());
+
         dropSelf(EvansBlocks.GRONE_BRICKS.get());
         dropSelf(EvansBlocks.GRONE_BRICK_STAIRS.get());
         add(EvansBlocks.GRONE_BRICK_SLAB.get(),

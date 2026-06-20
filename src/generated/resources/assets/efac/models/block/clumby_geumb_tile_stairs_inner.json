@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "efac:block/clumby_geumb_tiles",
+    "side": "efac:block/clumby_geumb_tiles",
+    "top": "efac:block/clumby_geumb_tiles"
+  }
+}

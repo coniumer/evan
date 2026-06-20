@@ -68,6 +68,11 @@ public class EvansItemModelProvider extends ItemModelProvider {
         basicItem(EvansBlocks.GELWOOD_DOOR.asItem());
 
         //walls
+        //wallItem(EvansBlocks.GEUMB_TILE_WALL, EvansBlocks.GEUMB_TILES);
+        //wallItem(EvansBlocks.CLUMBY_GEUMB_TILE_WALL, EvansBlocks.CLUMBY_GEUMB_TILES);
+        //wallItem(EvansBlocks.ALBY_GEUMB_TILE_WALL, EvansBlocks.ALBY_GEUMB_TILES);
+        //wallItem(EvansBlocks.CITRY_GEUMB_TILE_WALL, EvansBlocks.CITRY_GEUMB_TILES);
+        //wallItem(EvansBlocks.RUBY_GEUMB_TILE_WALL, EvansBlocks.RUBY_GEUMB_TILES);
         //wallItem(EvansBlocks.GRONE_BRICK_WALL, EvansBlocks.GRONE_BRICKS);
         //wallItem(EvansBlocks.RONE_BRICK_WALL, EvansBlocks.RONE_BRICKS);
         //wallItem(EvansBlocks.BLONE_BRICK_WALL, EvansBlocks.BLONE_BRICKS);

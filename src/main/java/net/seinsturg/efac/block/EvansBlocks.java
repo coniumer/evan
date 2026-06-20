@@ -144,6 +144,156 @@ public class EvansBlocks {
                     .strength(1.5F)
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final DeferredBlock<Block> GEUMB_TILES = registerBlock(
+            "geumb_tiles", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_TILES)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<StairBlock> GEUMB_TILE_STAIRS = registerBlock("geumb_tile_stairs",
+            () -> new StairBlock(EvansBlocks.GEUMB_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_ORANGE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .sound(SoundType.DEEPSLATE_BRICKS)
+                            .strength(1.5f, 6.0f)
+                            .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<SlabBlock> GEUMB_TILE_SLAB = registerBlock("geumb_tile_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<WallBlock> GEUMB_TILE_WALL = registerBlock("geumb_tile_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> CLUMBY_GEUMB_TILES = registerBlock(
+            "clumby_geumb_tiles", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_TILES)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<StairBlock> CLUMBY_GEUMB_TILE_STAIRS = registerBlock("clumby_geumb_tile_stairs",
+            () -> new StairBlock(EvansBlocks.CLUMBY_GEUMB_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.TERRACOTTA_WHITE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .sound(SoundType.DEEPSLATE_BRICKS)
+                            .strength(1.5f, 6.0f)
+                            .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<SlabBlock> CLUMBY_GEUMB_TILE_SLAB = registerBlock("clumby_geumb_tile_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<WallBlock> CLUMBY_GEUMB_TILE_WALL = registerBlock("clumby_geumb_tile_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> ALBY_GEUMB_TILES = registerBlock(
+            "alby_geumb_tiles", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_TILES)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<StairBlock> ALBY_GEUMB_TILE_STAIRS = registerBlock("alby_geumb_tile_stairs",
+            () -> new StairBlock(EvansBlocks.ALBY_GEUMB_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .sound(SoundType.DEEPSLATE_BRICKS)
+                            .strength(1.5f, 6.0f)
+                            .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<SlabBlock> ALBY_GEUMB_TILE_SLAB = registerBlock("alby_geumb_tile_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<WallBlock> ALBY_GEUMB_TILE_WALL = registerBlock("alby_geumb_tile_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> CITRY_GEUMB_TILES = registerBlock(
+            "citry_geumb_tiles", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_TILES)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<StairBlock> CITRY_GEUMB_TILE_STAIRS = registerBlock("citry_geumb_tile_stairs",
+            () -> new StairBlock(EvansBlocks.CITRY_GEUMB_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_YELLOW)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .sound(SoundType.DEEPSLATE_BRICKS)
+                            .strength(1.5f, 6.0f)
+                            .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<SlabBlock> CITRY_GEUMB_TILE_SLAB = registerBlock("citry_geumb_tile_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<WallBlock> CITRY_GEUMB_TILE_WALL = registerBlock("citry_geumb_tile_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> RUBY_GEUMB_TILES = registerBlock(
+            "ruby_geumb_tiles", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_TILES)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<StairBlock> RUBY_GEUMB_TILE_STAIRS = registerBlock("ruby_geumb_tile_stairs",
+            () -> new StairBlock(EvansBlocks.RUBY_GEUMB_TILES.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.TERRACOTTA_RED)
+                            .instrument(NoteBlockInstrument.BASEDRUM)
+                            .sound(SoundType.DEEPSLATE_BRICKS)
+                            .strength(1.5f, 6.0f)
+                            .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<SlabBlock> RUBY_GEUMB_TILE_SLAB = registerBlock("ruby_geumb_tile_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<WallBlock> RUBY_GEUMB_TILE_WALL = registerBlock("ruby_geumb_tile_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+
     /// resources
     // gelwood
     public static final DeferredBlock<Block> GELWOOD_ORE = registerBlock(

@@ -1,5 +1,10 @@
 {
   "values": [
+    "efac:geumb_tile_wall",
+    "efac:clumby_geumb_tile_wall",
+    "efac:alby_geumb_tile_wall",
+    "efac:citry_geumb_tile_wall",
+    "efac:ruby_geumb_tile_wall",
     "efac:grone_brick_wall",
     "efac:rone_brick_wall",
     "efac:blone_brick_wall",

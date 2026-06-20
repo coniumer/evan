@@ -22,32 +22,24 @@ public class EvansBlockStateProvider extends BlockStateProvider {
         blockItem(EvansBlocks.GRONE_BRICK_STAIRS);
         slabBlock(EvansBlocks.GRONE_BRICK_SLAB.get(), blockTexture(EvansBlocks.GRONE_BRICKS.get()), blockTexture(EvansBlocks.GRONE_BRICKS.get()));
         blockItem(EvansBlocks.GRONE_BRICK_SLAB);
-        wallBlock(EvansBlocks.GRONE_BRICK_WALL.get(), blockTexture(EvansBlocks.GRONE_BRICKS.get()));
-        blockItem(EvansBlocks.GRONE_BRICK_WALL);
 
         blockWithItem(EvansBlocks.RONE_BRICKS);
         stairsBlock(EvansBlocks.RONE_BRICK_STAIRS.get(), blockTexture(EvansBlocks.RONE_BRICKS.get()));
         blockItem(EvansBlocks.RONE_BRICK_STAIRS);
         slabBlock(EvansBlocks.RONE_BRICK_SLAB.get(), blockTexture(EvansBlocks.RONE_BRICKS.get()), blockTexture(EvansBlocks.RONE_BRICKS.get()));
         blockItem(EvansBlocks.RONE_BRICK_SLAB);
-        wallBlock(EvansBlocks.RONE_BRICK_WALL.get(), blockTexture(EvansBlocks.RONE_BRICKS.get()));
-        blockItem(EvansBlocks.RONE_BRICK_WALL);
 
         blockWithItem(EvansBlocks.BLONE_BRICKS);
         stairsBlock(EvansBlocks.BLONE_BRICK_STAIRS.get(), blockTexture(EvansBlocks.BLONE_BRICKS.get()));
         blockItem(EvansBlocks.BLONE_BRICK_STAIRS);
         slabBlock(EvansBlocks.BLONE_BRICK_SLAB.get(), blockTexture(EvansBlocks.BLONE_BRICKS.get()), blockTexture(EvansBlocks.BLONE_BRICKS.get()));
         blockItem(EvansBlocks.BLONE_BRICK_SLAB);
-        wallBlock(EvansBlocks.BLONE_BRICK_WALL.get(), blockTexture(EvansBlocks.BLONE_BRICKS.get()));
-        blockItem(EvansBlocks.BLONE_BRICK_WALL);
 
         blockWithItem(EvansBlocks.PLONE_BRICKS);
         stairsBlock(EvansBlocks.PLONE_BRICK_STAIRS.get(), blockTexture(EvansBlocks.PLONE_BRICKS.get()));
         blockItem(EvansBlocks.PLONE_BRICK_STAIRS);
         slabBlock(EvansBlocks.PLONE_BRICK_SLAB.get(), blockTexture(EvansBlocks.PLONE_BRICKS.get()), blockTexture(EvansBlocks.PLONE_BRICKS.get()));
         blockItem(EvansBlocks.PLONE_BRICK_SLAB);
-        wallBlock(EvansBlocks.PLONE_BRICK_WALL.get(), blockTexture(EvansBlocks.PLONE_BRICKS.get()));
-        blockItem(EvansBlocks.PLONE_BRICK_WALL);
 
         blockWithItem(EvansBlocks.COMPACT_DIRT);
         blockWithItem(EvansBlocks.ALBY_ORE);
@@ -58,10 +50,51 @@ public class EvansBlockStateProvider extends BlockStateProvider {
         blockWithItem(EvansBlocks.CITRY_BLOCK);
         blockWithItem(EvansBlocks.RUBY_ORE);
         blockWithItem(EvansBlocks.RUBY_BLOCK);
+
         blockWithItem(EvansBlocks.GEUMB_BLOCK);
         blockWithItem(EvansBlocks.BUDDING_GEUMB);
-        blockWithItem(EvansBlocks.GELWOOD_ORE);
 
+        blockWithItem(EvansBlocks.GEUMB_TILES);
+        stairsBlock(EvansBlocks.GEUMB_TILE_STAIRS.get(), blockTexture(EvansBlocks.GEUMB_TILES.get()));
+        blockItem(EvansBlocks.GEUMB_TILE_STAIRS);
+        slabBlock(EvansBlocks.GEUMB_TILE_SLAB.get(), blockTexture(EvansBlocks.GEUMB_TILES.get()), blockTexture(EvansBlocks.GEUMB_TILES.get()));
+        blockItem(EvansBlocks.GEUMB_TILE_SLAB);
+        //wallBlock(EvansBlocks.GEUMB_TILE_WALL.get(), blockTexture(EvansBlocks.GEUMB_TILES.get()));
+        //blockItem(EvansBlocks.GEUMB_TILE_WALL);
+
+        blockWithItem(EvansBlocks.CLUMBY_GEUMB_TILES);
+        stairsBlock(EvansBlocks.CLUMBY_GEUMB_TILE_STAIRS.get(), blockTexture(EvansBlocks.CLUMBY_GEUMB_TILES.get()));
+        blockItem(EvansBlocks.CLUMBY_GEUMB_TILE_STAIRS);
+        slabBlock(EvansBlocks.CLUMBY_GEUMB_TILE_SLAB.get(), blockTexture(EvansBlocks.CLUMBY_GEUMB_TILES.get()), blockTexture(EvansBlocks.CLUMBY_GEUMB_TILES.get()));
+        blockItem(EvansBlocks.CLUMBY_GEUMB_TILE_SLAB);
+        //wallBlock(EvansBlocks.CLUMBY_GEUMB_TILE_WALL.get(), blockTexture(EvansBlocks.CLUMBY_GEUMB_TILES.get()));
+        //blockItem(EvansBlocks.CLUMBY_GEUMB_TILE_WALL);
+
+        blockWithItem(EvansBlocks.ALBY_GEUMB_TILES);
+        stairsBlock(EvansBlocks.ALBY_GEUMB_TILE_STAIRS.get(), blockTexture(EvansBlocks.ALBY_GEUMB_TILES.get()));
+        blockItem(EvansBlocks.ALBY_GEUMB_TILE_STAIRS);
+        slabBlock(EvansBlocks.ALBY_GEUMB_TILE_SLAB.get(), blockTexture(EvansBlocks.ALBY_GEUMB_TILES.get()), blockTexture(EvansBlocks.ALBY_GEUMB_TILES.get()));
+        blockItem(EvansBlocks.ALBY_GEUMB_TILE_SLAB);
+        //wallBlock(EvansBlocks.ALBY_GEUMB_TILE_WALL.get(), blockTexture(EvansBlocks.ALBY_GEUMB_TILES.get()));
+        //blockItem(EvansBlocks.ALBY_GEUMB_TILE_WALL);
+
+        blockWithItem(EvansBlocks.CITRY_GEUMB_TILES);
+        stairsBlock(EvansBlocks.CITRY_GEUMB_TILE_STAIRS.get(), blockTexture(EvansBlocks.CITRY_GEUMB_TILES.get()));
+        blockItem(EvansBlocks.CITRY_GEUMB_TILE_STAIRS);
+        slabBlock(EvansBlocks.CITRY_GEUMB_TILE_SLAB.get(), blockTexture(EvansBlocks.CITRY_GEUMB_TILES.get()), blockTexture(EvansBlocks.CITRY_GEUMB_TILES.get()));
+        blockItem(EvansBlocks.CITRY_GEUMB_TILE_SLAB);
+        //wallBlock(EvansBlocks.CITRY_GEUMB_TILE_WALL.get(), blockTexture(EvansBlocks.CITRY_GEUMB_TILES.get()));
+        //blockItem(EvansBlocks.CITRY_GEUMB_TILE_WALL);
+
+        blockWithItem(EvansBlocks.RUBY_GEUMB_TILES);
+        stairsBlock(EvansBlocks.RUBY_GEUMB_TILE_STAIRS.get(), blockTexture(EvansBlocks.RUBY_GEUMB_TILES.get()));
+        blockItem(EvansBlocks.RUBY_GEUMB_TILE_STAIRS);
+        slabBlock(EvansBlocks.RUBY_GEUMB_TILE_SLAB.get(), blockTexture(EvansBlocks.RUBY_GEUMB_TILES.get()), blockTexture(EvansBlocks.RUBY_GEUMB_TILES.get()));
+        blockItem(EvansBlocks.RUBY_GEUMB_TILE_SLAB);
+        //wallBlock(EvansBlocks.RUBY_GEUMB_TILE_WALL.get(), blockTexture(EvansBlocks.RUBY_GEUMB_TILES.get()));
+        //blockItem(EvansBlocks.RUBY_GEUMB_TILE_WALL);
+
+        blockWithItem(EvansBlocks.GELWOOD_ORE);
         blockWithItem(EvansBlocks.GELWOOD_PLANKS);
         stairsBlock(EvansBlocks.GELWOOD_STAIRS.get(), blockTexture(EvansBlocks.GELWOOD_PLANKS.get()));
         slabBlock(EvansBlocks.GELWOOD_SLAB.get(), blockTexture(EvansBlocks.GELWOOD_PLANKS.get()), blockTexture(EvansBlocks.GELWOOD_PLANKS.get()));

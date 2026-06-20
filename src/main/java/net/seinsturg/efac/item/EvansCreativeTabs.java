@@ -60,8 +60,30 @@ public class EvansCreativeTabs {
                         output.accept(EvansBlocks.RUBY_BLOCK);
                         output.accept(EvansBlocks.PHILOSOPHERS_ORE);
                         output.accept(EvansBlocks.PHILOSOPHERS_BLOCK);
+
                         output.accept(EvansBlocks.GEUMB_BLOCK);
                         output.accept(EvansBlocks.BUDDING_GEUMB);
+                        output.accept(EvansBlocks.GEUMB_TILES);
+                        output.accept(EvansBlocks.GEUMB_TILE_STAIRS);
+                        output.accept(EvansBlocks.GEUMB_TILE_SLAB);
+                        output.accept(EvansBlocks.GEUMB_TILE_WALL);
+                        output.accept(EvansBlocks.CLUMBY_GEUMB_TILES);
+                        output.accept(EvansBlocks.CLUMBY_GEUMB_TILE_STAIRS);
+                        output.accept(EvansBlocks.CLUMBY_GEUMB_TILE_SLAB);
+                        output.accept(EvansBlocks.CLUMBY_GEUMB_TILE_WALL);
+                        output.accept(EvansBlocks.ALBY_GEUMB_TILES);
+                        output.accept(EvansBlocks.ALBY_GEUMB_TILE_STAIRS);
+                        output.accept(EvansBlocks.ALBY_GEUMB_TILE_SLAB);
+                        output.accept(EvansBlocks.ALBY_GEUMB_TILE_WALL);
+                        output.accept(EvansBlocks.CITRY_GEUMB_TILES);
+                        output.accept(EvansBlocks.CITRY_GEUMB_TILE_STAIRS);
+                        output.accept(EvansBlocks.CITRY_GEUMB_TILE_SLAB);
+                        output.accept(EvansBlocks.CITRY_GEUMB_TILE_WALL);
+                        output.accept(EvansBlocks.RUBY_GEUMB_TILES);
+                        output.accept(EvansBlocks.RUBY_GEUMB_TILE_STAIRS);
+                        output.accept(EvansBlocks.RUBY_GEUMB_TILE_SLAB);
+                        output.accept(EvansBlocks.RUBY_GEUMB_TILE_WALL);
+
                         ///items
                         output.accept(EvansItems.CLUMB_MATERIA);
                         output.accept(EvansItems.ALBY_CLUMB_MATERIA);

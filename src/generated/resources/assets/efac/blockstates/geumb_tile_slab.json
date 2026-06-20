@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "efac:block/geumb_tile_slab"
+    },
+    "type=double": {
+      "model": "efac:block/geumb_tiles"
+    },
+    "type=top": {
+      "model": "efac:block/geumb_tile_slab_top"
+    }
+  }
+}
