@@ -1,7 +1,6 @@
 package net.seinsturg.efac.block;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -237,6 +236,127 @@ public class EvansBlocks {
                     return null;
                 }
     });
+
+    public static final DeferredBlock<Block> GRONE_BRICKS = registerBlock(
+            "grone_bricks", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<StairBlock> GRONE_BRICK_STAIRS = registerBlock("grone_brick_stairs",
+            () -> new StairBlock(EvansBlocks.GRONE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<SlabBlock> GRONE_BRICK_SLAB = registerBlock("grone_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<WallBlock> GRONE_BRICK_WALL = registerBlock("grone_brick_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> RONE_BRICKS = registerBlock(
+            "rone_bricks", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<StairBlock> RONE_BRICK_STAIRS = registerBlock("rone_brick_stairs",
+            () -> new StairBlock(EvansBlocks.RONE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<SlabBlock> RONE_BRICK_SLAB = registerBlock("rone_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<WallBlock> RONE_BRICK_WALL = registerBlock("rone_brick_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> BLONE_BRICKS = registerBlock(
+            "blone_bricks", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<StairBlock> BLONE_BRICK_STAIRS = registerBlock("blone_brick_stairs",
+            () -> new StairBlock(EvansBlocks.BLONE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<SlabBlock> BLONE_BRICK_SLAB = registerBlock("blone_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<WallBlock> BLONE_BRICK_WALL = registerBlock("blone_brick_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> PLONE_BRICKS = registerBlock(
+            "plone_bricks", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PINK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<StairBlock> PLONE_BRICK_STAIRS = registerBlock("plone_brick_stairs",
+            () -> new StairBlock(EvansBlocks.PLONE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PINK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<SlabBlock> PLONE_BRICK_SLAB = registerBlock("plone_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PINK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<WallBlock> PLONE_BRICK_WALL = registerBlock("plone_brick_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PINK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .sound(SoundType.DEEPSLATE_BRICKS)
+                    .strength(1.5f, 6.0f)
+                    .requiresCorrectToolForDrops()));
+
     public static final DeferredBlock<Block> COMPACT_DIRT = registerBlock(
             "compact_dirt", () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.DIRT)

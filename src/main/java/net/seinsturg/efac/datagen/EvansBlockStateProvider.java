@@ -16,6 +16,39 @@ public class EvansBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(EvansBlocks.GRONE);
+
+        blockWithItem(EvansBlocks.GRONE_BRICKS);
+        stairsBlock(EvansBlocks.GRONE_BRICK_STAIRS.get(), blockTexture(EvansBlocks.GRONE_BRICKS.get()));
+        blockItem(EvansBlocks.GRONE_BRICK_STAIRS);
+        slabBlock(EvansBlocks.GRONE_BRICK_SLAB.get(), blockTexture(EvansBlocks.GRONE_BRICKS.get()), blockTexture(EvansBlocks.GRONE_BRICKS.get()));
+        blockItem(EvansBlocks.GRONE_BRICK_SLAB);
+        wallBlock(EvansBlocks.GRONE_BRICK_WALL.get(), blockTexture(EvansBlocks.GRONE_BRICKS.get()));
+        blockItem(EvansBlocks.GRONE_BRICK_WALL);
+
+        blockWithItem(EvansBlocks.RONE_BRICKS);
+        stairsBlock(EvansBlocks.RONE_BRICK_STAIRS.get(), blockTexture(EvansBlocks.RONE_BRICKS.get()));
+        blockItem(EvansBlocks.RONE_BRICK_STAIRS);
+        slabBlock(EvansBlocks.RONE_BRICK_SLAB.get(), blockTexture(EvansBlocks.RONE_BRICKS.get()), blockTexture(EvansBlocks.RONE_BRICKS.get()));
+        blockItem(EvansBlocks.RONE_BRICK_SLAB);
+        wallBlock(EvansBlocks.RONE_BRICK_WALL.get(), blockTexture(EvansBlocks.RONE_BRICKS.get()));
+        blockItem(EvansBlocks.RONE_BRICK_WALL);
+
+        blockWithItem(EvansBlocks.BLONE_BRICKS);
+        stairsBlock(EvansBlocks.BLONE_BRICK_STAIRS.get(), blockTexture(EvansBlocks.BLONE_BRICKS.get()));
+        blockItem(EvansBlocks.BLONE_BRICK_STAIRS);
+        slabBlock(EvansBlocks.BLONE_BRICK_SLAB.get(), blockTexture(EvansBlocks.BLONE_BRICKS.get()), blockTexture(EvansBlocks.BLONE_BRICKS.get()));
+        blockItem(EvansBlocks.BLONE_BRICK_SLAB);
+        wallBlock(EvansBlocks.BLONE_BRICK_WALL.get(), blockTexture(EvansBlocks.BLONE_BRICKS.get()));
+        blockItem(EvansBlocks.BLONE_BRICK_WALL);
+
+        blockWithItem(EvansBlocks.PLONE_BRICKS);
+        stairsBlock(EvansBlocks.PLONE_BRICK_STAIRS.get(), blockTexture(EvansBlocks.PLONE_BRICKS.get()));
+        blockItem(EvansBlocks.PLONE_BRICK_STAIRS);
+        slabBlock(EvansBlocks.PLONE_BRICK_SLAB.get(), blockTexture(EvansBlocks.PLONE_BRICKS.get()), blockTexture(EvansBlocks.PLONE_BRICKS.get()));
+        blockItem(EvansBlocks.PLONE_BRICK_SLAB);
+        wallBlock(EvansBlocks.PLONE_BRICK_WALL.get(), blockTexture(EvansBlocks.PLONE_BRICKS.get()));
+        blockItem(EvansBlocks.PLONE_BRICK_WALL);
+
         blockWithItem(EvansBlocks.COMPACT_DIRT);
         blockWithItem(EvansBlocks.ALBY_ORE);
         blockWithItem(EvansBlocks.ALBY_BLOCK);

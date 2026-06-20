@@ -124,6 +124,55 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
         trapdoorBuilder(EvansBlocks.GELWOOD_TRAPDOOR.get(), Ingredient.of(EvansBlocks.GELWOOD_PLANKS.get())).group("gelwood")
                 .unlockedBy("has_gelwood_planks", has(EvansBlocks.GELWOOD_PLANKS.get())).save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GRONE_BRICKS.get())
+                .pattern("OOO")
+                .pattern("OOO")
+                .pattern("OOO")
+                .define('O', EvansBlocks.GRONE)
+                .unlockedBy("has_grone", has(EvansBlocks.GRONE)).save(recipeOutput);
+        stairBuilder(EvansBlocks.GRONE_BRICK_STAIRS.get(), Ingredient.of(EvansBlocks.GRONE_BRICKS.get())).group("grone")
+                .unlockedBy("has_grone_brics", has(EvansBlocks.GRONE_BRICKS.get())).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GRONE_BRICK_SLAB.get(), EvansBlocks.GRONE_BRICKS.get());
+        wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GRONE_BRICK_WALL, Ingredient.of(EvansBlocks.GRONE_BRICKS)).group("grone")
+                .unlockedBy("has_grone_brics", has(EvansBlocks.GRONE_BRICKS.get())).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.RONE_BRICKS.get())
+                .pattern("OOO")
+                .pattern("OOO")
+                .pattern("OOO")
+                .define('O', Blocks.RED_SAND)
+                .unlockedBy("has_red_sand", has(Blocks.RED_SAND)).save(recipeOutput);
+        stairBuilder(EvansBlocks.RONE_BRICK_STAIRS.get(), Ingredient.of(EvansBlocks.RONE_BRICKS.get())).group("rone")
+                .unlockedBy("has_rone_brics", has(EvansBlocks.RONE_BRICKS.get())).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, EvansBlocks.RONE_BRICK_SLAB.get(), EvansBlocks.RONE_BRICKS.get());
+        wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.RONE_BRICK_WALL, Ingredient.of(EvansBlocks.RONE_BRICKS)).group("rone")
+                .unlockedBy("has_rone_brics", has(EvansBlocks.RONE_BRICKS.get())).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.BLONE_BRICKS.get())
+                .pattern("OOO")
+                .pattern("OOO")
+                .pattern("OOO")
+                .define('O', Blocks.GRAVEL)
+                .unlockedBy("has_gravel", has(Blocks.GRAVEL)).save(recipeOutput);
+        stairBuilder(EvansBlocks.BLONE_BRICK_STAIRS.get(), Ingredient.of(EvansBlocks.BLONE_BRICKS.get())).group("blone")
+                .unlockedBy("has_blone_brics", has(EvansBlocks.BLONE_BRICKS.get())).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, EvansBlocks.BLONE_BRICK_SLAB.get(), EvansBlocks.BLONE_BRICKS.get());
+        wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.BLONE_BRICK_WALL, Ingredient.of(EvansBlocks.BLONE_BRICKS)).group("blone")
+                .unlockedBy("has_blone_brics", has(EvansBlocks.BLONE_BRICKS.get())).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.PLONE_BRICKS.get())
+                .pattern("OOO")
+                .pattern("OOO")
+                .pattern("OOO")
+                .define('O', Blocks.SAND)
+                .unlockedBy("has_sand", has(Blocks.SAND)).save(recipeOutput);
+        stairBuilder(EvansBlocks.PLONE_BRICK_STAIRS.get(), Ingredient.of(EvansBlocks.PLONE_BRICKS.get())).group("plone")
+                .unlockedBy("has_plone_brics", has(EvansBlocks.PLONE_BRICKS.get())).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, EvansBlocks.PLONE_BRICK_SLAB.get(), EvansBlocks.PLONE_BRICKS.get());
+        wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.PLONE_BRICK_WALL, Ingredient.of(EvansBlocks.PLONE_BRICKS)).group("plone")
+                .unlockedBy("has_plone_brics", has(EvansBlocks.PLONE_BRICKS.get())).save(recipeOutput);
+
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, EvansItems.ALBY_CLUMB_MATERIA.get())
                 .requires(EvansItems.CLUMB_MATERIA)
                 .requires(EvansItems.ALBY_GEM)

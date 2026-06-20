@@ -32,6 +32,27 @@
   "block.efac.medium_geumb_bud": "Medium Geumb Bud",
   "block.efac.small_geumb_bud": "Small Geumb Bud",
   "block.efac.grone": "Grone",
+
+  "block.efac.grone_bricks": "Grone Bricks",
+  "block.efac.grone_brick_stairs": "Grone Brick Stairs",
+  "block.efac.grone_brick_slab": "Grone Brick Slab",
+  "block.efac.grone_brick_wall": "Grone Brick Wall",
+
+  "block.efac.rone_bricks": "Rone Bricks",
+  "block.efac.rone_brick_stairs": "Rone Brick Stairs",
+  "block.efac.rone_brick_slab": "Rone Brick Slab",
+  "block.efac.rone_brick_wall": "Rone Brick Wall",
+
+  "block.efac.blone_bricks": "Blone Bricks",
+  "block.efac.blone_brick_stairs": "Blone Brick Stairs",
+  "block.efac.blone_brick_slab": "Blone Brick Slab",
+  "block.efac.blone_brick_wall": "Blone Brick Wall",
+
+  "block.efac.plone_bricks": "Plone Bricks",
+  "block.efac.plone_brick_stairs": "Plone Brick Stairs",
+  "block.efac.plone_brick_slab": "Plone Brick Slab",
+  "block.efac.plone_brick_wall": "Plone Brick Wall",
+
   "block.efac.compact_dirt": "Compact Dung Ore Materia",
 
   "item.efac.clumb_materia": "Clumb Materia",

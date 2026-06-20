@@ -66,6 +66,12 @@ public class EvansItemModelProvider extends ItemModelProvider {
         buttonItem(EvansBlocks.GELWOOD_BUTTON, EvansBlocks.GELWOOD_PLANKS);
         fenceItem(EvansBlocks.GELWOOD_FENCE, EvansBlocks.GELWOOD_PLANKS);
         basicItem(EvansBlocks.GELWOOD_DOOR.asItem());
+
+        //walls
+        //wallItem(EvansBlocks.GRONE_BRICK_WALL, EvansBlocks.GRONE_BRICKS);
+        //wallItem(EvansBlocks.RONE_BRICK_WALL, EvansBlocks.RONE_BRICKS);
+        //wallItem(EvansBlocks.BLONE_BRICK_WALL, EvansBlocks.BLONE_BRICKS);
+        //wallItem(EvansBlocks.PLONE_BRICK_WALL, EvansBlocks.PLONE_BRICKS);
     }
 
     public void buttonItem(DeferredBlock<?> block, DeferredBlock<Block> baseBlock) {

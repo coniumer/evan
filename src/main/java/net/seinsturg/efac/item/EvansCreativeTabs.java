@@ -99,9 +99,29 @@ public class EvansCreativeTabs {
                     .withTabsBefore(EFAC.res("charm_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(Blocks.GRAVEL);
+                        output.accept(EvansBlocks.BLONE_BRICKS);
+                        output.accept(EvansBlocks.BLONE_BRICK_STAIRS);
+                        output.accept(EvansBlocks.BLONE_BRICK_SLAB);
+                        output.accept(EvansBlocks.BLONE_BRICK_WALL);
+
                         output.accept(Blocks.SAND);
+                        output.accept(EvansBlocks.PLONE_BRICKS);
+                        output.accept(EvansBlocks.PLONE_BRICK_STAIRS);
+                        output.accept(EvansBlocks.PLONE_BRICK_SLAB);
+                        output.accept(EvansBlocks.PLONE_BRICK_WALL);
+
                         output.accept(Blocks.RED_SAND);
+                        output.accept(EvansBlocks.RONE_BRICKS);
+                        output.accept(EvansBlocks.RONE_BRICK_STAIRS);
+                        output.accept(EvansBlocks.RONE_BRICK_SLAB);
+                        output.accept(EvansBlocks.RONE_BRICK_WALL);
+
                         output.accept(EvansBlocks.GRONE);
+                        output.accept(EvansBlocks.GRONE_BRICKS);
+                        output.accept(EvansBlocks.GRONE_BRICK_STAIRS);
+                        output.accept(EvansBlocks.GRONE_BRICK_SLAB);
+                        output.accept(EvansBlocks.GRONE_BRICK_WALL);
+
                         output.accept(EvansBlocks.GELWOOD_ORE);
                         output.accept(EvansBlocks.GELWOOD_PLANKS);
                         output.accept(EvansBlocks.GELWOOD_STAIRS);

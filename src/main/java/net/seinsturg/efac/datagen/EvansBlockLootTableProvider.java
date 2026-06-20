@@ -6,13 +6,11 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -30,6 +28,31 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(EvansBlocks.CLUMB_BLOCK.get());
         dropSelf(EvansBlocks.GRONE.get());
+
+        dropSelf(EvansBlocks.GRONE_BRICKS.get());
+        dropSelf(EvansBlocks.GRONE_BRICK_STAIRS.get());
+        add(EvansBlocks.GRONE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(EvansBlocks.GRONE_BRICK_SLAB.get()));
+        dropSelf(EvansBlocks.GRONE_BRICK_WALL.get());
+
+        dropSelf(EvansBlocks.RONE_BRICKS.get());
+        dropSelf(EvansBlocks.RONE_BRICK_STAIRS.get());
+        add(EvansBlocks.RONE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(EvansBlocks.RONE_BRICK_SLAB.get()));
+        dropSelf(EvansBlocks.RONE_BRICK_WALL.get());
+
+        dropSelf(EvansBlocks.BLONE_BRICKS.get());
+        dropSelf(EvansBlocks.BLONE_BRICK_STAIRS.get());
+        add(EvansBlocks.BLONE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(EvansBlocks.BLONE_BRICK_SLAB.get()));
+        dropSelf(EvansBlocks.BLONE_BRICK_WALL.get());
+
+        dropSelf(EvansBlocks.PLONE_BRICKS.get());
+        dropSelf(EvansBlocks.PLONE_BRICK_STAIRS.get());
+        add(EvansBlocks.PLONE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(EvansBlocks.PLONE_BRICK_SLAB.get()));
+        dropSelf(EvansBlocks.PLONE_BRICK_WALL.get());
+
         dropSelf(EvansBlocks.COMPACT_DIRT.get());
         dropSelf(EvansBlocks.SLIPULON_BLOCK.get());
         dropSelf(EvansBlocks.PHILOSOPHERS_BLOCK.get());
@@ -41,10 +64,8 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(EvansBlocks.GELWOOD_STAIRS.get());
         add(EvansBlocks.GELWOOD_SLAB.get(),
                 block -> createSlabItemTable(EvansBlocks.GELWOOD_SLAB.get()));
-
         dropSelf(EvansBlocks.GELWOOD_PRESSURE_PLATE.get());
         dropSelf(EvansBlocks.GELWOOD_BUTTON.get());
-
         dropSelf(EvansBlocks.GELWOOD_FENCE.get());
         dropSelf(EvansBlocks.GELWOOD_FENCE_GATE.get());
         dropSelf(EvansBlocks.GELWOOD_TRAPDOOR.get());

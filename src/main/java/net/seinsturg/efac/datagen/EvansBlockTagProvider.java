@@ -23,6 +23,27 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
         ///charge tags
         tag(EvansTags.Blocks.PROVIDES_CHARGE_RARE)
                 .add(EvansBlocks.GRONE.get())
+
+                .add(EvansBlocks.GRONE_BRICKS.get())
+                .add(EvansBlocks.GRONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.GRONE_BRICK_SLAB.get())
+                .add(EvansBlocks.GRONE_BRICK_WALL.get())
+
+                .add(EvansBlocks.RONE_BRICKS.get())
+                .add(EvansBlocks.RONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.RONE_BRICK_SLAB.get())
+                .add(EvansBlocks.RONE_BRICK_WALL.get())
+
+                .add(EvansBlocks.BLONE_BRICKS.get())
+                .add(EvansBlocks.BLONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.BLONE_BRICK_SLAB.get())
+                .add(EvansBlocks.BLONE_BRICK_WALL.get())
+
+                .add(EvansBlocks.PLONE_BRICKS.get())
+                .add(EvansBlocks.PLONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.PLONE_BRICK_SLAB.get())
+                .add(EvansBlocks.PLONE_BRICK_WALL.get())
+
                 .add(EvansBlocks.ALBY_ORE.get())
                 .add(EvansBlocks.CITRY_ORE.get())
                 .add(EvansBlocks.RUBY_ORE.get())
@@ -63,6 +84,11 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.GELWOOD_FENCE.get());
         tag(BlockTags.FENCE_GATES)
                 .add(EvansBlocks.GELWOOD_FENCE_GATE.get());
+        tag(BlockTags.WALLS)
+                .add(EvansBlocks.GRONE_BRICK_WALL.get())
+                .add(EvansBlocks.RONE_BRICK_WALL.get())
+                .add(EvansBlocks.BLONE_BRICK_WALL.get())
+                .add(EvansBlocks.PLONE_BRICK_WALL.get());
 
         ///tool tags
         //tool type
@@ -75,6 +101,27 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.CITRY_BLOCK.get())
                 .add(EvansBlocks.RUBY_ORE.get())
                 .add(EvansBlocks.RUBY_BLOCK.get())
+
+                .add(EvansBlocks.GRONE_BRICKS.get())
+                .add(EvansBlocks.GRONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.GRONE_BRICK_SLAB.get())
+                .add(EvansBlocks.GRONE_BRICK_WALL.get())
+
+                .add(EvansBlocks.RONE_BRICKS.get())
+                .add(EvansBlocks.RONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.RONE_BRICK_SLAB.get())
+                .add(EvansBlocks.RONE_BRICK_WALL.get())
+
+                .add(EvansBlocks.BLONE_BRICKS.get())
+                .add(EvansBlocks.BLONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.BLONE_BRICK_SLAB.get())
+                .add(EvansBlocks.BLONE_BRICK_WALL.get())
+
+                .add(EvansBlocks.PLONE_BRICKS.get())
+                .add(EvansBlocks.PLONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.PLONE_BRICK_SLAB.get())
+                .add(EvansBlocks.PLONE_BRICK_WALL.get())
+
                 .add(EvansBlocks.GELWOOD_ORE.get())
                 .add(EvansBlocks.SLIPULON_ORE.get())
                 .add(EvansBlocks.SLIPULON_BLOCK.get())
@@ -106,6 +153,27 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(EvansBlocks.ALBY_ORE.get())
                 .add(EvansBlocks.ALBY_BLOCK.get())
+
+                .add(EvansBlocks.GRONE_BRICKS.get())
+                .add(EvansBlocks.GRONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.GRONE_BRICK_SLAB.get())
+                .add(EvansBlocks.GRONE_BRICK_WALL.get())
+
+                .add(EvansBlocks.RONE_BRICKS.get())
+                .add(EvansBlocks.RONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.RONE_BRICK_SLAB.get())
+                .add(EvansBlocks.RONE_BRICK_WALL.get())
+
+                .add(EvansBlocks.BLONE_BRICKS.get())
+                .add(EvansBlocks.BLONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.BLONE_BRICK_SLAB.get())
+                .add(EvansBlocks.BLONE_BRICK_WALL.get())
+
+                .add(EvansBlocks.PLONE_BRICKS.get())
+                .add(EvansBlocks.PLONE_BRICK_STAIRS.get())
+                .add(EvansBlocks.PLONE_BRICK_SLAB.get())
+                .add(EvansBlocks.PLONE_BRICK_WALL.get())
+
                 .add(EvansBlocks.GELWOOD_ORE.get())
                 .add(EvansBlocks.SLIPULON_ORE.get())
                 .add(EvansBlocks.SLIPULON_BLOCK.get())
