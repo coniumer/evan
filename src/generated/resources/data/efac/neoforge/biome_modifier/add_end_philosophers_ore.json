@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:has_structure/end_city",
+  "features": "efac:end_philosophers_ore_placed",
+  "step": "underground_ores"
+}
