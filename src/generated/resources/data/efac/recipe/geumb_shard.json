@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "efac:geumb_block"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "efac:geumb_shard"
+  }
+}

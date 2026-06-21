@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "efac:citry_geumb_shard"
+    },
+    {
+      "item": "efac:citry_geumb_shard"
+    },
+    {
+      "item": "efac:awesome_sauce"
+    },
+    {
+      "item": "efac:awesome_sauce"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:citry_geumb_tiles"
+  }
+}

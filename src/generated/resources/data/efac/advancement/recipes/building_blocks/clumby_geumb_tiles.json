@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_clumby_geumb_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "efac:clumby_geumb_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "efac:clumby_geumb_tiles"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_clumby_geumb_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "efac:clumby_geumb_tiles"
+    ]
+  }
+}

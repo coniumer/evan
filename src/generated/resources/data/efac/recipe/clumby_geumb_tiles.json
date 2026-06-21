@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "efac:clumby_geumb_shard"
+    },
+    {
+      "item": "efac:clumby_geumb_shard"
+    },
+    {
+      "item": "efac:random_sauce"
+    },
+    {
+      "item": "efac:random_sauce"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:clumby_geumb_tiles"
+  }
+}

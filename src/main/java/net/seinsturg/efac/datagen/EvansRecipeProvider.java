@@ -189,6 +189,17 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .requires(EvansItems.BUTTER_STICK)
                 .unlockedBy("has_clumb_materia", has(EvansItems.CLUMB_MATERIA)).save(recipeOutput);
 
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GEUMB_BLOCK.get())
+                .pattern("GG")
+                .pattern("GG")
+                .define('G', EvansItems.GEUMB_SHARD.get())
+                .unlockedBy("has_geumb_shard", has(EvansItems.GEUMB_SHARD)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, EvansItems.GEUMB_SHARD.get(), 4)
+                .requires(EvansBlocks.GEUMB_BLOCK)
+                .unlockedBy("has_geumb_block", has(EvansBlocks.GEUMB_BLOCK)).save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, EvansItems.CLUMBY_GEUMB_SHARD.get())
                 .requires(EvansItems.CLUMB_MATERIA)
                 .requires(EvansItems.RANDOM_SAUCE)
@@ -213,6 +224,93 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .requires(EvansItems.EPIC_SAUCE)
                 .requires(EvansItems.GEUMB_SHARD)
                 .unlockedBy("has_geumb_shard", has(EvansItems.GEUMB_SHARD)).save(recipeOutput);
+
+
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GEUMB_TILES.get())
+                .requires(EvansItems.GEUMB_SHARD)
+                .requires(EvansItems.GEUMB_SHARD)
+                .requires(EvansItems.BUTTER_STICK)
+                .requires(EvansItems.BUTTER_STICK)
+                .unlockedBy("has_geumb_shard", has(EvansItems.GEUMB_SHARD)).save(recipeOutput);
+
+        stairBuilder(EvansBlocks.GEUMB_TILE_STAIRS.get(), Ingredient.of(EvansBlocks.GEUMB_TILES.get())).group("geumb_tile")
+                .unlockedBy("has_geumb_tiles", has(EvansBlocks.GEUMB_TILES.get())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GEUMB_TILE_SLAB.get(), EvansBlocks.GEUMB_TILES.get());
+
+        wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GEUMB_TILE_WALL, Ingredient.of(EvansBlocks.GEUMB_TILES)).group("geumb_tile")
+                .unlockedBy("has_geumb_tiles", has(EvansBlocks.GEUMB_TILES.get())).save(recipeOutput);
+
+
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CLUMBY_GEUMB_TILES.get())
+                .requires(EvansItems.CLUMBY_GEUMB_SHARD)
+                .requires(EvansItems.CLUMBY_GEUMB_SHARD)
+                .requires(EvansItems.RANDOM_SAUCE)
+                .requires(EvansItems.RANDOM_SAUCE)
+                .unlockedBy("has_clumby_geumb_shard", has(EvansItems.CLUMBY_GEUMB_SHARD)).save(recipeOutput);
+
+        stairBuilder(EvansBlocks.CLUMBY_GEUMB_TILE_STAIRS.get(), Ingredient.of(EvansBlocks.CLUMBY_GEUMB_TILES.get())).group("clumby_geumb_tile")
+                .unlockedBy("has_clumby_geumb_tiles", has(EvansBlocks.CLUMBY_GEUMB_TILES.get())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CLUMBY_GEUMB_TILE_SLAB.get(), EvansBlocks.CLUMBY_GEUMB_TILES.get());
+
+        wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CLUMBY_GEUMB_TILE_WALL, Ingredient.of(EvansBlocks.CLUMBY_GEUMB_TILES)).group("clumby_geumb_tile")
+                .unlockedBy("has_clumby_geumb_tiles", has(EvansBlocks.CLUMBY_GEUMB_TILES.get())).save(recipeOutput);
+
+
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.ALBY_GEUMB_TILES.get())
+                .requires(EvansItems.ALBY_GEUMB_SHARD)
+                .requires(EvansItems.ALBY_GEUMB_SHARD)
+                .requires(EvansItems.YUMMY_SAUCE)
+                .requires(EvansItems.YUMMY_SAUCE)
+                .unlockedBy("has_alby_geumb_shard", has(EvansItems.ALBY_GEUMB_SHARD)).save(recipeOutput);
+
+        stairBuilder(EvansBlocks.ALBY_GEUMB_TILE_STAIRS.get(), Ingredient.of(EvansBlocks.ALBY_GEUMB_TILES.get())).group("alby_geumb_tile")
+                .unlockedBy("has_alby_geumb_tiles", has(EvansBlocks.ALBY_GEUMB_TILES.get())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, EvansBlocks.ALBY_GEUMB_TILE_SLAB.get(), EvansBlocks.ALBY_GEUMB_TILES.get());
+
+        wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.ALBY_GEUMB_TILE_WALL, Ingredient.of(EvansBlocks.ALBY_GEUMB_TILES)).group("alby_geumb_tile")
+                .unlockedBy("has_alby_geumb_tiles", has(EvansBlocks.ALBY_GEUMB_TILES.get())).save(recipeOutput);
+
+
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CITRY_GEUMB_TILES.get())
+                .requires(EvansItems.CITRY_GEUMB_SHARD)
+                .requires(EvansItems.CITRY_GEUMB_SHARD)
+                .requires(EvansItems.AWESOME_SAUCE)
+                .requires(EvansItems.AWESOME_SAUCE)
+                .unlockedBy("has_citry_geumb_shard", has(EvansItems.CITRY_GEUMB_SHARD)).save(recipeOutput);
+
+        stairBuilder(EvansBlocks.CITRY_GEUMB_TILE_STAIRS.get(), Ingredient.of(EvansBlocks.CITRY_GEUMB_TILES.get())).group("citry_geumb_tile")
+                .unlockedBy("has_citry_geumb_tiles", has(EvansBlocks.CITRY_GEUMB_TILES.get())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CITRY_GEUMB_TILE_SLAB.get(), EvansBlocks.CITRY_GEUMB_TILES.get());
+
+        wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CITRY_GEUMB_TILE_WALL, Ingredient.of(EvansBlocks.CITRY_GEUMB_TILES)).group("citry_geumb_tile")
+                .unlockedBy("has_citry_geumb_tiles", has(EvansBlocks.CITRY_GEUMB_TILES.get())).save(recipeOutput);
+
+
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.RUBY_GEUMB_TILES.get())
+                .requires(EvansItems.RUBIED_GEUMB_SHARD)
+                .requires(EvansItems.RUBIED_GEUMB_SHARD)
+                .requires(EvansItems.EPIC_SAUCE)
+                .requires(EvansItems.EPIC_SAUCE)
+                .unlockedBy("has_rubied_geumb_shard", has(EvansItems.RUBIED_GEUMB_SHARD)).save(recipeOutput);
+
+        stairBuilder(EvansBlocks.RUBY_GEUMB_TILE_STAIRS.get(), Ingredient.of(EvansBlocks.RUBY_GEUMB_TILES.get())).group("ruby_geumb_tile")
+                .unlockedBy("has_ruby_geumb_tiles", has(EvansBlocks.RUBY_GEUMB_TILES.get())).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, EvansBlocks.RUBY_GEUMB_TILE_SLAB.get(), EvansBlocks.RUBY_GEUMB_TILES.get());
+
+        wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.RUBY_GEUMB_TILE_WALL, Ingredient.of(EvansBlocks.RUBY_GEUMB_TILES)).group("ruby_geumb_tile")
+                .unlockedBy("has_ruby_geumb_tiles", has(EvansBlocks.RUBY_GEUMB_TILES.get())).save(recipeOutput);
+
+
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, EvansItems.CLUMBY_WAND.get())
                 .pattern("G")

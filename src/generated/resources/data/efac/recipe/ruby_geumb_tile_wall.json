@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ruby_geumb_tile",
+  "key": {
+    "#": {
+      "item": "efac:ruby_geumb_tiles"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "efac:ruby_geumb_tile_wall"
+  }
+}

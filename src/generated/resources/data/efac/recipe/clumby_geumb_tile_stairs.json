@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "clumby_geumb_tile",
+  "key": {
+    "#": {
+      "item": "efac:clumby_geumb_tiles"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "efac:clumby_geumb_tile_stairs"
+  }
+}

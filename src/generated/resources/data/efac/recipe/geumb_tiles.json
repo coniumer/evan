@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "efac:geumb_shard"
+    },
+    {
+      "item": "efac:geumb_shard"
+    },
+    {
+      "item": "efac:butter_stick"
+    },
+    {
+      "item": "efac:butter_stick"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:geumb_tiles"
+  }
+}

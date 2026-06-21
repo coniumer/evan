@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "efac:rubied_geumb_shard"
+    },
+    {
+      "item": "efac:rubied_geumb_shard"
+    },
+    {
+      "item": "efac:epic_sauce"
+    },
+    {
+      "item": "efac:epic_sauce"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:ruby_geumb_tiles"
+  }
+}
