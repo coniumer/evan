@@ -6,6 +6,7 @@ import net.seinsturg.efac.component.EvansComponents;
 import net.seinsturg.efac.data.EvansData;
 import net.seinsturg.efac.item.EvansCreativeTabs;
 import net.seinsturg.efac.item.EvansItems;
+import net.seinsturg.efac.loot.EvansLootModifiers;
 import net.seinsturg.efac.sound.EvansSounds;
 
 public class EvansRegistries {
@@ -17,5 +18,6 @@ public class EvansRegistries {
         EvansSounds.register(eventBus);
         EvansData.register(eventBus);
         EvansComponents.register(eventBus);
+        EvansLootModifiers.register(eventBus);
     }
 }

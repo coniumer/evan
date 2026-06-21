@@ -1,0 +1,14 @@
+{
+  "entries": [
+    "efac:clumb_materia_from_zombie",
+    "efac:looting_clumb_materia_from_zombie",
+    "efac:clumb_materia_from_skeleton",
+    "efac:looting_clumb_materia_from_skeleton",
+    "efac:random_sauce_from_spider",
+    "efac:looting_random_sauce_from_spider",
+    "efac:random_sauce_from_creeper",
+    "efac:looting_random_sauce_from_creeper",
+    "efac:looting_yummy_sauce_from_creeper"
+  ],
+  "replace": false
+}

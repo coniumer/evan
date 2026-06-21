@@ -1,0 +1,12 @@
+{
+  "type": "efac:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:entities/creeper"
+    }
+  ],
+  "item": "efac:random_sauce",
+  "max": 3,
+  "min": 0
+}

@@ -37,5 +37,6 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new EvansBlockStateProvider(packOutput, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new EvansDatapackProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new EvansGlobalLootModifierProvider(packOutput, lookupProvider));
     }
 }
