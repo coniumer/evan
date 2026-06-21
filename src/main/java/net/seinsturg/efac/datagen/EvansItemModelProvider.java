@@ -40,6 +40,7 @@ public class EvansItemModelProvider extends ItemModelProvider {
         basicItem(EvansItems.SLIPULON_INGOT.get());
         basicItem(EvansItems.BUTTER_STICK.get());
         basicItem(EvansItems.BLOOD_CANISTER.get());
+        basicItem(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE.get());
 
         //tools
         handheldItem(EvansItems.CLUMBY_WAND.get());

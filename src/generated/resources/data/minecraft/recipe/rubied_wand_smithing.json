@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "efac:philosophers_stone"
+  },
+  "base": {
+    "item": "efac:rubied_wand"
+  },
+  "result": {
+    "count": 1,
+    "id": "efac:philosophers_wand"
+  },
+  "template": {
+    "item": "efac:philosophers_upgrade_smithing_template"
+  }
+}

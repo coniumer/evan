@@ -1,5 +1,10 @@
 package net.seinsturg.efac.item;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -12,7 +17,25 @@ import net.seinsturg.efac.item.custom.charms.DashCharm;
 import net.seinsturg.efac.item.custom.charms.LightningCharm;
 import net.seinsturg.efac.item.custom.charms.PhilosopherCharm;
 
+import java.util.List;
+
 public class EvansItems {
+    private static final Component PHILOSOPHERS_UPGRADE = Component.translatable(Util.makeDescriptionId("upgrade", ResourceLocation.fromNamespaceAndPath(EFAC.MOD_ID, "philosophers_upgrade"))).withStyle(ChatFormatting.GRAY);
+    private static final Component PHILOSOPHERS_UPGRADE_APPLIES_TO = Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(EFAC.MOD_ID, "smithing_template.philosophers_upgrade.applies_to"))).withStyle(ChatFormatting.BLUE);
+    private static final Component PHILOSOPHERS_UPGRADE_INGREDIENTS = Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(EFAC.MOD_ID,"smithing_template.philosophers_upgrade.ingredients"))).withStyle(ChatFormatting.BLUE);
+    private static final Component PHILOSOPHERS_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(EFAC.MOD_ID,"smithing_template.philosophers_upgrade.base_slot_description")));
+    private static final Component PHILOSOPHERS_UPGRADE_ADDITIONS_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", ResourceLocation.fromNamespaceAndPath(EFAC.MOD_ID,"smithing_template.philosophers_upgrade.additions_slot_description")));
+    private static final ResourceLocation EMPTY_SLOT_HELMET = ResourceLocation.withDefaultNamespace("item/empty_armor_slot_helmet");
+    private static final ResourceLocation EMPTY_SLOT_CHESTPLATE = ResourceLocation.withDefaultNamespace("item/empty_armor_slot_chestplate");
+    private static final ResourceLocation EMPTY_SLOT_LEGGINGS = ResourceLocation.withDefaultNamespace("item/empty_armor_slot_leggings");
+    private static final ResourceLocation EMPTY_SLOT_BOOTS = ResourceLocation.withDefaultNamespace("item/empty_armor_slot_boots");
+    private static final ResourceLocation EMPTY_SLOT_HOE = ResourceLocation.withDefaultNamespace("item/empty_slot_hoe");
+    private static final ResourceLocation EMPTY_SLOT_AXE = ResourceLocation.withDefaultNamespace("item/empty_slot_axe");
+    private static final ResourceLocation EMPTY_SLOT_SWORD = ResourceLocation.withDefaultNamespace("item/empty_slot_sword");
+    private static final ResourceLocation EMPTY_SLOT_SHOVEL = ResourceLocation.withDefaultNamespace("item/empty_slot_shovel");
+    private static final ResourceLocation EMPTY_SLOT_PICKAXE = ResourceLocation.withDefaultNamespace("item/empty_slot_pickaxe");
+    private static final ResourceLocation EMPTY_SLOT_INGOT = ResourceLocation.withDefaultNamespace("item/empty_slot_ingot");
+
     public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(EFAC.MOD_ID);
 
@@ -61,6 +84,32 @@ public class EvansItems {
             "butter_stick", () -> new Item(new Item.Properties().food(EvansFoodProperties.BUTTER)));
     public static final DeferredItem<Item> BLOOD_CANISTER = ITEMS.register(
             "blood_canister", () -> new BloodCanisterItem(new Item.Properties().food(EvansFoodProperties.BLOOD_CANISTER)));
+
+    public static SmithingTemplateItem createPhilosophersUpgradeTemplate() {
+        return new SmithingTemplateItem(PHILOSOPHERS_UPGRADE_APPLIES_TO,
+                PHILOSOPHERS_UPGRADE_INGREDIENTS,
+                PHILOSOPHERS_UPGRADE,
+                PHILOSOPHERS_UPGRADE_BASE_SLOT_DESCRIPTION,
+                PHILOSOPHERS_UPGRADE_ADDITIONS_SLOT_DESCRIPTION,
+                createPhilosophersUpgradeIconList(),
+                createPhilosophersUpgradeMaterialList(),
+                new FeatureFlag[0]);
+    }
+
+    private static List<ResourceLocation> createPhilosophersUpgradeIconList() {
+        return List.of(EMPTY_SLOT_HELMET, EMPTY_SLOT_SWORD,
+                EMPTY_SLOT_CHESTPLATE, EMPTY_SLOT_PICKAXE,
+                EMPTY_SLOT_LEGGINGS, EMPTY_SLOT_AXE,
+                EMPTY_SLOT_BOOTS, EMPTY_SLOT_HOE, EMPTY_SLOT_SHOVEL);
+    }
+
+    private static List<ResourceLocation> createPhilosophersUpgradeMaterialList() {
+        return List.of(EMPTY_SLOT_INGOT);
+    }
+
+    public static final DeferredItem<Item> PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE = ITEMS.register(
+            "philosophers_upgrade_smithing_template", EvansItems::createPhilosophersUpgradeTemplate);
+
     //wands
     public static final DeferredItem<Item> CLUMBY_WAND = ITEMS.register(
             "clumby_wand", () -> new WandItem(Tiers.STONE, WandTiers.CLUMBY, new Item.Properties().stacksTo(1)));

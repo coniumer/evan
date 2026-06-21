@@ -273,6 +273,60 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .define('G', EvansItems.RUBIED_GEUMB_SHARD)
                 .define('H', Items.STICK)
                 .unlockedBy("has_rubied_geumb_shard", has(EvansItems.RUBIED_GEUMB_SHARD)).save(recipeOutput);
+
+        SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(EvansItems.RUBIED_WAND),
+                Ingredient.of(EvansItems.PHILOSOPHERS_STONE),
+                RecipeCategory.COMBAT,
+                EvansItems.PHILOSOPHERS_WAND.get())
+                .unlocks("has_philosophers_stone", has(EvansItems.PHILOSOPHERS_STONE.get()))
+                .save(recipeOutput, getItemName(EvansItems.RUBIED_WAND) + "_smithing");
+
+        SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(EvansItems.RUBIED_PULSAR),
+                Ingredient.of(EvansItems.PHILOSOPHERS_STONE),
+                RecipeCategory.TOOLS,
+                EvansItems.PHILOSOPHERS_PULSAR.get())
+                .unlocks("has_philosophers_stone", has(EvansItems.PHILOSOPHERS_STONE.get()))
+                .save(recipeOutput, getItemName(EvansItems.RUBIED_PULSAR) + "_smithing");
+
+        SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(Items.NETHERITE_SHOVEL),
+                Ingredient.of(EvansItems.PHILOSOPHERS_STONE),
+                RecipeCategory.TOOLS,
+                EvansItems.PHILOSOPHERS_SHOVEL.get())
+                .unlocks("has_philosophers_stone", has(EvansItems.PHILOSOPHERS_STONE.get()))
+                .save(recipeOutput, getItemName(Items.NETHERITE_SHOVEL) + "_smithing");
+
+        SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(Items.NETHERITE_PICKAXE),
+                Ingredient.of(EvansItems.PHILOSOPHERS_STONE),
+                RecipeCategory.TOOLS,
+                EvansItems.PHILOSOPHERS_PICKAXE.get())
+                .unlocks("has_philosophers_stone", has(EvansItems.PHILOSOPHERS_STONE.get()))
+                .save(recipeOutput, getItemName(Items.NETHERITE_PICKAXE) + "_smithing");
+
+        SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(Items.NETHERITE_AXE),
+                Ingredient.of(EvansItems.PHILOSOPHERS_STONE),
+                RecipeCategory.TOOLS,
+                EvansItems.PHILOSOPHERS_AXE.get())
+                .unlocks("has_philosophers_stone", has(EvansItems.PHILOSOPHERS_STONE.get()))
+                .save(recipeOutput, getItemName(Items.NETHERITE_AXE) + "_smithing");
+
+        SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(Items.NETHERITE_HOE),
+                Ingredient.of(EvansItems.PHILOSOPHERS_STONE),
+                RecipeCategory.TOOLS,
+                EvansItems.PHILOSOPHERS_HOE.get())
+                .unlocks("has_philosophers_stone", has(EvansItems.PHILOSOPHERS_STONE.get()))
+                .save(recipeOutput, getItemName(Items.NETHERITE_HOE) + "_smithing");
     }
 
     protected void smelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
