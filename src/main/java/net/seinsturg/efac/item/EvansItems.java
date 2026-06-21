@@ -165,6 +165,20 @@ public class EvansItems {
             "philosophers_hoe", () -> new HoeItem(EvansToolTiers.PHILOSOPHERS,
             new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(
             EvansToolTiers.PHILOSOPHERS, 8.0f, -6.0f))));
+
+    public static final DeferredItem<ArmorItem> PHILOSOPHERS_HELMET = ITEMS.register(
+            "philosophers_helmet", () -> new ArmorItem(EvansArmorMaterials.PHILOSOPHERS_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(50))));
+    public static final DeferredItem<ArmorItem> PHILOSOPHERS_CHESTPLATE = ITEMS.register(
+            "philosophers_chestplate", () -> new ArmorItem(EvansArmorMaterials.PHILOSOPHERS_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(50))));
+    public static final DeferredItem<ArmorItem> PHILOSOPHERS_LEGGINGS = ITEMS.register(
+            "philosophers_leggings", () -> new ArmorItem(EvansArmorMaterials.PHILOSOPHERS_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(50))));
+    public static final DeferredItem<ArmorItem> PHILOSOPHERS_BOOTS = ITEMS.register(
+            "philosophers_boots", () -> new PhilosophersArmorItem(EvansArmorMaterials.PHILOSOPHERS_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(50))));
+
     //charms
     public static final DeferredItem<Item> LIGHTNING_CHARM = ITEMS.register(
             "lightning_charm", () -> new LightningCharm(new Item.Properties().stacksTo(1)));

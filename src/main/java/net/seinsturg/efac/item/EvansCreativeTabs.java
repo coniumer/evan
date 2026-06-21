@@ -50,6 +50,11 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.PHILOSOPHERS_PICKAXE);
                         output.accept(EvansItems.PHILOSOPHERS_AXE);
                         output.accept(EvansItems.PHILOSOPHERS_HOE);
+
+                        output.accept(EvansItems.PHILOSOPHERS_HELMET);
+                        output.accept(EvansItems.PHILOSOPHERS_CHESTPLATE);
+                        output.accept(EvansItems.PHILOSOPHERS_LEGGINGS);
+                        output.accept(EvansItems.PHILOSOPHERS_BOOTS);
                         ///blocks
                         output.accept(EvansBlocks.CLUMB_BLOCK);
                         output.accept(EvansBlocks.ALBY_ORE);
@@ -102,6 +107,7 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.CITRY_GEM);
                         output.accept(EvansItems.RUBY_GEM);
                         output.accept(EvansItems.PHILOSOPHERS_STONE);
+                        output.accept(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE);
                         output.accept(EvansItems.BLOOD_CANISTER);
                     })
                     .build());

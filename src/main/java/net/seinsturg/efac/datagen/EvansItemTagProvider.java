@@ -41,5 +41,11 @@ public class EvansItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.PLANKS)
                 .add(EvansBlocks.GELWOOD_PLANKS.asItem());
+
+        tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(EvansItems.PHILOSOPHERS_HELMET.get())
+                .add(EvansItems.PHILOSOPHERS_CHESTPLATE.get())
+                .add(EvansItems.PHILOSOPHERS_LEGGINGS.get())
+                .add(EvansItems.PHILOSOPHERS_BOOTS.get());
     }
 }
