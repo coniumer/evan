@@ -109,6 +109,14 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.PHILOSOPHERS_STONE);
                         output.accept(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE);
                         output.accept(EvansItems.BLOOD_CANISTER);
+                        output.accept(EvansItems.CLUMBELON);
+                        output.accept(EvansItems.CLUMBKIE);
+                        output.accept(EvansItems.BLUMB);
+                        output.accept(EvansItems.CLUMBROT);
+                        output.accept(EvansItems.GOLD_CLUMBROT);
+                        output.accept(EvansItems.CLUMBLE);
+                        output.accept(EvansItems.GOLD_CLUMBLE);
+                        output.accept(EvansItems.CLUMBURGER);
                     })
                     .build());
     public static final Supplier<CreativeModeTab> CHARM_TAB = CREATIVE_MODE_TAB.register("charm_tab",
@@ -167,6 +175,7 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.SLIPULON_INGOT);
                         output.accept(EvansBlocks.BUTTER);
                         output.accept(EvansItems.BUTTER_STICK);
+                        output.accept(EvansItems.BURNT_CHICKEN);
                     })
                     .build());
 

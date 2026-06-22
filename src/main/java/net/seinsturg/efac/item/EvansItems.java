@@ -85,6 +85,27 @@ public class EvansItems {
     public static final DeferredItem<Item> BLOOD_CANISTER = ITEMS.register(
             "blood_canister", () -> new BloodCanisterItem(new Item.Properties().food(EvansFoodProperties.BLOOD_CANISTER)));
 
+    //foods
+    public static final DeferredItem<Item> CLUMBELON = ITEMS.register(
+            "clumbelon", () -> new ClumbFoodItem(1, new Item.Properties().food(EvansFoodProperties.CLUMBELON)));
+    public static final DeferredItem<Item> CLUMBKIE = ITEMS.register(
+            "clumbkie", () -> new ClumbFoodItem(1, new Item.Properties().food(EvansFoodProperties.CLUMBKIE)));
+    public static final DeferredItem<Item> BLUMB = ITEMS.register(
+            "blumb", () -> new ClumbFoodItem(1, new Item.Properties().food(EvansFoodProperties.BLUMB)));
+    public static final DeferredItem<Item> CLUMBROT = ITEMS.register(
+            "clumbrot", () -> new ClumbFoodItem(1, new Item.Properties().food(EvansFoodProperties.CLUMBROT)));
+    public static final DeferredItem<Item> GOLD_CLUMBROT = ITEMS.register(
+            "gold_clumbrot", () -> new ClumbFoodItem(2, new Item.Properties().food(EvansFoodProperties.GOLD_CLUMBROT)));
+    public static final DeferredItem<Item> CLUMBLE = ITEMS.register(
+            "clumble", () -> new ClumbFoodItem(1, new Item.Properties().food(EvansFoodProperties.CLUMBLE)));
+    public static final DeferredItem<Item> GOLD_CLUMBLE = ITEMS.register(
+            "gold_clumble", () -> new ClumbFoodItem(2, new Item.Properties().food(EvansFoodProperties.GOLD_CLUMBLE)));
+    public static final DeferredItem<Item> CLUMBURGER = ITEMS.register(
+            "clumburger", () -> new ClumbFoodItem(2, new Item.Properties().food(EvansFoodProperties.CLUMBURGER)));
+    public static final DeferredItem<Item> BURNT_CHICKEN = ITEMS.register(
+            "burnt_chicken", () -> new Item(new Item.Properties().food(EvansFoodProperties.BURNT_CHICKEN)));
+
+    //smithing upgrade
     public static SmithingTemplateItem createPhilosophersUpgradeTemplate() {
         return new SmithingTemplateItem(PHILOSOPHERS_UPGRADE_APPLIES_TO,
                 PHILOSOPHERS_UPGRADE_INGREDIENTS,

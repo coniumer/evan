@@ -64,6 +64,17 @@ public class EvansItemModelProvider extends ItemModelProvider {private static Li
         basicItem(EvansItems.BLOOD_CANISTER.get());
         basicItem(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE.get());
 
+        //foods
+        basicItem(EvansItems.CLUMBELON.get());
+        basicItem(EvansItems.CLUMBKIE.get());
+        basicItem(EvansItems.BLUMB.get());
+        basicItem(EvansItems.CLUMBROT.get());
+        basicItem(EvansItems.GOLD_CLUMBROT.get());
+        basicItem(EvansItems.CLUMBLE.get());
+        basicItem(EvansItems.GOLD_CLUMBLE.get());
+        basicItem(EvansItems.CLUMBURGER.get());
+        basicItem(EvansItems.BURNT_CHICKEN.get());
+
         //tools
         handheldItem(EvansItems.CLUMBY_WAND.get());
         handheldItem(EvansItems.CLUMBY_PULSAR.get());
