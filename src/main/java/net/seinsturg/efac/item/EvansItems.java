@@ -13,9 +13,7 @@ import net.seinsturg.efac.EFAC;
 import net.seinsturg.efac.component.EvansComponents;
 import net.seinsturg.efac.item.component.PulsarComponent;
 import net.seinsturg.efac.item.custom.*;
-import net.seinsturg.efac.item.custom.charms.DashCharm;
-import net.seinsturg.efac.item.custom.charms.LightningCharm;
-import net.seinsturg.efac.item.custom.charms.PhilosopherCharm;
+import net.seinsturg.efac.item.custom.charms.*;
 
 import java.util.List;
 
@@ -200,11 +198,17 @@ public class EvansItems {
             "philosophers_boots", () -> new PhilosophersArmorItem(EvansArmorMaterials.PHILOSOPHERS_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(50))));
 
-    //charms
+    //charms todo: fix lightning charm, add blink charm, add gravity block throwing charm, add enchantments
     public static final DeferredItem<Item> LIGHTNING_CHARM = ITEMS.register(
             "lightning_charm", () -> new LightningCharm(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> DASH_CHARM = ITEMS.register(
             "dash_charm", () -> new DashCharm(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> HEALTH_CHARM = ITEMS.register(
+            "health_charm", () -> new HealthCharm(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> FIREBALL_CHARM = ITEMS.register(
+            "fireball_charm", () -> new FireballCharm(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> PRANK_CHARM = ITEMS.register(
+            "prank_charm", () -> new PrankCharm(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> PHILOSOPHERS_CHARM = ITEMS.register(
             "philosophers_charm", () -> new PhilosopherCharm(new Item.Properties().stacksTo(1)));
 

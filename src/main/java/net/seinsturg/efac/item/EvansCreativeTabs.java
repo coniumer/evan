@@ -124,8 +124,11 @@ public class EvansCreativeTabs {
                     .title(Component.translatable("creativetab.efac.charm_tab"))
                     .withTabsBefore(EFAC.res("clumb_item_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(EvansItems.HEALTH_CHARM);
                         output.accept(EvansItems.DASH_CHARM);
                         output.accept(EvansItems.LIGHTNING_CHARM);
+                        output.accept(EvansItems.FIREBALL_CHARM);
+                        output.accept(EvansItems.PRANK_CHARM);
                         output.accept(EvansItems.PHILOSOPHERS_CHARM);
                     })
                     .build());

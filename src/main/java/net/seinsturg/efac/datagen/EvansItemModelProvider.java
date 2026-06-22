@@ -92,7 +92,10 @@ public class EvansItemModelProvider extends ItemModelProvider {private static Li
         handheldItem(EvansItems.PHILOSOPHERS_HOE.get());
 
         //charms
+        handheldItem(EvansItems.HEALTH_CHARM.get());
         handheldItem(EvansItems.DASH_CHARM.get());
+        handheldItem(EvansItems.FIREBALL_CHARM.get());
+        handheldItem(EvansItems.PRANK_CHARM.get());
         handheldItem(EvansItems.LIGHTNING_CHARM.get());
         handheldItem(EvansItems.PHILOSOPHERS_CHARM.get());
 

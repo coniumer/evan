@@ -15,6 +15,7 @@ public class EvansMessages {
         final PayloadRegistrar registrar = event.registrar("1") // Update this version if the payload semantics change.
                 .optional();
 
+        //clumb charges
         registrar.playToClient(
                 SyncChargePayload.TYPE,
                 SyncChargePayload.STREAM_CODEC,
@@ -31,10 +32,24 @@ public class EvansMessages {
                 RemoveChargePayload.TYPE,
                 RemoveChargePayload.STREAM_CODEC,
                 RemoveChargeHandler::handle);
+
+        //charms
         registrar.playToServer(
                 LightningCharmPayload.TYPE,
                 LightningCharmPayload.STREAM_CODEC,
                 LightningCharmHandler::handle);
+        registrar.playToServer(
+                FireballCharmPayload.TYPE,
+                FireballCharmPayload.STREAM_CODEC,
+                FireballCharmHandler::handle);
+        registrar.playToServer(
+                PrankCharmPayload.TYPE,
+                PrankCharmPayload.STREAM_CODEC,
+                PrankCharmHandler::handle);
+        registrar.playToServer(
+                HealthCharmPayload.TYPE,
+                HealthCharmPayload.STREAM_CODEC,
+                HealthCharmHandler::handle);
         registrar.playToServer(
                 DashCharmPayload.TYPE,
                 DashCharmPayload.STREAM_CODEC,

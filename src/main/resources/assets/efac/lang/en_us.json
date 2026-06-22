@@ -133,6 +133,9 @@
   "upgrade.efac.philosophers_upgrade": "Upgrade: ",
 
   "item.efac.lightning_charm": "Lightning Charm",
+  "item.efac.fireball_charm": "Fireball Charm",
+  "item.efac.prank_charm": "Prank Charm",
+  "item.efac.health_charm": "Health Charm",
   "item.efac.dash_charm": "Dash Charm",
   "item.efac.philosophers_charm": "Philosopher's Charm",
 
@@ -144,6 +147,9 @@
   "tooltip.efac.pulsar_charge.desc": "Provides a chance to gain clumb charge on attacking.",
   "tooltip.efac.charm.title": "Clumb Charm:",
   "tooltip.efac.charm.lightning.desc": "Summon lightning at look location.",
+  "tooltip.efac.charm.fireball.desc": "Cast a fireball.",
+  "tooltip.efac.charm.prank.desc": "Summon a lit prank box.",
+  "tooltip.efac.charm.health.desc": "Heal yourself.",
   "tooltip.efac.charm.dash.desc": "Amplify current velocity.",
   "tooltip.efac.charm.philosopher.desc": "Passively bypass removal of clumb charge.",
   "tooltip.efac.geumb": "Eat to increase max clumb charge.",
