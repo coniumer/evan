@@ -21,6 +21,9 @@ import java.util.List;
 public class EvansConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> GELWOOD_ORE_KEY = registerKey("gelwood_ore");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GRONE_ORE_KEY = registerKey("grone_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> END_GRONE_ORE_KEY = registerKey("end_grone_ore");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> SLIPULON_ORE_KEY = registerKey("slipulon_ore");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> ALBY_ORE_KEY = registerKey("alby_ore");
@@ -38,36 +41,20 @@ public class EvansConfiguredFeatures {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest overworldReplaceables = new TagMatchTest(BlockTags.BASE_STONE_OVERWORLD);
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
         RuleTest endstoneReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
         //gelwood
-        List<OreConfiguration.TargetBlockState> overworldGelwoodOres = List.of(
-                OreConfiguration.target(stoneReplaceables, EvansBlocks.GELWOOD_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, EvansBlocks.GELWOOD_ORE.get().defaultBlockState()));
-        register(context, GELWOOD_ORE_KEY, Feature.ORE, new OreConfiguration(overworldGelwoodOres, 15));
+        register(context, GELWOOD_ORE_KEY, Feature.ORE, new OreConfiguration(overworldReplaceables, EvansBlocks.GELWOOD_ORE.get().defaultBlockState(), 15));
 
         //slipulon
-        List<OreConfiguration.TargetBlockState> overworldSlipulonOres = List.of(
-                OreConfiguration.target(stoneReplaceables, EvansBlocks.SLIPULON_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, EvansBlocks.SLIPULON_ORE.get().defaultBlockState()));
-        register(context, SLIPULON_ORE_KEY, Feature.ORE, new OreConfiguration(overworldSlipulonOres, 11));
+        register(context, SLIPULON_ORE_KEY, Feature.ORE, new OreConfiguration(overworldReplaceables, EvansBlocks.SLIPULON_ORE.get().defaultBlockState(), 11));
 
         //gems
-        List<OreConfiguration.TargetBlockState> overworldAlbyOres = List.of(
-                OreConfiguration.target(stoneReplaceables, EvansBlocks.ALBY_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, EvansBlocks.ALBY_ORE.get().defaultBlockState()));
-        register(context, ALBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldAlbyOres, 11));
-
-        List<OreConfiguration.TargetBlockState> overworldCitryOres = List.of(
-                OreConfiguration.target(stoneReplaceables, EvansBlocks.CITRY_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, EvansBlocks.CITRY_ORE.get().defaultBlockState()));
-        register(context, CITRY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCitryOres, 8));
-
-        List<OreConfiguration.TargetBlockState> overworldRubyOres = List.of(
-                OreConfiguration.target(stoneReplaceables, EvansBlocks.RUBY_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, EvansBlocks.RUBY_ORE.get().defaultBlockState()));
-        register(context, RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldRubyOres, 5));
+        register(context, ALBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldReplaceables, EvansBlocks.ALBY_ORE.get().defaultBlockState(), 11));
+        register(context, CITRY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldReplaceables, EvansBlocks.CITRY_ORE.get().defaultBlockState(), 8));
+        register(context, RUBY_ORE_KEY, Feature.ORE, new OreConfiguration(overworldReplaceables, EvansBlocks.RUBY_ORE.get().defaultBlockState(), 5));
 
         //geumbs
         List<OreConfiguration.TargetBlockState> overworldGeumbOres = List.of(
@@ -76,11 +63,12 @@ public class EvansConfiguredFeatures {
         register(context, GEUMB_ORE_KEY, Feature.ORE, new OreConfiguration(overworldGeumbOres, 8));
 
         //butter
-        List<OreConfiguration.TargetBlockState> overworldButterOres = List.of(
-                OreConfiguration.target(stoneReplaceables, EvansBlocks.BUTTER.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, EvansBlocks.BUTTER.get().defaultBlockState()));
-        register(context, BUTTER_ORE_KEY, Feature.ORE, new OreConfiguration(overworldButterOres, 11));
+        register(context, BUTTER_ORE_KEY, Feature.ORE, new OreConfiguration(overworldReplaceables, EvansBlocks.BUTTER.get().defaultBlockState(), 11));
         register(context, NETHER_BUTTER_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables, EvansBlocks.BUTTER.get().defaultBlockState(), 12));
+
+        //grone
+        register(context, GRONE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldReplaceables, EvansBlocks.GRONE.get().defaultBlockState(), 33));
+        register(context, END_GRONE_ORE_KEY, Feature.ORE, new OreConfiguration(endstoneReplaceables, EvansBlocks.GRONE.get().defaultBlockState(), 27));
 
         //philosophers ore
         register(context, END_PHILOSOPHERS_ORE_KEY, Feature.ORE, new OreConfiguration(endstoneReplaceables, EvansBlocks.PHILOSOPHERS_ORE.get().defaultBlockState(), 4, 0.9f));

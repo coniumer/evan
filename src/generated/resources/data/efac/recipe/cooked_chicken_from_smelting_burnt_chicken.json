@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "burnt_chicken",
+  "ingredient": {
+    "item": "efac:burnt_chicken"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:cooked_chicken"
+  }
+}

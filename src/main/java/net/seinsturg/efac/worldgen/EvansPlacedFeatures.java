@@ -28,6 +28,9 @@ public class EvansPlacedFeatures {
     public static final ResourceKey<PlacedFeature> BUTTER_ORE_PLACED_KEY = registerKey("butter_ore_placed");
     public static final ResourceKey<PlacedFeature> NETHER_BUTTER_ORE_PLACED_KEY = registerKey("nether_butter_ore_placed");
 
+    public static final ResourceKey<PlacedFeature> GRONE_ORE_PLACED_KEY = registerKey("grone_ore_placed");
+    public static final ResourceKey<PlacedFeature> END_GRONE_ORE_PLACED_KEY = registerKey("end_grone_ore_placed");
+
     public static final ResourceKey<PlacedFeature> END_PHILOSOPHERS_ORE_PLACED_KEY = registerKey("end_philosophers_ore_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -58,6 +61,13 @@ public class EvansPlacedFeatures {
                 EvansOrePlacement.commonOrePlacement(10, HeightRangePlacement.triangle(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(96))));
         register(context, NETHER_BUTTER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(EvansConfiguredFeatures.NETHER_BUTTER_ORE_KEY),
                 EvansOrePlacement.commonOrePlacement(8, HeightRangePlacement.uniform(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(80))));
+
+        //grone
+        register(context, GRONE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(EvansConfiguredFeatures.GRONE_ORE_KEY),
+                EvansOrePlacement.commonOrePlacement(14, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top())));
+        register(context, END_GRONE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(EvansConfiguredFeatures.END_GRONE_ORE_KEY),
+                EvansOrePlacement.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top())));
+
 
         //philosophers
         register(context, END_PHILOSOPHERS_ORE_PLACED_KEY, configuredFeatures.getOrThrow(EvansConfiguredFeatures.END_PHILOSOPHERS_ORE_KEY),

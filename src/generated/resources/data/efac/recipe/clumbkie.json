@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:cookie"
+    },
+    {
+      "item": "efac:butter_stick"
+    },
+    {
+      "item": "efac:clumb_materia"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:clumbkie"
+  }
+}

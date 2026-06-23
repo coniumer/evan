@@ -26,6 +26,9 @@ public class EvansBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_BUTTER_ORE = registerKey("add_butter_ore");
     public static final ResourceKey<BiomeModifier> ADD_NETHER_BUTTER_ORE = registerKey("add_nether_butter_ore");
 
+    public static final ResourceKey<BiomeModifier> ADD_GRONE_ORE = registerKey("add_grone_ore");
+    public static final ResourceKey<BiomeModifier> ADD_END_GRONE_ORE = registerKey("add_end_grone_ore");
+
     public static final ResourceKey<BiomeModifier> ADD_END_PHILOSOPHERS_ORE = registerKey("add_end_philosophers_ore");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
@@ -73,6 +76,16 @@ public class EvansBiomeModifiers {
         context.register(ADD_NETHER_BUTTER_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_NETHER),
                 HolderSet.direct(placedFeatures.getOrThrow(EvansPlacedFeatures.NETHER_BUTTER_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+
+        //butter
+        context.register(ADD_GRONE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(EvansPlacedFeatures.GRONE_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_END_GRONE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_END),
+                HolderSet.direct(placedFeatures.getOrThrow(EvansPlacedFeatures.END_GRONE_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
         //philosophers

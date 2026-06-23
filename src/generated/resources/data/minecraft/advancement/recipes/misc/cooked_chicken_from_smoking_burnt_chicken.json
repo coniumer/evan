@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_burnt_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "efac:burnt_chicken"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cooked_chicken_from_smoking_burnt_chicken"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_burnt_chicken"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cooked_chicken_from_smoking_burnt_chicken"
+    ]
+  }
+}

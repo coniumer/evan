@@ -25,11 +25,11 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
         List<ItemLike> CLUMB_SMELTABLES = List.of(
-                EvansBlocks.COMPACT_DIRT
-        );
+                EvansBlocks.COMPACT_DIRT);
         List<ItemLike> SLIPULON_SMELTABLES = List.of(
-                EvansBlocks.SLIPULON_ORE, EvansItems.RAW_SLIPULON
-        );
+                EvansBlocks.SLIPULON_ORE, EvansItems.RAW_SLIPULON);
+        List<ItemLike> BURNT_CHICKEN_SMELTABLES = List.of(
+                EvansItems.BURNT_CHICKEN);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CLUMB_BLOCK.get())
                 .pattern("CCC")
@@ -124,7 +124,7 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
         trapdoorBuilder(EvansBlocks.GELWOOD_TRAPDOOR.get(), Ingredient.of(EvansBlocks.GELWOOD_PLANKS.get())).group("gelwood")
                 .unlockedBy("has_gelwood_planks", has(EvansBlocks.GELWOOD_PLANKS.get())).save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GRONE_BRICKS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GRONE_BRICKS.get(), 9)
                 .pattern("OOO")
                 .pattern("OOO")
                 .pattern("OOO")
@@ -136,7 +136,7 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
         wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GRONE_BRICK_WALL, Ingredient.of(EvansBlocks.GRONE_BRICKS)).group("grone")
                 .unlockedBy("has_grone_brics", has(EvansBlocks.GRONE_BRICKS.get())).save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.RONE_BRICKS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.RONE_BRICKS.get(), 9)
                 .pattern("OOO")
                 .pattern("OOO")
                 .pattern("OOO")
@@ -148,7 +148,7 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
         wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.RONE_BRICK_WALL, Ingredient.of(EvansBlocks.RONE_BRICKS)).group("rone")
                 .unlockedBy("has_rone_brics", has(EvansBlocks.RONE_BRICKS.get())).save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.BLONE_BRICKS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.BLONE_BRICKS.get(), 9)
                 .pattern("OOO")
                 .pattern("OOO")
                 .pattern("OOO")
@@ -160,7 +160,7 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
         wallBuilder(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.BLONE_BRICK_WALL, Ingredient.of(EvansBlocks.BLONE_BRICKS)).group("blone")
                 .unlockedBy("has_blone_brics", has(EvansBlocks.BLONE_BRICKS.get())).save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.PLONE_BRICKS.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.PLONE_BRICKS.get(), 9)
                 .pattern("OOO")
                 .pattern("OOO")
                 .pattern("OOO")
@@ -227,7 +227,7 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
 
 
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GEUMB_TILES.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GEUMB_TILES.get(), 4)
                 .requires(EvansItems.GEUMB_SHARD)
                 .requires(EvansItems.GEUMB_SHARD)
                 .requires(EvansItems.BUTTER_STICK)
@@ -244,7 +244,7 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
 
 
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CLUMBY_GEUMB_TILES.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CLUMBY_GEUMB_TILES.get(), 4)
                 .requires(EvansItems.CLUMBY_GEUMB_SHARD)
                 .requires(EvansItems.CLUMBY_GEUMB_SHARD)
                 .requires(EvansItems.RANDOM_SAUCE)
@@ -261,7 +261,7 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
 
 
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.ALBY_GEUMB_TILES.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.ALBY_GEUMB_TILES.get(), 4)
                 .requires(EvansItems.ALBY_GEUMB_SHARD)
                 .requires(EvansItems.ALBY_GEUMB_SHARD)
                 .requires(EvansItems.YUMMY_SAUCE)
@@ -278,7 +278,7 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
 
 
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CITRY_GEUMB_TILES.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CITRY_GEUMB_TILES.get(), 4)
                 .requires(EvansItems.CITRY_GEUMB_SHARD)
                 .requires(EvansItems.CITRY_GEUMB_SHARD)
                 .requires(EvansItems.AWESOME_SAUCE)
@@ -295,7 +295,7 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
 
 
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.RUBY_GEUMB_TILES.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.RUBY_GEUMB_TILES.get(), 4)
                 .requires(EvansItems.RUBIED_GEUMB_SHARD)
                 .requires(EvansItems.RUBIED_GEUMB_SHARD)
                 .requires(EvansItems.EPIC_SAUCE)
@@ -372,6 +372,49 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .define('H', Items.STICK)
                 .unlockedBy("has_rubied_geumb_shard", has(EvansItems.RUBIED_GEUMB_SHARD)).save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EvansItems.CLUMBELON)
+                .requires(Items.MELON_SLICE)
+                .requires(EvansItems.BUTTER_STICK)
+                .requires(EvansItems.CLUMB_MATERIA)
+                .unlockedBy("has_clumb_materia", has(EvansItems.CLUMB_MATERIA)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EvansItems.CLUMBKIE)
+                .requires(Items.COOKIE)
+                .requires(EvansItems.BUTTER_STICK)
+                .requires(EvansItems.CLUMB_MATERIA)
+                .unlockedBy("has_clumb_materia", has(EvansItems.CLUMB_MATERIA)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EvansItems.BLUMB)
+                .requires(Items.BREAD)
+                .requires(EvansItems.BUTTER_STICK)
+                .requires(EvansItems.CLUMB_MATERIA)
+                .unlockedBy("has_clumb_materia", has(EvansItems.CLUMB_MATERIA)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EvansItems.CLUMBLE)
+                .requires(Items.APPLE)
+                .requires(EvansItems.BUTTER_STICK)
+                .requires(EvansItems.CLUMB_MATERIA)
+                .unlockedBy("has_clumb_materia", has(EvansItems.CLUMB_MATERIA)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EvansItems.GOLD_CLUMBLE)
+                .requires(Items.APPLE)
+                .requires(Blocks.GOLD_BLOCK)
+                .requires(EvansItems.BUTTER_STICK)
+                .requires(EvansItems.CITRY_CLUMB_MATERIA)
+                .unlockedBy("has_citry_clumb_materia", has(EvansItems.CITRY_CLUMB_MATERIA)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EvansItems.CLUMBROT)
+                .requires(Items.CARROT)
+                .requires(EvansItems.BUTTER_STICK)
+                .requires(EvansItems.CLUMB_MATERIA)
+                .unlockedBy("has_clumb_materia", has(EvansItems.CLUMB_MATERIA)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EvansItems.GOLD_CLUMBROT)
+                .requires(Items.CARROT)
+                .requires(Blocks.GOLD_BLOCK)
+                .requires(EvansItems.BUTTER_STICK)
+                .requires(EvansItems.CITRY_CLUMB_MATERIA)
+                .unlockedBy("has_citry_clumb_materia", has(EvansItems.CITRY_CLUMB_MATERIA)).save(recipeOutput);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, EvansItems.CLUMBURGER)
+                .requires(Items.COOKED_BEEF)
+                .requires(EvansItems.BUTTER_STICK)
+                .requires(EvansItems.CLUMB_MATERIA)
+                .unlockedBy("has_clumb_materia", has(EvansItems.CLUMB_MATERIA)).save(recipeOutput);
+
         SmithingTransformRecipeBuilder.smithing(
                 Ingredient.of(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE),
                 Ingredient.of(EvansItems.RUBIED_WAND),
@@ -425,6 +468,10 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 EvansItems.PHILOSOPHERS_HOE.get())
                 .unlocks("has_philosophers_stone", has(EvansItems.PHILOSOPHERS_STONE.get()))
                 .save(recipeOutput, getItemName(Items.NETHERITE_HOE) + "_smithing");
+
+        smelting(recipeOutput, BURNT_CHICKEN_SMELTABLES, RecipeCategory.MISC, Items.COOKED_CHICKEN, 0.3f, 200, "burnt_chicken");
+        smoking(recipeOutput, BURNT_CHICKEN_SMELTABLES, RecipeCategory.MISC, Items.COOKED_CHICKEN, 0.3f, 100, "burnt_chicken");
+
     }
 
     protected void smelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
