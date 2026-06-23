@@ -10,7 +10,7 @@ public class HealthCharm extends CharmItem {
     }
 
     @Override
-    public void serverAction(Player player) {
+    public void c2sPayloadAction(Player player) {
         //todo: enchantments for healing amount and for regen
         PacketDistributor.sendToServer(new HealthCharmPayload(4, true, 100, 1));
     }

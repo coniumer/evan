@@ -12,7 +12,7 @@ public class LightningCharm extends CharmItem {
     }
 
     @Override
-    public void serverAction(Player player) {
+    public void c2sPayloadAction(Player player) {
         assert Minecraft.getInstance().hitResult != null;
         Vec3 pos = Minecraft.getInstance().hitResult.getLocation();
         PacketDistributor.sendToServer(new LightningCharmPayload(pos));

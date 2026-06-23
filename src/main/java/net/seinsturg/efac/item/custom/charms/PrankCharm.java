@@ -11,7 +11,7 @@ public class PrankCharm extends CharmItem{
     }
 
     @Override
-    public void serverAction(Player player) {
+    public void c2sPayloadAction(Player player) {
         double pX = player.getX();
         double pY = player.getEyeY();
         double pZ = player.getZ();

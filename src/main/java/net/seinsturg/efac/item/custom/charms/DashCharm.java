@@ -22,7 +22,7 @@ public class DashCharm extends CharmItem {
     }
 
     @Override
-    public void serverAction(Player player) {
+    public void c2sPayloadAction(Player player) {
         PacketDistributor.sendToServer(new DashCharmPayload(1));
     }
 }

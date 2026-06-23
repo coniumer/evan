@@ -10,6 +10,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.seinsturg.efac.block.EvansBlocks;
 import net.seinsturg.efac.entity.EvansEntities;
+import net.seinsturg.efac.entity.client.BlinkColliderRenderer;
 import net.seinsturg.efac.entity.client.ClumbProjectileRender;
 import net.seinsturg.efac.event.EvansCommonEvents;
 import net.seinsturg.efac.item.EvansCreativeTabs;
@@ -62,6 +63,7 @@ public class EFAC {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(EvansEntities.CLUMB_PROJECTILE.get(), ClumbProjectileRender::new);
+            EntityRenderers.register(EvansEntities.BLINK_COLLIDER_ENTITY.get(), BlinkColliderRenderer::new);
         }
     }
 }

@@ -59,6 +59,18 @@ public class EvansMessages {
                 DashCharmPayload.STREAM_CODEC,
                 DashCharmHandler::handle);
         registrar.playToServer(
+                BlinkCharmPayload.TYPE,
+                BlinkCharmPayload.STREAM_CODEC,
+                BlinkCharmHandler::handle);
+        registrar.playToClient(
+                FinishedBlinkPayload.TYPE,
+                FinishedBlinkPayload.STREAM_CODEC,
+                FinishedBlinkHandler::handle);
+        registrar.playToServer(
+                SyncLastMovementPayload.TYPE,
+                SyncLastMovementPayload.STREAM_CODEC,
+                SyncLastMovementHandler::handle);
+        registrar.playToServer(
                 ParryPayload.TYPE,
                 ParryPayload.STREAM_CODEC,
                 ParryHandler::handle);

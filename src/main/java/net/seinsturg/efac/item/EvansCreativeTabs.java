@@ -126,6 +126,7 @@ public class EvansCreativeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(EvansItems.HEALTH_CHARM);
                         output.accept(EvansItems.DASH_CHARM);
+                        output.accept(EvansItems.BLINK_CHARM);
                         output.accept(EvansItems.LIGHTNING_CHARM);
                         output.accept(EvansItems.FIREBALL_CHARM);
                         output.accept(EvansItems.PRANK_CHARM);

@@ -6,7 +6,6 @@ import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.ClientHooks;
 import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -40,10 +39,10 @@ public class EvansClientEvents {
     private static void performClumbAction(Player player) {
         if (player.getItemInHand(InteractionHand.OFF_HAND).getItem() instanceof CharmItem charm) {
             switch (charm.getDirection()) {
-                case SERVER -> charm.serverAction(player);
+                case SERVER -> charm.c2sPayloadAction(player);
                 case CLIENT -> charm.clientAction(player);
                 case BIDIRECTIONAL -> {
-                    charm.serverAction(player);
+                    charm.c2sPayloadAction(player);
                     charm.clientAction(player);
                 }
                 default -> {}

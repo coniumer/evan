@@ -203,6 +203,8 @@ public class EvansItems {
             "lightning_charm", () -> new LightningCharm(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> DASH_CHARM = ITEMS.register(
             "dash_charm", () -> new DashCharm(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> BLINK_CHARM = ITEMS.register(
+            "blink_charm", () -> new BlinkCharm(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> HEALTH_CHARM = ITEMS.register(
             "health_charm", () -> new HealthCharm(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> FIREBALL_CHARM = ITEMS.register(

@@ -1,6 +1,7 @@
 package net.seinsturg.efac.data;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -21,7 +22,7 @@ public class EvansData {
     );
     public static final Supplier<AttachmentType<Integer>> PARRY_TIME = ATTACHMENT_TYPES.register(
             "parry_time", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT)
-            .copyOnDeath().build()
+            .build()
     );
     public static final Supplier<AttachmentType<Integer>> LAST_HUNGER = ATTACHMENT_TYPES.register(
             "last_hunger", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT)
@@ -29,6 +30,10 @@ public class EvansData {
     );
     public static final Supplier<AttachmentType<Boolean>> DAMAGE_FLAG = ATTACHMENT_TYPES.register(
             "damage_flag", () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL)
+            .build()
+    );
+    public static final Supplier<AttachmentType<Vec3>> LAST_MOVEMENT = ATTACHMENT_TYPES.register(
+            "last_movement", () -> AttachmentType.builder(() -> Vec3.ZERO).serialize(Vec3.CODEC)
             .build()
     );
 

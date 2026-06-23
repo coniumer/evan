@@ -137,6 +137,7 @@
   "item.efac.prank_charm": "Prank Charm",
   "item.efac.health_charm": "Health Charm",
   "item.efac.dash_charm": "Dash Charm",
+  "item.efac.blink_charm": "Blink Charm",
   "item.efac.philosophers_charm": "Philosopher's Charm",
 
   "death.attack.efac.clumb": "%1$s got freaking clumbed on!",
@@ -151,6 +152,7 @@
   "tooltip.efac.charm.prank.desc": "Summon a lit prank box.",
   "tooltip.efac.charm.health.desc": "Heal yourself.",
   "tooltip.efac.charm.dash.desc": "Amplify current velocity.",
+  "tooltip.efac.charm.blink.desc": "Teleport forward a set distance.",
   "tooltip.efac.charm.philosopher.desc": "Passively bypass removal of clumb charge.",
   "tooltip.efac.geumb": "Eat to increase max clumb charge.",
 

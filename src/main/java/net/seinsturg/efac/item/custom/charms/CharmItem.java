@@ -29,5 +29,5 @@ public abstract class CharmItem extends Item {
     //Override to perform an action on the client only
     public void clientAction(Player player) {}
     //Override and send a payload to perform an action on the server only
-    public void serverAction(Player player) {}
+    public void c2sPayloadAction(Player player) {}
 }
