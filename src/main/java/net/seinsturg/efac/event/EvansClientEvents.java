@@ -13,6 +13,7 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import net.seinsturg.efac.EFAC;
 import net.seinsturg.efac.client.EvansKeyMappings;
 import net.seinsturg.efac.item.custom.charms.CharmItem;
+import net.seinsturg.efac.network.payload.ClumbFailPayload;
 import net.seinsturg.efac.network.payload.RemoveChargePayload;
 import net.seinsturg.efac.util.ClumbHelper;
 
@@ -29,6 +30,8 @@ public class EvansClientEvents {
                 if (ClumbHelper.canClumb(player)) {
                     performClumbAction(player);
                     PacketDistributor.sendToServer(new RemoveChargePayload(1));
+                } else {
+                    PacketDistributor.sendToServer(new ClumbFailPayload(1));
                 }
             }
         }

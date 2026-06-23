@@ -12,14 +12,14 @@ import net.seinsturg.efac.util.ClumbHelper;
 import java.util.List;
 
 //todo implement refined variants
-public class GeumbItem extends Item {
+public class GeumbItem extends ClumbFoodItem {
     private final GeumbEnum geumbEnum;
     public static boolean canUse(int maxCharges, int minToUse, int maxToUse) {
         return maxCharges >= minToUse && maxCharges <= maxToUse;
     }
 
-    public GeumbItem(GeumbEnum geumbEnum, Properties properties) {
-        super(properties);
+    public GeumbItem(int amt, GeumbEnum geumbEnum, Properties properties) {
+        super(amt, properties);
         this.geumbEnum = geumbEnum;
     }
 

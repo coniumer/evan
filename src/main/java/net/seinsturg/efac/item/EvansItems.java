@@ -39,13 +39,13 @@ public class EvansItems {
 
     //materials
     public static final DeferredItem<Item> CLUMB_MATERIA = ITEMS.register(
-            "clumb_materia", () -> new ClumbRechargeItem(new Item.Properties().food(EvansFoodProperties.CLUMB_MATERIA)));
+            "clumb_materia", () -> new ClumbFoodItem(1, new Item.Properties().food(EvansFoodProperties.CLUMB_MATERIA)));
     public static final DeferredItem<Item> ALBY_CLUMB_MATERIA = ITEMS.register(
-            "alby_clumb_materia", () -> new ClumbRechargeItem(new Item.Properties().food(EvansFoodProperties.CLUMB_MATERIA)));
+            "alby_clumb_materia", () -> new ClumbFoodItem(2, new Item.Properties().food(EvansFoodProperties.CLUMB_MATERIA)));
     public static final DeferredItem<Item> CITRY_CLUMB_MATERIA = ITEMS.register(
-            "citry_clumb_materia", () -> new ClumbRechargeItem(new Item.Properties().food(EvansFoodProperties.CLUMB_MATERIA)));
+            "citry_clumb_materia", () -> new ClumbFoodItem(3, new Item.Properties().food(EvansFoodProperties.CLUMB_MATERIA)));
     public static final DeferredItem<Item> RUBIED_CLUMB_MATERIA = ITEMS.register(
-            "rubied_clumb_materia", () -> new ClumbRechargeItem(new Item.Properties().food(EvansFoodProperties.CLUMB_MATERIA)));
+            "rubied_clumb_materia", () -> new ClumbFoodItem(4, new Item.Properties().food(EvansFoodProperties.CLUMB_MATERIA)));
     public static final DeferredItem<Item> RANDOM_SAUCE = ITEMS.register(
             "random_sauce", () -> new SauceItem(new Item.Properties().food(EvansFoodProperties.SAUCE)));
     public static final DeferredItem<Item> YUMMY_SAUCE = ITEMS.register(
@@ -57,13 +57,13 @@ public class EvansItems {
     public static final DeferredItem<Item> GEUMB_SHARD = ITEMS.register(
             "geumb_shard", () -> new Item(new Item.Properties().food(EvansFoodProperties.GEUMB)));
     public static final DeferredItem<Item> CLUMBY_GEUMB_SHARD = ITEMS.register(
-            "clumby_geumb_shard", () -> new GeumbItem(GeumbEnum.CLUMBY, new Item.Properties().food(EvansFoodProperties.GEUMB)));
+            "clumby_geumb_shard", () -> new GeumbItem(1, GeumbEnum.CLUMBY, new Item.Properties().food(EvansFoodProperties.GEUMB)));
     public static final DeferredItem<Item> ALBY_GEUMB_SHARD = ITEMS.register(
-            "alby_geumb_shard", () -> new GeumbItem(GeumbEnum.ALBY, new Item.Properties().food(EvansFoodProperties.GEUMB)));
+            "alby_geumb_shard", () -> new GeumbItem(1, GeumbEnum.ALBY, new Item.Properties().food(EvansFoodProperties.GEUMB)));
     public static final DeferredItem<Item> CITRY_GEUMB_SHARD = ITEMS.register(
-            "citry_geumb_shard", () -> new GeumbItem(GeumbEnum.CITRY, new Item.Properties().food(EvansFoodProperties.GEUMB)));
+            "citry_geumb_shard", () -> new GeumbItem(1, GeumbEnum.CITRY, new Item.Properties().food(EvansFoodProperties.GEUMB)));
     public static final DeferredItem<Item> RUBIED_GEUMB_SHARD = ITEMS.register(
-            "rubied_geumb_shard", () -> new GeumbItem(GeumbEnum.RUBIED, new Item.Properties().food(EvansFoodProperties.GEUMB)));
+            "rubied_geumb_shard", () -> new GeumbItem(1, GeumbEnum.RUBIED, new Item.Properties().food(EvansFoodProperties.GEUMB)));
     public static final DeferredItem<Item> ALBY_GEM = ITEMS.register(
             "alby_gem", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> CITRY_GEM = ITEMS.register(

@@ -23,7 +23,6 @@ public class ClumbFoodItem extends Item {
 
             float pitch = (Math.abs(player.level().random.nextInt() % 10) > 5) ? 1f : 0.8f;
             player.level().playSound(null, player.getOnPos(), EvansSounds.CLUMB_CHARGE.get(), SoundSource.PLAYERS, 1f, pitch);
-
         }
         return super.finishUsingItem(stack, level, livingEntity);
     }

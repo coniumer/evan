@@ -32,6 +32,10 @@ public class EvansMessages {
                 RemoveChargePayload.TYPE,
                 RemoveChargePayload.STREAM_CODEC,
                 RemoveChargeHandler::handle);
+        registrar.playToServer(
+                ClumbFailPayload.TYPE,
+                ClumbFailPayload.STREAM_CODEC,
+                ClumbFailHandler::handle);
 
         //charms
         registrar.playToServer(
