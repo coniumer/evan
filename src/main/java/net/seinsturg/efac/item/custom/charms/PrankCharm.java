@@ -13,7 +13,7 @@ public class PrankCharm extends CharmItem{
     @Override
     public void serverAction(Player player) {
         double pX = player.getX();
-        double pY = player.getY() + 0.5f;
+        double pY = player.getEyeY();
         double pZ = player.getZ();
 
         Vec3 pos = new Vec3(pX, pY, pZ);

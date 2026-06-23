@@ -1,10 +1,16 @@
 package net.seinsturg.efac;
 
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.seinsturg.efac.block.EvansBlocks;
+import net.seinsturg.efac.entity.EvansEntities;
+import net.seinsturg.efac.entity.client.ClumbProjectileRender;
 import net.seinsturg.efac.event.EvansCommonEvents;
 import net.seinsturg.efac.item.EvansCreativeTabs;
 import net.seinsturg.efac.util.EvansRegistries;
@@ -49,5 +55,13 @@ public class EFAC {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info("HELLO EVAN SERVER");
+    }
+
+    @EventBusSubscriber(modid = EFAC.MOD_ID, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(EvansEntities.CLUMB_PROJECTILE.get(), ClumbProjectileRender::new);
+        }
     }
 }

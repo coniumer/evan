@@ -17,6 +17,7 @@ import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.event.EventHooks;
+import net.seinsturg.efac.entity.custom.ClumbProjectileEntity;
 import net.seinsturg.efac.sound.EvansSounds;
 import net.seinsturg.efac.util.ClumbHelper;
 import net.seinsturg.efac.util.EvansDamage;
@@ -94,9 +95,9 @@ public class WandItem extends TieredItem {
     }
 
     private void summonProjectile(Player player, Level level, float velocity) {
-        WindCharge windcharge = new WindCharge(player, level, player.position().x, player.getEyeY(), player.position().z);
-        windcharge.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity, wandTier.getAccuracy());
-        level.addFreshEntity(windcharge);
+        ClumbProjectileEntity clumbProjectile = new ClumbProjectileEntity(player, level, player.position().x, player.getEyeY(), player.position().z, wandTier);
+        clumbProjectile.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity, wandTier.getAccuracy());
+        level.addFreshEntity(clumbProjectile);
     }
 
     @Override
