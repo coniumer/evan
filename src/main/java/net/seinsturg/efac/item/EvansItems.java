@@ -217,6 +217,8 @@ public class EvansItems {
             "fireball_charm", () -> new FireballCharm(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> PRANK_CHARM = ITEMS.register(
             "prank_charm", () -> new PrankCharm(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CUBING_CHARM = ITEMS.register(
+            "cubing_charm", () -> new CubingCharm(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> PHILOSOPHERS_CHARM = ITEMS.register(
             "philosophers_charm", () -> new PhilosopherCharm(new Item.Properties().stacksTo(1)));
 

@@ -6,6 +6,7 @@ public enum CharmFunction {
     BLINK_FUNCTION("tooltip.efac.charm.blink.desc", PayloadDirection.BIDIRECTIONAL),
     FIREBALL_FUNCTION("tooltip.efac.charm.fireball.desc", PayloadDirection.SERVER),
     PRANK_FUNCTION("tooltip.efac.charm.prank.desc", PayloadDirection.SERVER),
+    CUBING_FUNCTION("tooltip.efac.charm.cubing.desc", PayloadDirection.SERVER),
     HEALTH_FUNCTION("tooltip.efac.charm.health.desc", PayloadDirection.SERVER),
     PHILOSOPHER_FUNCTION("tooltip.efac.charm.philosopher.desc", PayloadDirection.NULL);
 

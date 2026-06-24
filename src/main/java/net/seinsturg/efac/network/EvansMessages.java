@@ -51,6 +51,10 @@ public class EvansMessages {
                 PrankCharmPayload.STREAM_CODEC,
                 PrankCharmHandler::handle);
         registrar.playToServer(
+                CubingCharmPayload.TYPE,
+                CubingCharmPayload.STREAM_CODEC,
+                CubingCharmHandler::handle);
+        registrar.playToServer(
                 HealthCharmPayload.TYPE,
                 HealthCharmPayload.STREAM_CODEC,
                 HealthCharmHandler::handle);

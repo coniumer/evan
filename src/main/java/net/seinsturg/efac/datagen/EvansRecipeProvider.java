@@ -222,6 +222,14 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .define('I', Blocks.TNT)
                 .define('N', EvansBlocks.NILENE_BLOCK)
                 .unlockedBy("has_nilene_block", has(EvansBlocks.NILENE_BLOCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, EvansItems.CUBING_CHARM.get())
+                .pattern("MMM")
+                .pattern("III")
+                .pattern("NNN")
+                .define('M', EvansItems.RUBIED_CLUMB_MATERIA)
+                .define('I', Blocks.SAND)
+                .define('N', EvansBlocks.NILENE_BLOCK)
+                .unlockedBy("has_nilene_block", has(EvansBlocks.NILENE_BLOCK)).save(recipeOutput);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, EvansItems.FIREBALL_CHARM.get())
                 .pattern("MMM")
                 .pattern("III")

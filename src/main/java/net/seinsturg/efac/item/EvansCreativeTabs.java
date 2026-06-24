@@ -130,6 +130,7 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.LIGHTNING_CHARM);
                         output.accept(EvansItems.FIREBALL_CHARM);
                         output.accept(EvansItems.PRANK_CHARM);
+                        output.accept(EvansItems.CUBING_CHARM);
                         output.accept(EvansItems.PHILOSOPHERS_CHARM);
                     })
                     .build());

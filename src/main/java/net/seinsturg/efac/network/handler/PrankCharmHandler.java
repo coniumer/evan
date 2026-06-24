@@ -15,8 +15,7 @@ public class PrankCharmHandler {
         PrimedTnt tnt = new PrimedTnt(context.player().level(), payload.pos().x, payload.pos().y, payload.pos().z, context.player());
         tnt.setPos(payload.pos());
 
-        Vec3 lookDir = payload.lookDir();
-        Vec3 velocity = new Vec3(lookDir.x * payload.mult(), lookDir.y * payload.mult(), lookDir.z * payload.mult());
+        Vec3 velocity = payload.lookDir().scale(payload.mult());
         tnt.setDeltaMovement(velocity);
 
         tnt.setFuse(payload.fuse());
