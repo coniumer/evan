@@ -131,7 +131,7 @@ public class EvansHud extends Screen {
         String def = "DEF: " + player.getArmorValue();
         float color = (player.getArmorValue() < 10) ? 1f : 0.2f;
         guiGraphics.setColor(1f, color, color, 1f);
-        guiGraphics.drawString(this.minecraft.font, def, guiGraphics.guiWidth() - 240, guiGraphics.guiHeight() - 18, 9090900, true);
+        guiGraphics.drawString(this.minecraft.font, def, guiGraphics.guiWidth() - 218, guiGraphics.guiHeight() - 18, 9090900, true);
         guiGraphics.setColor(1f, 1f, 1f, 1f);
     }
 
@@ -139,11 +139,11 @@ public class EvansHud extends Screen {
         Player player = this.getCameraPlayer();
         for (int i = 0; i < 10; i++) {
             ResourceLocation slotTex = getChargeSlotSpriteToDraw(i + 1, player);
-            guiGraphics.blitSprite(slotTex, guiGraphics.guiWidth() - 104 - (i * 10), guiGraphics.guiHeight() - 19, 10, 10);
+            guiGraphics.blitSprite(slotTex, guiGraphics.guiWidth() - 82 - (i * 10), guiGraphics.guiHeight() - 19, 10, 10);
 
             if (ClumbHelper.getCharge(player) >= i + 1) {
                 ResourceLocation chargeTex = getChargeSpriteToDraw(i, player);
-                guiGraphics.blitSprite(chargeTex, guiGraphics.guiWidth() - 104 - (i * 10), guiGraphics.guiHeight() - 19, 10, 10);
+                guiGraphics.blitSprite(chargeTex, guiGraphics.guiWidth() - 82 - (i * 10), guiGraphics.guiHeight() - 19, 10, 10);
             }
         }
     }
@@ -207,16 +207,16 @@ public class EvansHud extends Screen {
         if (nextLevelXp > 0) {
             int k = (int)(this.minecraft.player.experienceProgress * 202.0F);
             RenderSystem.enableBlend();
-            guiGraphics.blitSprite(HUD_EXPERIENCE_EMPTY_SPRITE, guiGraphics.guiWidth() - 294, guiGraphics.guiHeight() - 8, 200, 3);
+            guiGraphics.blitSprite(HUD_EXPERIENCE_EMPTY_SPRITE, guiGraphics.guiWidth() - 272, guiGraphics.guiHeight() - 8, 200, 3);
             if (k > 0) {
-                guiGraphics.blitSprite(HUD_EXPERIENCE_FULL_SPRITE, guiGraphics.guiWidth() - 294, guiGraphics.guiHeight() - 8, 200, 3);
-                guiGraphics.blitSprite(HUD_EXPERIENCE_EMPTY_SPRITE, 200, 3, 0, 0, guiGraphics.guiWidth() - 294, guiGraphics.guiHeight() - 8, 200 - k, 3);
+                guiGraphics.blitSprite(HUD_EXPERIENCE_FULL_SPRITE, guiGraphics.guiWidth() - 272, guiGraphics.guiHeight() - 8, 200, 3);
+                guiGraphics.blitSprite(HUD_EXPERIENCE_EMPTY_SPRITE, 200, 3, 0, 0, guiGraphics.guiWidth() - 272, guiGraphics.guiHeight() - 8, 200 - k, 3);
 
             }
             RenderSystem.disableBlend();
         }
         String lvText = "LV: " + level;
-        guiGraphics.drawString(this.minecraft.font, lvText, guiGraphics.guiWidth() - 294, guiGraphics.guiHeight() - 18, 9999999, true);
+        guiGraphics.drawString(this.minecraft.font, lvText, guiGraphics.guiWidth() - 272, guiGraphics.guiHeight() - 18, 9999999, true);
 
         guiGraphics.setColor(1,1,1,1);
     }
@@ -227,7 +227,7 @@ public class EvansHud extends Screen {
             if (canFillSlot(player, i)) {
                 drawCorrectTex(guiGraphics, player, i);
             } else {
-                guiGraphics.blitSprite(HUD_HEALTH_LOCKED_SPRITE, guiGraphics.guiWidth() - 104 - (i * 10), guiGraphics.guiHeight() - 5, 10, 5);
+                guiGraphics.blitSprite(HUD_HEALTH_LOCKED_SPRITE, guiGraphics.guiWidth() - 82 - (i * 10), guiGraphics.guiHeight() - 5, 10, 5);
             }
         }
     }
@@ -251,12 +251,12 @@ public class EvansHud extends Screen {
         if ((health / 2) > slot) {
             if (slot > (health / 2) - 1) {
                 ResourceLocation rightSprite = (health % 2 == 0) ? full : half;
-                guiGraphics.blitSprite(rightSprite, guiGraphics.guiWidth() - 104 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
+                guiGraphics.blitSprite(rightSprite, guiGraphics.guiWidth() - 82 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
             } else {
-                guiGraphics.blitSprite(full, guiGraphics.guiWidth() - 104 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
+                guiGraphics.blitSprite(full, guiGraphics.guiWidth() - 82 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
             }
         } else {
-            guiGraphics.blitSprite(empty, guiGraphics.guiWidth() - 104 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
+            guiGraphics.blitSprite(empty, guiGraphics.guiWidth() - 82 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
         }
     }
 
@@ -286,10 +286,10 @@ public class EvansHud extends Screen {
         if (player != null) {
             float progress = player.getAttackStrengthScale(0.0F);
             int scaledProgress = (int) (progress * 66);
-            guiGraphics.blitSprite(HUD_ATTACK_INDICATOR_FULL_SPRITE, guiGraphics.guiWidth() - 344, guiGraphics.guiHeight() - 66, 322, 66);
-            guiGraphics.blitSprite(HUD_ATTACK_INDICATOR_EMPTY_SPRITE, 322, 66, 0, 0, guiGraphics.guiWidth() - 344, guiGraphics.guiHeight() - 66, 322,  scaledProgress * -1 + 66);
-            guiGraphics.blitSprite(HUD_BASE_SPRITE, guiGraphics.guiWidth() - 344, guiGraphics.guiHeight() - 66, 322, 66);
-            InventoryScreen.renderEntityInInventoryFollowsMouse(guiGraphics, guiGraphics.guiWidth() - 64, guiGraphics.guiHeight() - 48, guiGraphics.guiWidth() - 32, guiGraphics.guiHeight() + 30, 30, 0, guiGraphics.guiWidth() - 78, guiGraphics.guiHeight(), player);
+            guiGraphics.blitSprite(HUD_ATTACK_INDICATOR_FULL_SPRITE, guiGraphics.guiWidth() - 322, guiGraphics.guiHeight() - 66, 322, 66);
+            guiGraphics.blitSprite(HUD_ATTACK_INDICATOR_EMPTY_SPRITE, 322, 66, 0, 0, guiGraphics.guiWidth() - 322, guiGraphics.guiHeight() - 66, 322,  scaledProgress * -1 + 66);
+            guiGraphics.blitSprite(HUD_BASE_SPRITE, guiGraphics.guiWidth() - 322, guiGraphics.guiHeight() - 66, 322, 66);
+            InventoryScreen.renderEntityInInventoryFollowsMouse(guiGraphics, guiGraphics.guiWidth() - 42, guiGraphics.guiHeight() - 48, guiGraphics.guiWidth() - 10, guiGraphics.guiHeight() + 30, 30, 0, guiGraphics.guiWidth() - 56, guiGraphics.guiHeight(), player);
         }
     }
 
@@ -306,29 +306,30 @@ public class EvansHud extends Screen {
             guiGraphics.pose().pushPose();
             guiGraphics.pose().translate(0.0F, 0.0F, -90.0F);
 
-            guiGraphics.blitSprite(HOTBAR_SPRITE, guiGraphics.guiWidth() - 44,  guiGraphics.guiHeight() - 34 - 182, 44, 182);
-            guiGraphics.blitSprite(HOTBAR_OFFHAND_SPRITE, guiGraphics.guiWidth() - 22, guiGraphics.guiHeight() - 22, 22, 22);
+            guiGraphics.blitSprite(HOTBAR_SPRITE, 0,  guiGraphics.guiHeight() - 44 - 182, 44, 182);
+            guiGraphics.blitSprite(HOTBAR_OFFHAND_SPRITE, 0, guiGraphics.guiHeight() - 28, 28, 28);
 
             int l = 1;
 
             for (int i1 = 0; i1 < 9; i1++) {
-                int j1 = guiGraphics.guiWidth() - 20;
-                int k1 = guiGraphics.guiHeight() - 52 - i1 * 20 - 1;
+                int j1 = 2;
+                int k1 = guiGraphics.guiHeight() - 62 - i1 * 20 - 1;
                 this.renderSlot(guiGraphics, j1, k1, deltaTracker, player, player.getInventory().items.get(i1), l++);
             }
 
             if (!itemstack.isEmpty()) {
-                this.renderSlot(guiGraphics, guiGraphics.guiWidth() - 20, guiGraphics.guiHeight() - 20, deltaTracker, player, itemstack, l++);
+                this.renderSlot(guiGraphics, 6, guiGraphics.guiHeight() - 22, deltaTracker, player, itemstack, l++);
             }
 
             guiGraphics.pose().translate(0.0F, 0.0F, -90.0F);
-            renderSelectedSlot(guiGraphics, guiGraphics.guiWidth() - 28, guiGraphics.guiHeight() - 56 - player.getInventory().selected * 20);
+            renderSelectedSlot(guiGraphics, 8, guiGraphics.guiHeight() - 66 - player.getInventory().selected * 20);
 
             RenderSystem.disableBlend();
         }
     }
 
     private void renderSelectedSlot(GuiGraphics guiGraphics, int x, int y) {
+        guiGraphics.pose().translate(0.0F, 0.0F, 90.0F);
         guiGraphics.blitSprite(HOTBAR_SELECTION_SPRITE, x, y, 22, 22);
     }
 
