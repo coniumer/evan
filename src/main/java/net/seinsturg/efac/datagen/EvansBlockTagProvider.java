@@ -98,6 +98,7 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.CLUMB_BLOCK.get());
 
         tag(EvansTags.Blocks.CONSUMES_CHARGE)
+                .add(EvansBlocks.NILENE_BLOCK.get())
                 .add(Blocks.SOUL_SAND)
                 .add(Blocks.SOUL_SOIL);
 
@@ -179,7 +180,9 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.LARGE_GEUMB_BUD.get())
                 .add(EvansBlocks.MEDIUM_GEUMB_BUD.get())
                 .add(EvansBlocks.SMALL_GEUMB_BUD.get())
-                .add(EvansBlocks.BUDDING_GEUMB.get());
+                .add(EvansBlocks.BUDDING_GEUMB.get())
+
+                .add(EvansBlocks.NILENE_BLOCK.get());
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(EvansBlocks.CLUMB_BLOCK.get())

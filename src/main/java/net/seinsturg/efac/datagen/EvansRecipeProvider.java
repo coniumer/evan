@@ -29,7 +29,13 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
         List<ItemLike> SLIPULON_SMELTABLES = List.of(
                 EvansBlocks.SLIPULON_ORE, EvansItems.RAW_SLIPULON);
         List<ItemLike> BURNT_CHICKEN_SMELTABLES = List.of(
-                EvansItems.BURNT_CHICKEN);
+                Items.COOKED_CHICKEN);
+        List<ItemLike> NILENE_SMELTABLES = List.of(
+                Blocks.ANDESITE,
+                Blocks.GRANITE,
+                Blocks.TUFF,
+                Blocks.BLACKSTONE,
+                Blocks.DIORITE);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CLUMB_BLOCK.get())
                 .pattern("CCC")
@@ -103,6 +109,9 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .unlockedBy("has_compact_dirt", has(EvansBlocks.COMPACT_DIRT)).save(recipeOutput);
         smelting(recipeOutput, CLUMB_SMELTABLES, RecipeCategory.MISC, EvansItems.CLUMB_MATERIA, 0.3f, 200, "clumb_materia");
         blasting(recipeOutput, CLUMB_SMELTABLES, RecipeCategory.MISC, EvansItems.CLUMB_MATERIA, 0.3f, 100, "clumb_materia");
+
+        smelting(recipeOutput, NILENE_SMELTABLES, RecipeCategory.MISC, EvansBlocks.NILENE_BLOCK, 0.3f, 200, "nilene_block");
+        blasting(recipeOutput, NILENE_SMELTABLES, RecipeCategory.MISC, EvansBlocks.NILENE_BLOCK, 0.3f, 100, "nilene_block");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.GELWOOD_PLANKS.get())
                 .pattern("OO")
@@ -188,6 +197,63 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .requires(EvansItems.RUBY_GEM)
                 .requires(EvansItems.BUTTER_STICK)
                 .unlockedBy("has_clumb_materia", has(EvansItems.CLUMB_MATERIA)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, EvansItems.BLINK_CHARM.get())
+                .pattern("MMM")
+                .pattern("III")
+                .pattern("NNN")
+                .define('M', EvansItems.ALBY_CLUMB_MATERIA)
+                .define('I', Items.ENDER_PEARL)
+                .define('N', EvansBlocks.NILENE_BLOCK)
+                .unlockedBy("has_nilene_block", has(EvansBlocks.NILENE_BLOCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, EvansItems.HEALTH_CHARM.get())
+                .pattern("MMM")
+                .pattern("III")
+                .pattern("NNN")
+                .define('M', EvansItems.CITRY_CLUMB_MATERIA)
+                .define('I', Items.GLISTERING_MELON_SLICE)
+                .define('N', EvansBlocks.NILENE_BLOCK)
+                .unlockedBy("has_nilene_block", has(EvansBlocks.NILENE_BLOCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, EvansItems.PRANK_CHARM.get())
+                .pattern("MMM")
+                .pattern("III")
+                .pattern("NNN")
+                .define('M', EvansItems.RUBIED_CLUMB_MATERIA)
+                .define('I', Blocks.TNT)
+                .define('N', EvansBlocks.NILENE_BLOCK)
+                .unlockedBy("has_nilene_block", has(EvansBlocks.NILENE_BLOCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, EvansItems.FIREBALL_CHARM.get())
+                .pattern("MMM")
+                .pattern("III")
+                .pattern("NNN")
+                .define('M', EvansItems.ALBY_CLUMB_MATERIA)
+                .define('I', Items.BLAZE_POWDER)
+                .define('N', EvansBlocks.NILENE_BLOCK)
+                .unlockedBy("has_nilene_block", has(EvansBlocks.NILENE_BLOCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, EvansItems.PHILOSOPHERS_CHARM.get())
+                .pattern("MMM")
+                .pattern("III")
+                .pattern("NNN")
+                .define('M', EvansItems.RUBIED_CLUMB_MATERIA)
+                .define('I', EvansItems.PHILOSOPHERS_STONE)
+                .define('N', EvansBlocks.NILENE_BLOCK)
+                .unlockedBy("has_nilene_block", has(EvansBlocks.NILENE_BLOCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, EvansItems.DASH_CHARM.get())
+                .pattern("MMM")
+                .pattern("III")
+                .pattern("NNN")
+                .define('M', EvansItems.CLUMB_MATERIA)
+                .define('I', Items.SUGAR)
+                .define('N', EvansBlocks.NILENE_BLOCK)
+                .unlockedBy("has_nilene_block", has(EvansBlocks.NILENE_BLOCK)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, EvansItems.LIGHTNING_CHARM.get())
+                .pattern("MMM")
+                .pattern("III")
+                .pattern("NNN")
+                .define('M', EvansItems.CITRY_CLUMB_MATERIA)
+                .define('I', Items.COPPER_INGOT)
+                .define('N', EvansBlocks.NILENE_BLOCK)
+                .unlockedBy("has_nilene_block", has(EvansBlocks.NILENE_BLOCK)).save(recipeOutput);
 
 
 
@@ -336,12 +402,6 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .define('G', EvansItems.RUBIED_CLUMB_MATERIA)
                 .define('H', Items.DIAMOND)
                 .unlockedBy("has_rubied_clumb_materia", has(EvansItems.RUBIED_CLUMB_MATERIA)).save(recipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, EvansItems.PHILOSOPHERS_WAND.get())
-                .pattern("G")
-                .pattern("H")
-                .define('G', EvansItems.PHILOSOPHERS_STONE)
-                .define('H', EvansItems.RUBIED_GEUMB_SHARD)
-                .unlockedBy("has_philosophers_stone", has(EvansItems.PHILOSOPHERS_STONE)).save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, EvansItems.CLUMBY_PULSAR.get())
                 .pattern("G")
@@ -469,8 +529,8 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .unlocks("has_philosophers_stone", has(EvansItems.PHILOSOPHERS_STONE.get()))
                 .save(recipeOutput, getItemName(Items.NETHERITE_HOE) + "_smithing");
 
-        smelting(recipeOutput, BURNT_CHICKEN_SMELTABLES, RecipeCategory.MISC, Items.COOKED_CHICKEN, 0.3f, 200, "burnt_chicken");
-        smoking(recipeOutput, BURNT_CHICKEN_SMELTABLES, RecipeCategory.MISC, Items.COOKED_CHICKEN, 0.3f, 100, "burnt_chicken");
+        smelting(recipeOutput, BURNT_CHICKEN_SMELTABLES, RecipeCategory.MISC, EvansItems.BURNT_CHICKEN, 0.3f, 200, "burnt_chicken");
+        smoking(recipeOutput, BURNT_CHICKEN_SMELTABLES, RecipeCategory.MISC, EvansItems.BURNT_CHICKEN, 0.3f, 100, "burnt_chicken");
 
     }
 

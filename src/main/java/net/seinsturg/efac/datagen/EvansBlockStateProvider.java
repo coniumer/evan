@@ -17,6 +17,8 @@ public class EvansBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(EvansBlocks.GRONE);
 
+        blockWithItem(EvansBlocks.NILENE_BLOCK);
+
         blockWithItem(EvansBlocks.GRONE_BRICKS);
         stairsBlock(EvansBlocks.GRONE_BRICK_STAIRS.get(), blockTexture(EvansBlocks.GRONE_BRICKS.get()));
         blockItem(EvansBlocks.GRONE_BRICK_STAIRS);

@@ -2,19 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "G": {
+    "I": {
       "item": "efac:philosophers_stone"
     },
-    "H": {
-      "item": "efac:rubied_geumb_shard"
+    "M": {
+      "item": "efac:rubied_clumb_materia"
+    },
+    "N": {
+      "item": "efac:nilene_block"
     }
   },
   "pattern": [
-    "G",
-    "H"
+    "MMM",
+    "III",
+    "NNN"
   ],
   "result": {
     "count": 1,
-    "id": "efac:philosophers_wand"
+    "id": "efac:philosophers_charm"
   }
 }

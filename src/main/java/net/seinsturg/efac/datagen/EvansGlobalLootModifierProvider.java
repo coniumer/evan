@@ -65,6 +65,46 @@ public class EvansGlobalLootModifierProvider extends GlobalLootModifierProvider 
                         LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("entities/creeper")).build(),
                         LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(registries, 0.1f, 0.15f).build()
                 }, EvansItems.YUMMY_SAUCE.get(), 0, 2));
+
+        add("yummy_sauce_from_enderman",
+                new AddItemModifier(new LootItemCondition[]{
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("entities/enderman")).build()
+                }, EvansItems.YUMMY_SAUCE.get(), 0, 3));
+        add("looting_yummy_sauce_from_enderman",
+                new AddItemModifier(new LootItemCondition[]{
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("entities/enderman")).build(),
+                        LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(registries, 0.15f, 0.3f).build()
+                }, EvansItems.YUMMY_SAUCE.get(), 1, 4));
+        add("looting_awesome_sauce_from_enderman",
+                new AddItemModifier(new LootItemCondition[]{
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("entities/enderman")).build(),
+                        LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(registries, 0.1f, 0.15f).build()
+                }, EvansItems.AWESOME_SAUCE.get(), 0, 2));
+
+        add("awesome_sauce_from_blaze",
+                new AddItemModifier(new LootItemCondition[]{
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("entities/blaze")).build()
+                }, EvansItems.AWESOME_SAUCE.get(), 0, 2));
+        add("looting_awesome_sauce_from_blaze",
+                new AddItemModifier(new LootItemCondition[]{
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("entities/blaze")).build(),
+                        LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(registries, 0.15f, 0.3f).build()
+                }, EvansItems.AWESOME_SAUCE.get(), 0, 2));
+
+        add("awesome_sauce_from_wither_skeleton",
+                new AddItemModifier(new LootItemCondition[]{
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("entities/wither_skeleton")).build()
+                }, EvansItems.AWESOME_SAUCE.get(), 0, 3));
+        add("looting_awesome_sauce_from_wither_skeleton",
+                new AddItemModifier(new LootItemCondition[]{
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("entities/wither_skeleton")).build(),
+                        LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(registries, 0.15f, 0.3f).build()
+                }, EvansItems.AWESOME_SAUCE.get(), 1, 4));
+        add("looting_epic_sauce_from_wither_skeleton",
+                new AddItemModifier(new LootItemCondition[]{
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("entities/wither_skeleton")).build(),
+                        LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(registries, 0.1f, 0.15f).build()
+                }, EvansItems.EPIC_SAUCE.get(), 0, 2));
     }
 
 }

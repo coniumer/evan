@@ -35,6 +35,14 @@ public class EvansBlocks {
                     .explosionResistance(0.4f)
                     .sound(SoundType.SLIME_BLOCK)));
 
+    public static final DeferredBlock<Block> NILENE_BLOCK = registerBlock(
+            "nilene_block", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLACK)
+                    .destroyTime(0.4f)
+                    .explosionResistance(0.4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.DEEPSLATE))); //todo: custom sounds
+
     /// ores & resource blocks
     // philosophers, todo: smithing upgrade
     public static final DeferredBlock<Block> PHILOSOPHERS_ORE = registerBlock(

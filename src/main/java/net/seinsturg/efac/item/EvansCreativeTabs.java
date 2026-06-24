@@ -57,6 +57,7 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.PHILOSOPHERS_BOOTS);
                         ///blocks
                         output.accept(EvansBlocks.CLUMB_BLOCK);
+                        output.accept(EvansBlocks.NILENE_BLOCK);
                         output.accept(EvansBlocks.ALBY_ORE);
                         output.accept(EvansBlocks.ALBY_BLOCK);
                         output.accept(EvansBlocks.CITRY_ORE);

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "nilene_block",
+  "ingredient": {
+    "item": "minecraft:granite"
+  },
+  "result": {
+    "count": 1,
+    "id": "efac:nilene_block"
+  }
+}

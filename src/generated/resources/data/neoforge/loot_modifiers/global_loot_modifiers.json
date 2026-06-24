@@ -8,7 +8,15 @@
     "efac:looting_random_sauce_from_spider",
     "efac:random_sauce_from_creeper",
     "efac:looting_random_sauce_from_creeper",
-    "efac:looting_yummy_sauce_from_creeper"
+    "efac:looting_yummy_sauce_from_creeper",
+    "efac:yummy_sauce_from_enderman",
+    "efac:looting_yummy_sauce_from_enderman",
+    "efac:looting_awesome_sauce_from_enderman",
+    "efac:awesome_sauce_from_blaze",
+    "efac:looting_awesome_sauce_from_blaze",
+    "efac:awesome_sauce_from_wither_skeleton",
+    "efac:looting_awesome_sauce_from_wither_skeleton",
+    "efac:looting_epic_sauce_from_wither_skeleton"
   ],
   "replace": false
 }

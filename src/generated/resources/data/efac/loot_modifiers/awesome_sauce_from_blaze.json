@@ -1,0 +1,12 @@
+{
+  "type": "efac:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:entities/blaze"
+    }
+  ],
+  "item": "efac:awesome_sauce",
+  "max": 2,
+  "min": 0
+}

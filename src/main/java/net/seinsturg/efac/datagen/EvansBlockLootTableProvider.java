@@ -27,6 +27,8 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(EvansBlocks.CLUMB_BLOCK.get());
+        dropSelf(EvansBlocks.NILENE_BLOCK.get());
+
         dropSelf(EvansBlocks.GRONE.get());
 
         dropSelf(EvansBlocks.GEUMB_TILES.get());
