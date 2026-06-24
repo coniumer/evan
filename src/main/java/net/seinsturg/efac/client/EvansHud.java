@@ -33,21 +33,33 @@ public class EvansHud extends Screen {
     private static final ResourceLocation HUD_ATTACK_INDICATOR_FULL_SPRITE = EFAC.res("hud/attack_indicator_full");
     private static final ResourceLocation HUD_EXPERIENCE_EMPTY_SPRITE = EFAC.res("hud/experience_empty");
     private static final ResourceLocation HUD_EXPERIENCE_FULL_SPRITE = EFAC.res("hud/experience_full");
-    private static final ResourceLocation HUD_HEALTH_FULL_SPRITE = EFAC.res("hud/health_full");
-    private static final ResourceLocation HUD_HEALTH_HALF_SPRITE = EFAC.res("hud/health_half");
-    private static final ResourceLocation HUD_HEALTH_EMPTY_SPRITE = EFAC.res("hud/health_empty");
-    private static final ResourceLocation HUD_HEALTH_LOCKED_SPRITE = EFAC.res("hud/health_locked");
-    private static final ResourceLocation HUD_CHARGE_CLUMBY_SPRITE = EFAC.res("hud/charge_clumby");
-    private static final ResourceLocation HUD_CHARGE_ALBY_SPRITE = EFAC.res("hud/charge_alby");
-    private static final ResourceLocation HUD_CHARGE_CITRY_SPRITE = EFAC.res("hud/charge_citry");
-    private static final ResourceLocation HUD_CHARGE_RUBIED_SPRITE = EFAC.res("hud/charge_rubied");
-    private static final ResourceLocation HUD_CHARGE_EMPTY_SPRITE = EFAC.res("hud/charge_empty");
-    private static final ResourceLocation HUD_CHARGE_ALBY_CAPABLE_SPRITE = EFAC.res("hud/charge_alby_capable");
-    private static final ResourceLocation HUD_CHARGE_CITRY_CAPABLE_SPRITE = EFAC.res("hud/charge_citry_capable");
-    private static final ResourceLocation HUD_CHARGE_RUBIED_CAPABLE_SPRITE = EFAC.res("hud/charge_rubied_capable");
-    private static final ResourceLocation HUD_CHARGE_LOCKED_SPRITE = EFAC.res("hud/charge_locked");
     private static final ResourceLocation HOTBAR_OFFHAND_SPRITE = EFAC.res("hud/hotbar_offhand");
     private static final ResourceLocation HOTBAR_SELECTION_SPRITE = EFAC.res("hud/hotbar_selection");
+
+    private static final ResourceLocation HUD_HEALTH_EMPTY_SPRITE = EFAC.res("hud/health/health_empty");
+    private static final ResourceLocation HUD_HEALTH_LOCKED_SPRITE = EFAC.res("hud/health/health_locked");
+    private static final ResourceLocation HUD_BLOOD_FULL_SPRITE = EFAC.res("hud/health/health_full");
+    private static final ResourceLocation HUD_BLOOD_HALF_SPRITE = EFAC.res("hud/health/health_half");
+    private static final List<ResourceLocation> BLOOD_SPRITES = List.of(HUD_BLOOD_FULL_SPRITE, HUD_BLOOD_HALF_SPRITE, HUD_HEALTH_EMPTY_SPRITE);
+    private static final ResourceLocation HUD_AMBROSIA_FULL_SPRITE = EFAC.res("hud/health/ambrosia_full");
+    private static final ResourceLocation HUD_AMBROSIA_HALF_SPRITE = EFAC.res("hud/health/ambrosia_half");
+    private static final List<ResourceLocation> AMBROSIA_SPRITES = List.of(HUD_AMBROSIA_FULL_SPRITE, HUD_AMBROSIA_HALF_SPRITE, HUD_BLOOD_FULL_SPRITE);
+    private static final ResourceLocation HUD_ELIXIR_FULL_SPRITE = EFAC.res("hud/health/elixir_full");
+    private static final ResourceLocation HUD_ELIXIR_HALF_SPRITE = EFAC.res("hud/health/elixir_half");
+    private static final List<ResourceLocation> ELIXIR_SPRITES = List.of(HUD_ELIXIR_FULL_SPRITE, HUD_ELIXIR_HALF_SPRITE, HUD_AMBROSIA_FULL_SPRITE);
+    private static final ResourceLocation HUD_MERCURY_FULL_SPRITE = EFAC.res("hud/health/mercury_full");
+    private static final ResourceLocation HUD_MERCURY_HALF_SPRITE = EFAC.res("hud/health/mercury_half");
+    private static final List<ResourceLocation> MERCURY_SPRITES = List.of(HUD_MERCURY_FULL_SPRITE, HUD_MERCURY_HALF_SPRITE, HUD_ELIXIR_FULL_SPRITE);
+
+    private static final ResourceLocation HUD_CHARGE_CLUMBY_SPRITE = EFAC.res("hud/clumb/charge_clumby");
+    private static final ResourceLocation HUD_CHARGE_ALBY_SPRITE = EFAC.res("hud/clumb/charge_alby");
+    private static final ResourceLocation HUD_CHARGE_CITRY_SPRITE = EFAC.res("hud/clumb/charge_citry");
+    private static final ResourceLocation HUD_CHARGE_RUBIED_SPRITE = EFAC.res("hud/clumb/charge_rubied");
+    private static final ResourceLocation HUD_CHARGE_EMPTY_SPRITE = EFAC.res("hud/clumb/charge_empty");
+    private static final ResourceLocation HUD_CHARGE_ALBY_CAPABLE_SPRITE = EFAC.res("hud/clumb/charge_alby_capable");
+    private static final ResourceLocation HUD_CHARGE_CITRY_CAPABLE_SPRITE = EFAC.res("hud/clumb/charge_citry_capable");
+    private static final ResourceLocation HUD_CHARGE_RUBIED_CAPABLE_SPRITE = EFAC.res("hud/clumb/charge_rubied_capable");
+    private static final ResourceLocation HUD_CHARGE_LOCKED_SPRITE = EFAC.res("hud/clumb/charge_locked");
 
     private static final ResourceLocation BLOOD_0 = EFAC.res("hud/blood/blood_overlay_0");
     private static final ResourceLocation BLOOD_1 = EFAC.res("hud/blood/blood_overlay_1");
@@ -213,25 +225,56 @@ public class EvansHud extends Screen {
         Player player = this.getCameraPlayer();
         for (int i = 0; i < 20; i++) {
             if (canFillSlot(player, i)) {
-                drawRightSlot(guiGraphics, player, i);
+                drawCorrectTex(guiGraphics, player, i);
             } else {
                 guiGraphics.blitSprite(HUD_HEALTH_LOCKED_SPRITE, guiGraphics.guiWidth() - 104 - (i * 10), guiGraphics.guiHeight() - 5, 10, 5);
             }
         }
     }
 
-    private void drawRightSlot(GuiGraphics guiGraphics, Player player, float slot) {
+    private void drawCorrectTex(GuiGraphics guiGraphics, Player player, float slot) {
         float health = player.getHealth();
+
+        List<ResourceLocation> spriteList = getHealthSpriteList((int)slot, player);
+        ResourceLocation full = spriteList.get(0);
+        ResourceLocation half = spriteList.get(1);
+        ResourceLocation empty = spriteList.get(2);
+
+        if (health > 120) {
+            health -= 120;
+        } else if (health > 80) {
+            health -= 80;
+        } else if (health > 40) {
+            health -= 40;
+        }
+
         if ((health / 2) > slot) {
             if (slot > (health / 2) - 1) {
-                ResourceLocation rightSprite = (health % 2 == 0) ? HUD_HEALTH_FULL_SPRITE : HUD_HEALTH_HALF_SPRITE;
+                ResourceLocation rightSprite = (health % 2 == 0) ? full : half;
                 guiGraphics.blitSprite(rightSprite, guiGraphics.guiWidth() - 104 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
             } else {
-                guiGraphics.blitSprite(HUD_HEALTH_FULL_SPRITE, guiGraphics.guiWidth() - 104 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
+                guiGraphics.blitSprite(full, guiGraphics.guiWidth() - 104 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
             }
         } else {
-            guiGraphics.blitSprite(HUD_HEALTH_EMPTY_SPRITE, guiGraphics.guiWidth() - 104 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
+            guiGraphics.blitSprite(empty, guiGraphics.guiWidth() - 104 - ((int) slot * 10), guiGraphics.guiHeight() - 5, 10, 5);
         }
+    }
+
+    private List<ResourceLocation> getHealthSpriteList(int slot, Player player) {
+        float health = (player.getHealth() / 2);
+        List<ResourceLocation> texList = BLOOD_SPRITES;
+
+        if (health <= 20) {
+            return texList;
+        } else if (health <= 40) {
+            return (health >= slot + 1) ? AMBROSIA_SPRITES : BLOOD_SPRITES;
+        } else if (health <= 60) {
+            return (health >= slot + 21) ? ELIXIR_SPRITES : AMBROSIA_SPRITES;
+        } else if (health <= 80) {
+            return (health >= slot + 41) ? MERCURY_SPRITES : ELIXIR_SPRITES;
+        }
+
+        return texList;
     }
 
     private boolean canFillSlot(Player player, float slot) {

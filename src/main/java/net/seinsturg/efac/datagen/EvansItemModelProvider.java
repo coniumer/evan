@@ -62,6 +62,9 @@ public class EvansItemModelProvider extends ItemModelProvider {private static Li
         basicItem(EvansItems.SLIPULON_INGOT.get());
         basicItem(EvansItems.BUTTER_STICK.get());
         basicItem(EvansItems.BLOOD_CANISTER.get());
+        basicItem(EvansItems.AMBROSIA_CANISTER.get());
+        basicItem(EvansItems.ELIXIR_CANISTER.get());
+        basicItem(EvansItems.MERCURY_CANISTER.get());
         basicItem(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE.get());
 
         //foods

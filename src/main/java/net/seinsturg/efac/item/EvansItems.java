@@ -81,7 +81,13 @@ public class EvansItems {
     public static final DeferredItem<Item> BUTTER_STICK = ITEMS.register(
             "butter_stick", () -> new Item(new Item.Properties().food(EvansFoodProperties.BUTTER)));
     public static final DeferredItem<Item> BLOOD_CANISTER = ITEMS.register(
-            "blood_canister", () -> new BloodCanisterItem(new Item.Properties().food(EvansFoodProperties.BLOOD_CANISTER)));
+            "blood_canister", () -> new CanisterItem(CanisterEnum.BLOOD, new Item.Properties().food(EvansFoodProperties.CANISTER)));
+    public static final DeferredItem<Item> AMBROSIA_CANISTER = ITEMS.register(
+            "ambrosia_canister", () -> new CanisterItem(CanisterEnum.AMBROSIA, new Item.Properties().food(EvansFoodProperties.CANISTER)));
+    public static final DeferredItem<Item> ELIXIR_CANISTER = ITEMS.register(
+            "elixir_canister", () -> new CanisterItem(CanisterEnum.ELIXIR, new Item.Properties().food(EvansFoodProperties.CANISTER)));
+    public static final DeferredItem<Item> MERCURY_CANISTER = ITEMS.register(
+            "mercury_canister", () -> new CanisterItem(CanisterEnum.MERCURY, new Item.Properties().food(EvansFoodProperties.CANISTER)));
 
     //foods
     public static final DeferredItem<Item> CLUMBELON = ITEMS.register(

@@ -37,5 +37,5 @@ public class EvansFoodProperties {
     public static final FoodProperties BURNT_CHICKEN = new FoodProperties.Builder().saturationModifier(0f)
             .nutrition(2).build();
 
-    public static final FoodProperties BLOOD_CANISTER = new FoodProperties.Builder().nutrition(2).saturationModifier(0f).alwaysEdible().fast().build();
+    public static final FoodProperties CANISTER = new FoodProperties.Builder().nutrition(4).saturationModifier(0f).alwaysEdible().fast().build();
 }

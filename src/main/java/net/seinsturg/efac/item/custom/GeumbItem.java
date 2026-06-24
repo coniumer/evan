@@ -11,7 +11,6 @@ import net.seinsturg.efac.util.ClumbHelper;
 
 import java.util.List;
 
-//todo implement refined variants
 public class GeumbItem extends ClumbFoodItem {
     private final GeumbEnum geumbEnum;
     public static boolean canUse(int maxCharges, int minToUse, int maxToUse) {
@@ -25,13 +24,13 @@ public class GeumbItem extends ClumbFoodItem {
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {
-        if (!level.isClientSide && livingEntity instanceof Player) {
-            geumbCheck(level, (Player) livingEntity);
+        if (!level.isClientSide && livingEntity instanceof Player player) {
+            geumbCheck(player);
         }
         return super.finishUsingItem(stack, level, livingEntity);
     }
 
-    private void geumbCheck(Level level, Player player) {
+    private void geumbCheck(Player player) {
         if (canUse(ClumbHelper.getMaxCharge(player), geumbEnum.getMinToUse(), geumbEnum.getMaxToUse())) {
             ClumbHelper.addMaxCharges(player);
         }

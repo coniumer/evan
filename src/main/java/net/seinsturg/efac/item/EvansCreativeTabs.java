@@ -109,7 +109,6 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.RUBY_GEM);
                         output.accept(EvansItems.PHILOSOPHERS_STONE);
                         output.accept(EvansItems.PHILOSOPHERS_UPGRADE_SMITHING_TEMPLATE);
-                        output.accept(EvansItems.BLOOD_CANISTER);
                         output.accept(EvansItems.CLUMBELON);
                         output.accept(EvansItems.CLUMBKIE);
                         output.accept(EvansItems.BLUMB);
@@ -181,6 +180,11 @@ public class EvansCreativeTabs {
                         output.accept(EvansBlocks.BUTTER);
                         output.accept(EvansItems.BUTTER_STICK);
                         output.accept(EvansItems.BURNT_CHICKEN);
+
+                        output.accept(EvansItems.BLOOD_CANISTER);
+                        output.accept(EvansItems.AMBROSIA_CANISTER);
+                        output.accept(EvansItems.ELIXIR_CANISTER);
+                        output.accept(EvansItems.MERCURY_CANISTER);
                     })
                     .build());
 
