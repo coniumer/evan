@@ -6,6 +6,8 @@ import net.seinsturg.efac.component.EvansComponents;
 import net.seinsturg.efac.data.EvansData;
 import net.seinsturg.efac.effect.EvansEffects;
 import net.seinsturg.efac.entity.EvansEntities;
+import net.seinsturg.efac.entity.poi.EvansPOI;
+import net.seinsturg.efac.entity.villager.EvansVillagers;
 import net.seinsturg.efac.item.EvansCreativeTabs;
 import net.seinsturg.efac.item.EvansItems;
 import net.seinsturg.efac.loot.EvansLootModifiers;
@@ -21,6 +23,8 @@ public class EvansRegistries {
         EvansPotions.register(eventBus);
         EvansEffects.register(eventBus);
         EvansEntities.register(eventBus);
+        EvansPOI.register(eventBus);
+        EvansVillagers.register(eventBus);
         EvansSounds.register(eventBus);
         EvansData.register(eventBus);
         EvansComponents.register(eventBus);

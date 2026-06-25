@@ -150,6 +150,8 @@
   "item.minecraft.splash_potion.effect.efac.instant_clumb": "Clumb Splash Potion",
   "item.minecraft.lingering_potion.effect.efac.instant_clumb": "Clumb Lingering Potion",
 
+  "entity.minecraft.villager.efac.clumbist": "Clumbist",
+
   "effect.efac.instant_clumb": "Instant Clumb",
 
   "death.attack.efac.clumb": "%1$s got freaking clumbed on!",
