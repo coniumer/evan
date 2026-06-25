@@ -4,6 +4,7 @@
   "creativetab.efac.environment_tab": "Environment",
 
   "block.efac.clumb_block": "Clumb Block",
+  "block.efac.compact_dirt": "Compact Dung Ore Materia",
   "block.efac.nilene_block": "Nilene Block",
   "block.efac.philosophers_ore": "Philosopher's Ore",
   "block.efac.philosophers_block": "Philosopher's Block",
@@ -74,7 +75,7 @@
   "block.efac.plone_brick_slab": "Plone Brick Slab",
   "block.efac.plone_brick_wall": "Plone Brick Wall",
 
-  "block.efac.compact_dirt": "Compact Dung Ore Materia",
+  "block.efac.clumbrot_crop": "Clumbrot Crop",
 
   "item.efac.clumb_materia": "Clumb Materia",
   "item.efac.alby_clumb_materia": "Alby Clumb Materia",
@@ -124,7 +125,7 @@
   "item.efac.philosophers_shovel": "Philosopher's Shovel",
   "item.efac.philosophers_pickaxe": "Philosopher's Pickaxe",
   "item.efac.philosophers_axe": "Philosopher's Axe",
-  "item.efac.philosophers_hoe": "Philosopher's Hoe",
+  "item.efac.philosophers_hoe": "Philosopher's How",
   "item.efac.philosophers_helmet": "Philosopher's Helmet",
   "item.efac.philosophers_chestplate": "Philosopher's Chestplate",
   "item.efac.philosophers_leggings": "Philosopher's Leggings",

@@ -15,10 +15,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.seinsturg.efac.EFAC;
-import net.seinsturg.efac.block.custom.BuddingGeumbBlock;
-import net.seinsturg.efac.block.custom.ClumbBlock;
-import net.seinsturg.efac.block.custom.GeumbBlock;
-import net.seinsturg.efac.block.custom.GeumbClusterBlock;
+import net.seinsturg.efac.block.custom.*;
 import net.seinsturg.efac.item.EvansItems;
 
 import java.util.function.Supplier;
@@ -34,6 +31,13 @@ public class EvansBlocks {
                     .destroyTime(0.4f)
                     .explosionResistance(0.4f)
                     .sound(SoundType.SLIME_BLOCK)));
+
+    public static final DeferredBlock<Block> COMPACT_DIRT = registerBlock(
+            "compact_dirt", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.DIRT)
+                    .strength(0.5F)
+                    .sound(SoundType.GRAVEL)
+            ));
 
     public static final DeferredBlock<Block> NILENE_BLOCK = registerBlock(
             "nilene_block", () -> new Block(BlockBehaviour.Properties.of()
@@ -515,12 +519,14 @@ public class EvansBlocks {
                     .strength(1.5f, 6.0f)
                     .requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> COMPACT_DIRT = registerBlock(
-            "compact_dirt", () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.DIRT)
-                    .strength(0.5F)
-                    .sound(SoundType.GRAVEL)
-    ));
+    public static final DeferredBlock<Block> CLUMBROT_CROP_BLOCK = BLOCKS.register("clumbrot_crop",
+            () -> new ClumbrotCropBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT)
+                    .noCollission()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

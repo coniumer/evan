@@ -33,6 +33,8 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new EvansItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
 
+        generator.addProvider(event.includeServer(), new EvansDataMapProvider(packOutput, lookupProvider));
+
         generator.addProvider(event.includeClient(), new EvansItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new EvansBlockStateProvider(packOutput, existingFileHelper));
 

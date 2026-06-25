@@ -10,6 +10,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.seinsturg.efac.EFAC;
+import net.seinsturg.efac.block.EvansBlocks;
 import net.seinsturg.efac.component.EvansComponents;
 import net.seinsturg.efac.item.component.PulsarComponent;
 import net.seinsturg.efac.item.custom.*;
@@ -97,7 +98,7 @@ public class EvansItems {
     public static final DeferredItem<Item> BLUMB = ITEMS.register(
             "blumb", () -> new ClumbFoodItem(1, new Item.Properties().food(EvansFoodProperties.BLUMB)));
     public static final DeferredItem<Item> CLUMBROT = ITEMS.register(
-            "clumbrot", () -> new ClumbFoodItem(1, new Item.Properties().food(EvansFoodProperties.CLUMBROT)));
+            "clumbrot", () -> new ClumbCropItem(1, EvansBlocks.CLUMBROT_CROP_BLOCK.get(), new Item.Properties().food(EvansFoodProperties.CLUMBROT)));
     public static final DeferredItem<Item> GOLD_CLUMBROT = ITEMS.register(
             "gold_clumbrot", () -> new ClumbFoodItem(2, new Item.Properties().food(EvansFoodProperties.GOLD_CLUMBROT)));
     public static final DeferredItem<Item> CLUMBLE = ITEMS.register(
@@ -189,7 +190,7 @@ public class EvansItems {
     public static final DeferredItem<Item> PHILOSOPHERS_HOE = ITEMS.register(
             "philosophers_hoe", () -> new HoeItem(EvansToolTiers.PHILOSOPHERS,
             new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(
-            EvansToolTiers.PHILOSOPHERS, 8.0f, -6.0f))));
+            EvansToolTiers.PHILOSOPHERS, 8.0f, -3.5f))));
 
     public static final DeferredItem<ArmorItem> PHILOSOPHERS_HELMET = ITEMS.register(
             "philosophers_helmet", () -> new ArmorItem(EvansArmorMaterials.PHILOSOPHERS_ARMOR_MATERIAL, ArmorItem.Type.HELMET,

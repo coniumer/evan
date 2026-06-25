@@ -1,12 +1,19 @@
 package net.seinsturg.efac.datagen;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.seinsturg.efac.EFAC;
 import net.seinsturg.efac.block.EvansBlocks;
+import net.seinsturg.efac.block.custom.ClumbrotCropBlock;
+
+import java.util.function.Function;
 
 public class EvansBlockStateProvider extends BlockStateProvider {
     public EvansBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -116,6 +123,24 @@ public class EvansBlockStateProvider extends BlockStateProvider {
         blockWithItem(EvansBlocks.SLIPULON_ORE);
         blockWithItem(EvansBlocks.SLIPULON_BLOCK);
         blockWithItem(EvansBlocks.BUTTER);
+
+        makeCrop((CropBlock) EvansBlocks.CLUMBROT_CROP_BLOCK.get(), "clumbrot_crop_stage", "clumbrot_stage");
+    }
+
+    // if adding new crop, this will need to be reworked a little
+    // shoutout to kaupenjoe
+    private ConfiguredModel[] states(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((ClumbrotCropBlock) block).getAgeProperty()),
+                EFAC.res("block/" + textureName + state.getValue(((ClumbrotCropBlock) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
+    }
+
+    public void makeCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> states(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
     }
 
     private void blockItem(DeferredBlock<?> deferredBlock) {

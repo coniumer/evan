@@ -1,5 +1,6 @@
 package net.seinsturg.efac.datagen;
 
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -13,8 +14,11 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.seinsturg.efac.block.EvansBlocks;
+import net.seinsturg.efac.block.custom.ClumbrotCropBlock;
 import net.seinsturg.efac.item.EvansItems;
 
 import java.util.Set;
@@ -128,6 +132,11 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createCustomOreDrop(EvansBlocks.SLIPULON_ORE.get(), EvansItems.RAW_SLIPULON.get(), 3, 5));
         add(EvansBlocks.BUTTER.get(),
                 block -> createCustomOreDrop(EvansBlocks.BUTTER.get(), EvansItems.BUTTER_STICK.get(), 1, 7));
+
+        LootItemCondition.Builder clumbrotCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(EvansBlocks.CLUMBROT_CROP_BLOCK.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ClumbrotCropBlock.AGE, 3));
+        add(EvansBlocks.CLUMBROT_CROP_BLOCK.get(), createCropDrops(EvansBlocks.CLUMBROT_CROP_BLOCK.get(),
+                EvansItems.CLUMBROT.get(), EvansItems.CLUMBROT.get(), clumbrotCondition));
     }
 
     protected LootTable.Builder createCustomOreDrop(Block block, Item item, int min, int max) {
