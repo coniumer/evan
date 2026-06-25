@@ -4,10 +4,12 @@ import net.neoforged.bus.api.IEventBus;
 import net.seinsturg.efac.block.EvansBlocks;
 import net.seinsturg.efac.component.EvansComponents;
 import net.seinsturg.efac.data.EvansData;
+import net.seinsturg.efac.effect.EvansEffects;
 import net.seinsturg.efac.entity.EvansEntities;
 import net.seinsturg.efac.item.EvansCreativeTabs;
 import net.seinsturg.efac.item.EvansItems;
 import net.seinsturg.efac.loot.EvansLootModifiers;
+import net.seinsturg.efac.potion.EvansPotions;
 import net.seinsturg.efac.sound.EvansSounds;
 
 public class EvansRegistries {
@@ -16,6 +18,8 @@ public class EvansRegistries {
         EvansCreativeTabs.register(eventBus);
         EvansBlocks.register(eventBus);
         EvansItems.register(eventBus);
+        EvansPotions.register(eventBus);
+        EvansEffects.register(eventBus);
         EvansEntities.register(eventBus);
         EvansSounds.register(eventBus);
         EvansData.register(eventBus);

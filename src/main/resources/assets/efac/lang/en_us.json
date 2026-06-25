@@ -145,6 +145,12 @@
   "item.efac.blink_charm": "Blink Charm",
   "item.efac.philosophers_charm": "Philosopher's Charm",
 
+  "item.minecraft.potion.effect.efac.instant_clumb": "Clumb Potion",
+  "item.minecraft.splash_potion.effect.efac.instant_clumb": "Clumb Splash Potion",
+  "item.minecraft.lingering_potion.effect.efac.instant_clumb": "Clumb Lingering Potion",
+
+  "effect.efac.instant_clumb": "Instant Clumb",
+
   "death.attack.efac.clumb": "%1$s got freaking clumbed on!",
 
   "tooltip.efac.pulsar_pulse.title": "Pulse Mode:",

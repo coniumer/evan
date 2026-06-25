@@ -5,11 +5,14 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.LogicalSide;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
@@ -17,8 +20,10 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.seinsturg.efac.EFAC;
 import net.seinsturg.efac.data.EvansData;
+import net.seinsturg.efac.item.EvansItems;
 import net.seinsturg.efac.network.payload.SyncChargePayload;
 import net.seinsturg.efac.network.payload.SyncMaxChargePayload;
+import net.seinsturg.efac.potion.EvansPotions;
 import net.seinsturg.efac.sound.EvansSounds;
 import net.seinsturg.efac.util.ClumbHelper;
 import net.seinsturg.efac.util.EvansDamage;
@@ -114,5 +119,12 @@ public class EvansEvents {
                     new SyncChargePayload(event.getEntity().getData(EvansData.CHARGES)),
                     new SyncMaxChargePayload(event.getEntity().getData(EvansData.MAX_CHARGES)));
         }
+    }
+
+    @SubscribeEvent
+    public static void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event) {
+        PotionBrewing.Builder builder = event.getBuilder();
+
+        builder.addMix(Potions.AWKWARD, EvansItems.CLUMB_MATERIA.get(), EvansPotions.CLUMB_POTION);
     }
 }
