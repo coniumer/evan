@@ -4,6 +4,10 @@
     {
       "id": "efac:clumbist_poi",
       "required": false
+    },
+    {
+      "id": "efac:shaman_poi",
+      "required": false
     }
   ]
 }

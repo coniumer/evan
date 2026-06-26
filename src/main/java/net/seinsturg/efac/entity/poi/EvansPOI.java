@@ -16,6 +16,9 @@ public class EvansPOI {
     public static final Holder<PoiType> CLUMBIST_POI = POI_TYPES.register("clumbist_poi",
             () -> new PoiType(ImmutableSet.copyOf(EvansBlocks.CLUMB_BLOCK.get().getStateDefinition().getPossibleStates()), 1, 1));
 
+    public static final Holder<PoiType> SHAMAN_POI = POI_TYPES.register("shaman_poi",
+            () -> new PoiType(ImmutableSet.copyOf(EvansBlocks.NILENE_BLOCK.get().getStateDefinition().getPossibleStates()), 1, 1));
+
     public static void register(IEventBus eventBus) {
         POI_TYPES.register(eventBus);
     }

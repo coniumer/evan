@@ -19,6 +19,11 @@ public class EvansVillagers {
                     poiTypeHolder -> poiTypeHolder.value() == EvansPOI.CLUMBIST_POI.value(), ImmutableSet.of(), ImmutableSet.of(),
                     EvansSounds.CLUMB_CHARGE.get()));
 
+    public static final Holder<VillagerProfession> SHAMAN = VILLAGER_PROFESSIONS.register("shaman",
+            () -> new VillagerProfession("shaman", holder -> holder.value() == EvansPOI.SHAMAN_POI.value(),
+                    poiTypeHolder -> poiTypeHolder.value() == EvansPOI.SHAMAN_POI.value(), ImmutableSet.of(), ImmutableSet.of(),
+                    EvansSounds.CLUMB_DASH.get()));
+
     public static void register(IEventBus eventBus) {
         VILLAGER_PROFESSIONS.register(eventBus);
     }

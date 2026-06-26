@@ -226,7 +226,7 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 .pattern("MMM")
                 .pattern("III")
                 .pattern("NNN")
-                .define('M', EvansItems.RUBIED_CLUMB_MATERIA)
+                .define('M', EvansItems.ALBY_CLUMB_MATERIA)
                 .define('I', Blocks.SAND)
                 .define('N', EvansBlocks.NILENE_BLOCK)
                 .unlockedBy("has_nilene_block", has(EvansBlocks.NILENE_BLOCK)).save(recipeOutput);

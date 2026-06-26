@@ -15,6 +15,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.seinsturg.efac.entity.custom.ClumbProjectileEntity;
 
 import java.util.Map;
 
@@ -42,7 +43,9 @@ public class ClumbBlock extends Block {
 
     @Override
     protected void onProjectileHit(Level level, BlockState state, BlockHitResult hit, Projectile projectile) {
-        makePassableAndScheduleTick(level, state, hit.getBlockPos());
+        if (projectile instanceof ClumbProjectileEntity) {
+            makePassableAndScheduleTick(level, state, hit.getBlockPos());
+        }
     }
 
     private void makePassableAndScheduleTick(Level level, BlockState state, BlockPos pos) {

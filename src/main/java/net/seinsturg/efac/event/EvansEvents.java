@@ -14,6 +14,7 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.LogicalSide;
@@ -40,6 +41,7 @@ import net.seinsturg.efac.util.EvansTags;
 import net.seinsturg.efac.util.HungerPlayerHandler;
 
 import java.util.List;
+import java.util.Optional;
 
 @EventBusSubscriber(modid = EFAC.MOD_ID)
 public class EvansEvents {
@@ -149,7 +151,7 @@ public class EvansEvents {
         if (event.getType() == EvansVillagers.CLUMBIST.value()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
-            //level one
+            //clumbist level one
             trades.get(1).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 1),
                     new ItemStack(EvansItems.CLUMB_MATERIA.get(), 6),
@@ -167,7 +169,7 @@ public class EvansEvents {
                     new ItemStack(Items.EMERALD, 1),
                     8, 4, 0.05F));
 
-            //level two
+            //clumbist level two
             trades.get(2).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 2),
                     new ItemStack(EvansItems.YUMMY_SAUCE.get(), 5),
@@ -189,7 +191,7 @@ public class EvansEvents {
                     new ItemStack(EvansBlocks.CLUMB_BLOCK.get(), 2),
                     7, 8, 0.05F));
 
-            //level three
+            //clumbist level three
             trades.get(3).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 1),
                     new ItemStack(EvansItems.AWESOME_SAUCE.get(), 3),
@@ -207,11 +209,11 @@ public class EvansEvents {
                     new ItemStack(EvansItems.CITRY_WAND.get()),
                     4, 16, 0.05F));
 
-            //level four
+            //clumbist level four
             trades.get(4).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 1),
                     new ItemStack(EvansItems.EPIC_SAUCE.get(), 1),
-                    8, 32, 0.05F));
+                    8, 24, 0.05F));
             trades.get(4).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 32),
                     new ItemStack(EvansItems.RUBIED_PULSAR.get()),
@@ -221,7 +223,7 @@ public class EvansEvents {
                     new ItemStack(EvansItems.RUBIED_WAND.get()),
                     3, 24, 0.05F));
 
-            //level five
+            //clumbist level five
             trades.get(5).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 1),
                     new ItemStack(EvansBlocks.GEUMB_TILES.get(), 12),
@@ -242,6 +244,68 @@ public class EvansEvents {
                     new ItemCost(Items.EMERALD, 1),
                     new ItemStack(EvansBlocks.RUBY_GEUMB_TILES.get(), 12),
                     12, 8, 0.05F));
+        }
+
+        if (event.getType() == EvansVillagers.SHAMAN.value()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            //shaman level one
+            trades.get(1).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 1),
+                    new ItemStack(EvansBlocks.NILENE_BLOCK.get(), 16),
+                    12, 4, 0.05F));
+            trades.get(1).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Blocks.DIORITE, 20),
+                    new ItemStack(Items.EMERALD, 1),
+                    14, 4, 0.05F));
+            trades.get(1).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Blocks.ANDESITE, 20),
+                    new ItemStack(Items.EMERALD, 1),
+                    14, 4, 0.05F));
+            trades.get(1).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Blocks.GRANITE, 20),
+                    new ItemStack(Items.EMERALD, 1),
+                    14, 4, 0.05F));
+
+            //shaman level two
+            trades.get(2).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 16),
+                    new ItemStack(EvansItems.DASH_CHARM.get(), 1),
+                    3, 8, 0.05F));
+            trades.get(2).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.COPPER_INGOT, 12),
+                    new ItemStack(Items.EMERALD, 3),
+                    12, 8, 0.05F));
+            trades.get(2).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Blocks.TNT, 8),
+                    new ItemStack(Items.EMERALD, 6),
+                    12, 8, 0.05F));
+
+            //shaman level three
+            trades.get(3).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 22),
+                    new ItemStack(EvansItems.FIREBALL_CHARM.get(), 1),
+                    3, 16, 0.05F));
+            trades.get(3).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.GLISTERING_MELON_SLICE, 4),
+                    new ItemStack(Items.EMERALD, 2),
+                    12, 16, 0.05F));
+
+            //shaman level four
+            trades.get(4).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 24),
+                    new ItemStack(EvansItems.HEALTH_CHARM.get(), 1),
+                    3, 24, 0.05F));
+            trades.get(4).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.BLAZE_POWDER, 7),
+                    new ItemStack(Items.EMERALD, 3),
+                    12, 24, 0.05F));
+
+            //shaman level five
+            trades.get(5).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 9),
+                    new ItemStack(EvansBlocks.SLIPULON_BLOCK, 2),
+                    3, 24, 0.05F));
         }
     }
 }
