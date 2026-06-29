@@ -30,6 +30,8 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        dropSelf(EvansBlocks.CLUMB_HARVESTER.get());
+
         dropSelf(EvansBlocks.CLUMB_BLOCK.get());
         dropSelf(EvansBlocks.NILENE_BLOCK.get());
 
@@ -90,6 +92,7 @@ public class EvansBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(EvansBlocks.PLONE_BRICK_WALL.get());
 
         dropSelf(EvansBlocks.COMPACT_DIRT.get());
+        dropSelf(EvansBlocks.YES.get());
         dropSelf(EvansBlocks.SLIPULON_BLOCK.get());
         dropSelf(EvansBlocks.PHILOSOPHERS_BLOCK.get());
         dropSelf(EvansBlocks.ALBY_BLOCK.get());

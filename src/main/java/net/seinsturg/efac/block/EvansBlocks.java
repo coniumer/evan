@@ -17,6 +17,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.seinsturg.efac.EFAC;
 import net.seinsturg.efac.block.custom.*;
 import net.seinsturg.efac.item.EvansItems;
+import net.seinsturg.efac.sound.EvansSounds;
 
 import java.util.function.Supplier;
 
@@ -24,6 +25,9 @@ public class EvansBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
         DeferredRegister.createBlocks(EFAC.MOD_ID);
 
+
+    public static final DeferredBlock<Block> CLUMB_HARVESTER = registerBlock("clumb_harvester",
+            () -> new ClumbHarvesterBlock(BlockBehaviour.Properties.of()));
 
     public static final DeferredBlock<Block> CLUMB_BLOCK = registerBlock(
             "clumb_block", () -> new ClumbBlock(BlockBehaviour.Properties.of()
@@ -46,6 +50,11 @@ public class EvansBlocks {
                     .explosionResistance(0.4f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.DEEPSLATE))); //todo: custom sounds
+
+    public static final DeferredBlock<Block> YES = registerBlock(
+            "yes", () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .sound(EvansSounds.YES_BLOCK_SOUNDS)));
 
     /// ores & resource blocks
     // philosophers, todo: smithing upgrade

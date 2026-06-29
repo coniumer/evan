@@ -95,6 +95,7 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
         tag(EvansTags.Blocks.PROVIDES_CHARGE_ALWAYS)
                 .add(EvansBlocks.PHILOSOPHERS_ORE.get())
                 .add(EvansBlocks.PHILOSOPHERS_BLOCK.get())
+                .add(EvansBlocks.YES.get())
                 .add(EvansBlocks.CLUMB_BLOCK.get());
 
         tag(EvansTags.Blocks.CONSUMES_CHARGE)
@@ -182,6 +183,8 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
                 .add(EvansBlocks.SMALL_GEUMB_BUD.get())
                 .add(EvansBlocks.BUDDING_GEUMB.get())
 
+                .add(EvansBlocks.CLUMB_HARVESTER.get())
+                .add(EvansBlocks.YES.get())
                 .add(EvansBlocks.NILENE_BLOCK.get());
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
@@ -204,6 +207,8 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
         //tool tier
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(EvansBlocks.ALBY_ORE.get())
+
+                .add(EvansBlocks.YES.get())
                 .add(EvansBlocks.ALBY_BLOCK.get())
 
                 .add(EvansBlocks.GRONE_BRICKS.get())

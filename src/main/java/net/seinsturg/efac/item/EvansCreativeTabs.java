@@ -56,6 +56,7 @@ public class EvansCreativeTabs {
                         output.accept(EvansItems.PHILOSOPHERS_LEGGINGS);
                         output.accept(EvansItems.PHILOSOPHERS_BOOTS);
                         ///blocks
+                        output.accept(EvansBlocks.CLUMB_HARVESTER);
                         output.accept(EvansBlocks.CLUMB_BLOCK);
                         output.accept(EvansBlocks.NILENE_BLOCK);
                         output.accept(EvansBlocks.ALBY_ORE);
@@ -139,6 +140,8 @@ public class EvansCreativeTabs {
                     .title(Component.translatable("creativetab.efac.environment_tab"))
                     .withTabsBefore(EFAC.res("charm_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(EvansBlocks.YES);
+
                         output.accept(Blocks.GRAVEL);
                         output.accept(EvansBlocks.BLONE_BRICKS);
                         output.accept(EvansBlocks.BLONE_BRICK_STAIRS);

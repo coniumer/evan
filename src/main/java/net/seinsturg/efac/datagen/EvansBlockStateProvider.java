@@ -51,6 +51,7 @@ public class EvansBlockStateProvider extends BlockStateProvider {
         blockItem(EvansBlocks.PLONE_BRICK_SLAB);
 
         blockWithItem(EvansBlocks.COMPACT_DIRT);
+        blockWithItem(EvansBlocks.YES);
         blockWithItem(EvansBlocks.ALBY_ORE);
         blockWithItem(EvansBlocks.ALBY_BLOCK);
         blockWithItem(EvansBlocks.PHILOSOPHERS_ORE);

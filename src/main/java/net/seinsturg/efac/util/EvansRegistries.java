@@ -2,6 +2,7 @@ package net.seinsturg.efac.util;
 
 import net.neoforged.bus.api.IEventBus;
 import net.seinsturg.efac.block.EvansBlocks;
+import net.seinsturg.efac.block.entity.EvansBlockEntities;
 import net.seinsturg.efac.component.EvansComponents;
 import net.seinsturg.efac.data.EvansData;
 import net.seinsturg.efac.effect.EvansEffects;
@@ -23,6 +24,7 @@ public class EvansRegistries {
         EvansPotions.register(eventBus);
         EvansEffects.register(eventBus);
         EvansEntities.register(eventBus);
+        EvansBlockEntities.register(eventBus);
         EvansPOI.register(eventBus);
         EvansVillagers.register(eventBus);
         EvansSounds.register(eventBus);
