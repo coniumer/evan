@@ -78,5 +78,15 @@ public class EvansMessages {
                 ParryPayload.TYPE,
                 ParryPayload.STREAM_CODEC,
                 ParryHandler::handle);
+
+        //air uses
+        registrar.playToClient(
+                SyncAirUsesPayload.TYPE,
+                SyncAirUsesPayload.STREAM_CODEC,
+                SyncAirUsesHandler::handle);
+        registrar.playToServer(
+                SetAirUsesPayload.TYPE,
+                SetAirUsesPayload.STREAM_CODEC,
+                SetAirUsesHandler::handle);
     }
 }

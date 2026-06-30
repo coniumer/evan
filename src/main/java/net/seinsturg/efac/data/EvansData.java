@@ -20,18 +20,26 @@ public class EvansData {
             "max_charges", () -> AttachmentType.builder(() -> 5).serialize(Codec.INT)
             .copyOnDeath().build()
     );
+
+    public static final Supplier<AttachmentType<Integer>> AIR_USES = ATTACHMENT_TYPES.register(
+            "air_uses", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT).build()
+    );
+
     public static final Supplier<AttachmentType<Integer>> PARRY_TIME = ATTACHMENT_TYPES.register(
             "parry_time", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT)
             .build()
     );
+
     public static final Supplier<AttachmentType<Integer>> LAST_HUNGER = ATTACHMENT_TYPES.register(
             "last_hunger", () -> AttachmentType.builder(() -> 0).serialize(Codec.INT)
             .copyOnDeath().build()
     );
+
     public static final Supplier<AttachmentType<Boolean>> DAMAGE_FLAG = ATTACHMENT_TYPES.register(
             "damage_flag", () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL)
             .build()
     );
+
     public static final Supplier<AttachmentType<Vec3>> LAST_MOVEMENT = ATTACHMENT_TYPES.register(
             "last_movement", () -> AttachmentType.builder(() -> Vec3.ZERO).serialize(Vec3.CODEC)
             .build()

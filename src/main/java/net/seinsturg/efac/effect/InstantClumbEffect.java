@@ -14,7 +14,7 @@ public class InstantClumbEffect extends InstantenousMobEffect {
     @Override
     public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
         if (livingEntity instanceof Player player) {
-            ClumbHelper.addCharges(player, 2 * (amplifier + 1), ClumbHelper.getMaxCharge(player));
+            ClumbHelper.addCharges(player, 2 * (amplifier + 1));
         }
         return true;
     }

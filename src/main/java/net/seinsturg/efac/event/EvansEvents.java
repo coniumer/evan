@@ -31,20 +31,26 @@ import net.seinsturg.efac.block.EvansBlocks;
 import net.seinsturg.efac.data.EvansData;
 import net.seinsturg.efac.entity.villager.EvansVillagers;
 import net.seinsturg.efac.item.EvansItems;
+import net.seinsturg.efac.network.payload.SetAirUsesPayload;
+import net.seinsturg.efac.network.payload.SyncAirUsesPayload;
 import net.seinsturg.efac.network.payload.SyncChargePayload;
 import net.seinsturg.efac.network.payload.SyncMaxChargePayload;
 import net.seinsturg.efac.potion.EvansPotions;
 import net.seinsturg.efac.sound.EvansSounds;
-import net.seinsturg.efac.util.ClumbHelper;
-import net.seinsturg.efac.util.EvansDamage;
-import net.seinsturg.efac.util.EvansTags;
-import net.seinsturg.efac.util.HungerPlayerHandler;
+import net.seinsturg.efac.util.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @EventBusSubscriber(modid = EFAC.MOD_ID)
 public class EvansEvents {
+
+    @SubscribeEvent
+    private static void playerTick(PlayerTickEvent.Post event) {
+        if (event.getEntity().onGround() && event.getEntity().level().isClientSide) {
+            PacketDistributor.sendToServer(new SetAirUsesPayload(0));
+        }
+    }
 
     /// parry
     @SubscribeEvent
@@ -64,7 +70,7 @@ public class EvansEvents {
         int chance = getChance(event.getState());
         if (tryCharge(event.getPlayer().level(), chance)) {
 
-            ClumbHelper.addCharges(event.getPlayer(), 1, event.getPlayer().getData(EvansData.MAX_CHARGES));
+            ClumbHelper.addCharges(event.getPlayer(), 1);
 
             float pitch = (Math.abs(event.getPlayer().level().random.nextInt() % 10) > 5) ? 1f : 0.8f;
             event.getPlayer().level().playSound(null, event.getPlayer().getOnPos(), EvansSounds.CLUMB_CHARGE.get(), SoundSource.PLAYERS, 1f, pitch);
@@ -133,6 +139,7 @@ public class EvansEvents {
         if (!level.isClientSide()) {
             PacketDistributor.sendToPlayer((ServerPlayer) event.getEntity(),
                     new SyncChargePayload(event.getEntity().getData(EvansData.CHARGES)),
+                    new SyncAirUsesPayload(event.getEntity().getData(EvansData.AIR_USES)),
                     new SyncMaxChargePayload(event.getEntity().getData(EvansData.MAX_CHARGES)));
         }
     }

@@ -52,7 +52,7 @@ public class PulsarItem extends SwordItem {
             }
         } else if (!pulsar.mode()  && !attacker.level().isClientSide && attacker instanceof Player player) {
             if (tryChargeAbsorption(attacker.level())) {
-                ClumbHelper.addCharges(player, 1, ClumbHelper.getMaxCharge(player));
+                ClumbHelper.addCharges(player, 1);
 
                 float pitch = (Math.abs(player.level().random.nextInt() % 10) > 5) ? 1f : 0.8f;
                 player.level().playSound(null, player.getOnPos(), EvansSounds.CLUMB_CHARGE.get(), SoundSource.PLAYERS, 1f, pitch);

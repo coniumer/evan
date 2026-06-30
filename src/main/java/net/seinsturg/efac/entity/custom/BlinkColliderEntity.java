@@ -85,7 +85,6 @@ public class BlinkColliderEntity extends Projectile {
 
         Vec3 newMovement = owner.getData(EvansData.LAST_MOVEMENT);
         PacketDistributor.sendToPlayer((ServerPlayer) owner, new FinishedBlinkPayload(newMovement));
-        System.out.println("newMovement = " + newMovement);
     }
 
     @Override

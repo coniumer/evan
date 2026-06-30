@@ -19,7 +19,7 @@ public class ClumbFoodItem extends Item {
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {
         if (!level.isClientSide && livingEntity instanceof Player player) {
-            ClumbHelper.addCharges(player, amt, ClumbHelper.getMaxCharge(player));
+            ClumbHelper.addCharges(player, amt);
 
             float pitch = (Math.abs(player.level().random.nextInt() % 10) > 5) ? 1f : 0.8f;
             player.level().playSound(null, player.getOnPos(), EvansSounds.CLUMB_CHARGE.get(), SoundSource.PLAYERS, 1f, pitch);

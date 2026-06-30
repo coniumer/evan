@@ -14,9 +14,9 @@ public class ClumbHelper {
     public static boolean canClumb(Player player) { return getCharge(player) > 0 || player.isCreative() || hasBypassItem(player); }
     public static boolean hasBypassItem(Player player) { return player.getInventory().contains(EvansTags.Items.BYPASS_CHARGE_COST); }
 
-    public static void addCharges(Player player, int amt, int max) {
+    public static void addCharges(Player player, int amt) {
         int charges = getCharge(player);
-        charges = Math.clamp(charges + amt, 0, max);
+        charges = Math.clamp(charges + amt, 0, getMaxCharge(player));
         player.setData(EvansData.CHARGES, charges);
         PacketDistributor.sendToPlayer((ServerPlayer) player, new SyncChargePayload(getCharge(player)));
     }

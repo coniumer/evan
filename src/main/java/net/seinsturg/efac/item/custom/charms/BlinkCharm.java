@@ -6,7 +6,9 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.seinsturg.efac.data.EvansData;
 import net.seinsturg.efac.network.payload.BlinkCharmPayload;
+import net.seinsturg.efac.network.payload.SetAirUsesPayload;
 import net.seinsturg.efac.network.payload.SyncLastMovementPayload;
+import net.seinsturg.efac.util.AirUsesHelper;
 
 public class BlinkCharm extends CharmItem {
     public BlinkCharm(Properties properties) {
@@ -15,20 +17,23 @@ public class BlinkCharm extends CharmItem {
 
     @Override
     public void clientAction(Player player) {
-        //todo: increment air use limiter when added
-        for(int i = 0; i < 32; ++i) {
-            player.level().addParticle(ParticleTypes.PORTAL, player.getX(), player.getY() + player.level().random.nextDouble() * (double)2.0F, player.getZ(), player.level().random.nextGaussian(), (double)0.0F, player.level().random.nextGaussian());
+        if (AirUsesHelper.canUse(player)) {
+            for (int i = 0; i < 32; ++i) {
+                player.level().addParticle(ParticleTypes.PORTAL, player.getX(), player.getY() + player.level().random.nextDouble() * (double) 2.0F, player.getZ(), player.level().random.nextGaussian(), (double) 0.0F, player.level().random.nextGaussian());
+            }
         }
     }
 
     @Override
     public void c2sPayloadAction(Player player) {
-        Vec3 lastMovement = player.getDeltaMovement();
-        player.setData(EvansData.LAST_MOVEMENT, lastMovement);
-        System.out.println("LAST_MOVEMENT = " + player.getData(EvansData.LAST_MOVEMENT));
-        PacketDistributor.sendToServer(new SyncLastMovementPayload(lastMovement));
+        if (AirUsesHelper.canUse(player)) {
+            Vec3 lastMovement = player.getDeltaMovement();
+            player.setData(EvansData.LAST_MOVEMENT, lastMovement);
+            PacketDistributor.sendToServer(new SyncLastMovementPayload(lastMovement));
 
-        Vec3 lookDir = player.getLookAngle();
-        PacketDistributor.sendToServer(new BlinkCharmPayload(lookDir));
+            Vec3 lookDir = player.getLookAngle();
+            PacketDistributor.sendToServer(new BlinkCharmPayload(lookDir));
+            PacketDistributor.sendToServer(new SetAirUsesPayload(AirUsesHelper.getAirUses(player) + 1));
+        }
     }
 }
