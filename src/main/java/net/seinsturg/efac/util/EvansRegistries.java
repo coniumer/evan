@@ -13,6 +13,7 @@ import net.seinsturg.efac.item.EvansCreativeTabs;
 import net.seinsturg.efac.item.EvansItems;
 import net.seinsturg.efac.loot.EvansLootModifiers;
 import net.seinsturg.efac.potion.EvansPotions;
+import net.seinsturg.efac.screen.EvansMenuTypes;
 import net.seinsturg.efac.sound.EvansSounds;
 
 public class EvansRegistries {
@@ -25,6 +26,7 @@ public class EvansRegistries {
         EvansEffects.register(eventBus);
         EvansEntities.register(eventBus);
         EvansBlockEntities.register(eventBus);
+        EvansMenuTypes.register(eventBus);
         EvansPOI.register(eventBus);
         EvansVillagers.register(eventBus);
         EvansSounds.register(eventBus);

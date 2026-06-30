@@ -7,6 +7,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.seinsturg.efac.block.EvansBlocks;
 import net.seinsturg.efac.entity.EvansEntities;
@@ -14,6 +15,8 @@ import net.seinsturg.efac.entity.client.BlinkColliderRenderer;
 import net.seinsturg.efac.entity.client.ClumbProjectileRender;
 import net.seinsturg.efac.event.EvansCommonEvents;
 import net.seinsturg.efac.item.EvansCreativeTabs;
+import net.seinsturg.efac.screen.EvansMenuTypes;
+import net.seinsturg.efac.screen.custom.ClumbHarvesterScreen;
 import net.seinsturg.efac.util.EvansRegistries;
 import org.slf4j.Logger;
 
@@ -64,6 +67,11 @@ public class EFAC {
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(EvansEntities.CLUMB_PROJECTILE.get(), ClumbProjectileRender::new);
             EntityRenderers.register(EvansEntities.BLINK_COLLIDER_ENTITY.get(), BlinkColliderRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(EvansMenuTypes.CLUMB_HARVESTER_MENU.get(), ClumbHarvesterScreen::new);
         }
     }
 }
