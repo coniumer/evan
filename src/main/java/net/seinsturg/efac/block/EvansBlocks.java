@@ -29,6 +29,9 @@ public class EvansBlocks {
     public static final DeferredBlock<Block> CLUMB_HARVESTER = registerBlock("clumb_harvester",
             () -> new ClumbHarvesterBlock(BlockBehaviour.Properties.of()));
 
+    public static final DeferredBlock<Block> CACHER = registerBlock("cacher",
+            () -> new CacherBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
     public static final DeferredBlock<Block> CLUMB_BLOCK = registerBlock(
             "clumb_block", () -> new ClumbBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.TERRACOTTA_WHITE)

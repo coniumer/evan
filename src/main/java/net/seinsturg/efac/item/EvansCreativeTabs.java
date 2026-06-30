@@ -140,6 +140,8 @@ public class EvansCreativeTabs {
                     .title(Component.translatable("creativetab.efac.environment_tab"))
                     .withTabsBefore(EFAC.res("charm_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(EvansBlocks.CACHER);
+
                         output.accept(EvansBlocks.YES);
 
                         output.accept(Blocks.GRAVEL);
