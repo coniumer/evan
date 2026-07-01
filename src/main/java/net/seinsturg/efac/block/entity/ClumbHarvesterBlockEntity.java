@@ -15,16 +15,21 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.seinsturg.efac.block.EvansBlocks;
+import net.seinsturg.efac.recipe.ClumbHarvesterRecipe;
+import net.seinsturg.efac.recipe.ClumbHarvesterRecipeInput;
+import net.seinsturg.efac.recipe.EvansRecipes;
 import net.seinsturg.efac.screen.custom.ClumbHarvesterMenu;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Optional;
 
 public class ClumbHarvesterBlockEntity extends BlockEntity implements MenuProvider {
     public static final int SIZE = 4;
@@ -88,11 +93,13 @@ public class ClumbHarvesterBlockEntity extends BlockEntity implements MenuProvid
     }
 
     private void harvest() {
-        inventory.extractItem(INPUT_SLOT_INDEX, 1, false);
+        Optional<RecipeHolder<ClumbHarvesterRecipe>> recipe = getCurrentRecipe();
 
-        ItemStack outputL = new ItemStack(EvansBlocks.NILENE_BLOCK, 1);
-        ItemStack outputM = new ItemStack(EvansBlocks.YES, 1);
-        ItemStack outputR = new ItemStack(EvansBlocks.CLUMB_BLOCK, 1);
+        ItemStack outputL = recipe.get().value().outputL();
+        ItemStack outputM = recipe.get().value().outputM();
+        ItemStack outputR = recipe.get().value().outputR();
+
+        inventory.extractItem(INPUT_SLOT_INDEX, 1, false);
         List<ItemStack> outputs = List.of(outputL, outputM, outputR);
 
         for (int i = 0; i < 3; i++) {
@@ -101,14 +108,23 @@ public class ClumbHarvesterBlockEntity extends BlockEntity implements MenuProvid
     }
 
     private boolean hasRecipe() {
-        ItemStack outputL = new ItemStack(EvansBlocks.NILENE_BLOCK, 1);
-        ItemStack outputM = new ItemStack(EvansBlocks.YES, 1);
-        ItemStack outputR = new ItemStack(EvansBlocks.CLUMB_BLOCK, 1);
+        Optional<RecipeHolder<ClumbHarvesterRecipe>> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) {
+            return false;
+        }
 
-        return inventory.getStackInSlot(INPUT_SLOT_INDEX).is(Blocks.DIORITE.asItem())
-                && canInsertItemIntoOutputSlot(outputL, OUTPUT_SLOT_L) && canInsertAmountIntoOutputSlot(outputL.getCount(), OUTPUT_SLOT_L)
-                && canInsertItemIntoOutputSlot(outputM, OUTPUT_SLOT_M) && canInsertAmountIntoOutputSlot(outputM.getCount(), OUTPUT_SLOT_M)
-                && canInsertItemIntoOutputSlot(outputR, OUTPUT_SLOT_R) && canInsertAmountIntoOutputSlot(outputR.getCount(), OUTPUT_SLOT_R);
+        ItemStack outputL = recipe.get().value().outputL();
+        ItemStack outputM = recipe.get().value().outputM();
+        ItemStack outputR = recipe.get().value().outputR();
+
+        return canInsertItemIntoOutputSlot(outputL, OUTPUT_SLOT_L) && canInsertAmountIntoOutputSlot(outputL.getCount(), OUTPUT_SLOT_L)
+            && canInsertItemIntoOutputSlot(outputM, OUTPUT_SLOT_M) && canInsertAmountIntoOutputSlot(outputM.getCount(), OUTPUT_SLOT_M)
+            && canInsertItemIntoOutputSlot(outputR, OUTPUT_SLOT_R) && canInsertAmountIntoOutputSlot(outputR.getCount(), OUTPUT_SLOT_R);
+    }
+
+    private Optional<RecipeHolder<ClumbHarvesterRecipe>> getCurrentRecipe() {
+        return this.level.getRecipeManager()
+                .getRecipeFor(EvansRecipes.CLUMB_HARVESTER_TYPE.get(), new ClumbHarvesterRecipeInput(inventory.getStackInSlot(INPUT_SLOT_INDEX)), level);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output, int slot) {

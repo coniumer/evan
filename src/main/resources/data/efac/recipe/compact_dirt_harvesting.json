@@ -1,0 +1,15 @@
+{
+  "type": "efac:clumb_harvester",
+  "ingredient": {
+    "item": "efac:compact_dirt"
+  },
+  "resultL": {
+    "id": "efac:clumb_materia"
+  },
+  "resultM": {
+    "id": "efac:clumb_materia"
+  },
+  "resultR": {
+    "id": "minecraft:dirt"
+  }
+}

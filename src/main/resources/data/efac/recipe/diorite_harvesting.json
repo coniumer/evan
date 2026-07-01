@@ -1,0 +1,15 @@
+{
+  "type": "efac:clumb_harvester",
+  "ingredient": {
+    "item": "minecraft:diorite"
+  },
+  "resultL": {
+    "id": "efac:nilene"
+  },
+  "resultM": {
+    "id": "efac:nilene"
+  },
+  "resultR": {
+    "id": "efac:clumb_materia"
+  }
+}
