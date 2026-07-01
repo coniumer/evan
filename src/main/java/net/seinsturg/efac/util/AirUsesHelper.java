@@ -11,7 +11,6 @@ public class AirUsesHelper {
     public static int getMaxAirUses() { return 3; }
 
     public static boolean canUse(Player player) {
-        System.out.println("airUses = " + getAirUses(player));
         return getAirUses(player) <= getMaxAirUses();
     }
 

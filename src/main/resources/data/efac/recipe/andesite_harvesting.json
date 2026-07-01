@@ -1,7 +1,7 @@
 {
   "type": "efac:clumb_harvester",
   "ingredient": {
-    "item": "minecraft:diorite"
+    "item": "minecraft:andesite"
   },
   "resultL": {
     "id": "efac:nilene_block"

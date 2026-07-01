@@ -1,0 +1,18 @@
+{
+  "type": "efac:clumb_harvester",
+  "ingredient": {
+    "item": "minecraft:tuff"
+  },
+  "resultL": {
+    "id": "efac:random_sauce"
+  },
+  "chanceL": 0.9,
+  "resultM": {
+    "id": "efac:yummy_sauce"
+  },
+  "chanceM": 0.666,
+  "resultR": {
+    "id": "efac:awesome_sauce"
+  },
+  "chanceR": 0.333
+}

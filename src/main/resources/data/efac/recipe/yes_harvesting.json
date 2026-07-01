@@ -1,0 +1,18 @@
+{
+  "type": "efac:clumb_harvester",
+  "ingredient": {
+    "item": "efac:yes"
+  },
+  "resultL": {
+    "id": "minecraft:iron_ingot"
+  },
+  "chanceL": 0.75,
+  "resultM": {
+    "id": "minecraft:diamond"
+  },
+  "chanceM": 0.45,
+  "resultR": {
+    "id": "minecraft:netherite_scrap"
+  },
+  "chanceR": 0.125
+}

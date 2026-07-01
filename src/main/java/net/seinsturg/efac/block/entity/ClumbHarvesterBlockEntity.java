@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -17,15 +18,14 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import net.seinsturg.efac.block.EvansBlocks;
 import net.seinsturg.efac.recipe.ClumbHarvesterRecipe;
 import net.seinsturg.efac.recipe.ClumbHarvesterRecipeInput;
 import net.seinsturg.efac.recipe.EvansRecipes;
 import net.seinsturg.efac.screen.custom.ClumbHarvesterMenu;
+import net.seinsturg.efac.sound.EvansSounds;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -85,6 +85,7 @@ public class ClumbHarvesterBlockEntity extends BlockEntity implements MenuProvid
 
             if (hasCraftingFinished()) {
                 harvest();
+                useLevel.playSound(null, blockPos, EvansSounds.HARVESTER_HARVEST.get(), SoundSource.BLOCKS, 0.7f + (level.random.nextFloat() * 0.3f), 1f);
                 resetProgress();
             }
         } else {
@@ -99,12 +100,25 @@ public class ClumbHarvesterBlockEntity extends BlockEntity implements MenuProvid
         ItemStack outputM = recipe.get().value().outputM();
         ItemStack outputR = recipe.get().value().outputR();
 
+        float chanceL = recipe.get().value().chanceL();
+        float chanceM = recipe.get().value().chanceM();
+        float chanceR = recipe.get().value().chanceR();
+
         inventory.extractItem(INPUT_SLOT_INDEX, 1, false);
+
         List<ItemStack> outputs = List.of(outputL, outputM, outputR);
+        float[] chances = { chanceL, chanceM, chanceR };
 
         for (int i = 0; i < 3; i++) {
-            inventory.setStackInSlot(i + 1, new ItemStack(outputs.get(i).getItem(), inventory.getStackInSlot(i + 1).getCount() + outputs.get(i).getCount()));
+            if (shouldFillSlot(chances[i])) {
+                inventory.setStackInSlot(i + 1, new ItemStack(outputs.get(i).getItem(), inventory.getStackInSlot(i + 1).getCount() + outputs.get(i).getCount()));
+            }
         }
+    }
+
+    private boolean shouldFillSlot(float chance) {
+        float roll = level.random.nextFloat();
+        return roll <= chance;
     }
 
     private boolean hasRecipe() {

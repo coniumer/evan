@@ -1,18 +1,18 @@
 {
   "type": "efac:clumb_harvester",
   "ingredient": {
-    "item": "efac:compact_dirt"
+    "item": "minecraft:netherrack"
   },
   "resultL": {
-    "id": "efac:clumb_materia"
+    "id": "minecraft:gold_nugget"
   },
   "chanceL": 1,
   "resultM": {
     "id": "efac:clumb_materia"
   },
-  "chanceM": 0.95,
+  "chanceM": 0.333,
   "resultR": {
-    "id": "minecraft:dirt"
+    "id": "efac:yummy_sauce"
   },
-  "chanceR": 0.5
+  "chanceR": 0.25
 }

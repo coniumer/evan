@@ -1,7 +1,7 @@
 {
   "type": "efac:clumb_harvester",
   "ingredient": {
-    "item": "minecraft:diorite"
+    "item": "minecraft:granite"
   },
   "resultL": {
     "id": "efac:nilene_block"

@@ -1,19 +1,18 @@
 package net.seinsturg.efac.recipe;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
-public record ClumbHarvesterRecipe(Ingredient inputItem, ItemStack outputL, ItemStack outputM, ItemStack outputR) implements Recipe<ClumbHarvesterRecipeInput> {
+public record ClumbHarvesterRecipe(Ingredient inputItem, ItemStack outputL, ItemStack outputM, ItemStack outputR, float chanceL, float chanceM, float chanceR) implements Recipe<ClumbHarvesterRecipeInput> {
 
     @Override
     public NonNullList<Ingredient> getIngredients() {
@@ -57,20 +56,40 @@ public record ClumbHarvesterRecipe(Ingredient inputItem, ItemStack outputL, Item
     }
 
     public static class Serializer implements RecipeSerializer<ClumbHarvesterRecipe> {
+
         public static final MapCodec<ClumbHarvesterRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
                 Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(ClumbHarvesterRecipe::inputItem),
                 ItemStack.CODEC.fieldOf("resultL").forGetter(ClumbHarvesterRecipe::outputL),
                 ItemStack.CODEC.fieldOf("resultM").forGetter(ClumbHarvesterRecipe::outputM),
-                ItemStack.CODEC.fieldOf("resultR").forGetter(ClumbHarvesterRecipe::outputR)
+                ItemStack.CODEC.fieldOf("resultR").forGetter(ClumbHarvesterRecipe::outputR),
+                Codec.FLOAT.optionalFieldOf("chanceL", 1f).forGetter(ClumbHarvesterRecipe::chanceL),
+                Codec.FLOAT.optionalFieldOf("chanceM", 1f).forGetter(ClumbHarvesterRecipe::chanceM),
+                Codec.FLOAT.optionalFieldOf("chanceR", 1f).forGetter(ClumbHarvesterRecipe::chanceR)
         ).apply(inst, ClumbHarvesterRecipe::new));
 
-        public static final StreamCodec<RegistryFriendlyByteBuf, ClumbHarvesterRecipe> STREAM_CODEC =
-                StreamCodec.composite(
-                        Ingredient.CONTENTS_STREAM_CODEC, ClumbHarvesterRecipe::inputItem,
-                        ItemStack.STREAM_CODEC, ClumbHarvesterRecipe::outputL,
-                        ItemStack.STREAM_CODEC, ClumbHarvesterRecipe::outputM,
-                        ItemStack.STREAM_CODEC, ClumbHarvesterRecipe::outputR,
-                        ClumbHarvesterRecipe::new);
+        public static final StreamCodec<RegistryFriendlyByteBuf, ClumbHarvesterRecipe> STREAM_CODEC = StreamCodec.of(ClumbHarvesterRecipe.Serializer::toNetwork, ClumbHarvesterRecipe.Serializer::fromNetwork);
+
+        private static ClumbHarvesterRecipe fromNetwork(RegistryFriendlyByteBuf buffer) {
+            Ingredient ingredient = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
+            ItemStack outputL = ItemStack.STREAM_CODEC.decode(buffer);
+            ItemStack outputM = ItemStack.STREAM_CODEC.decode(buffer);
+            ItemStack outputR = ItemStack.STREAM_CODEC.decode(buffer);
+            float chanceL = buffer.readFloat();
+            float chanceM = buffer.readFloat();
+            float chanceR = buffer.readFloat();
+
+            return new ClumbHarvesterRecipe(ingredient, outputL, outputM, outputR, chanceL, chanceM, chanceR);
+        }
+
+        private static void toNetwork(RegistryFriendlyByteBuf buffer, ClumbHarvesterRecipe recipe) {
+            Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.inputItem);
+            ItemStack.STREAM_CODEC.encode(buffer, recipe.outputL);
+            ItemStack.STREAM_CODEC.encode(buffer, recipe.outputM);
+            ItemStack.STREAM_CODEC.encode(buffer, recipe.outputR);
+            ByteBufCodecs.FLOAT.encode(buffer, recipe.chanceL);
+            ByteBufCodecs.FLOAT.encode(buffer, recipe.chanceM);
+            ByteBufCodecs.FLOAT.encode(buffer, recipe.chanceR);
+        }
 
         @Override
         public MapCodec<ClumbHarvesterRecipe> codec() {

@@ -1,18 +1,18 @@
 {
   "type": "efac:clumb_harvester",
   "ingredient": {
-    "item": "minecraft:diorite"
+    "item": "minecraft:gravel"
   },
   "resultL": {
-    "id": "efac:nilene_block"
+    "id": "efac:blone_bricks"
   },
   "chanceL": 1,
   "resultM": {
-    "id": "efac:nilene_block"
+    "id": "minecraft:flint"
   },
-  "chanceM": 0.9,
+  "chanceM": 0.333,
   "resultR": {
     "id": "efac:clumb_materia"
   },
-  "chanceR": 0.5
+  "chanceR": 0.25
 }
