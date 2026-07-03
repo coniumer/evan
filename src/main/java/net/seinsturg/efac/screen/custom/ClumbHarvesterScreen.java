@@ -10,8 +10,8 @@ import net.minecraft.world.entity.player.Inventory;
 import net.seinsturg.efac.EFAC;
 
 public class ClumbHarvesterScreen extends AbstractContainerScreen<ClumbHarvesterMenu> {
-    private static final ResourceLocation TEX =
-            EFAC.res("textures/gui/harvester/clumb_harvester.png");
+    private static final ResourceLocation TEX = EFAC.res("textures/gui/container/harvester/clumb_harvester.png");
+    private static final ResourceLocation PROGRESS_SPRITE = EFAC.res("container/harvester/progress");
 
     public ClumbHarvesterScreen(ClumbHarvesterMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
@@ -27,6 +27,10 @@ public class ClumbHarvesterScreen extends AbstractContainerScreen<ClumbHarvester
         int y = (height - imageHeight) / 2;
 
         guiGraphics.blit(TEX, x, y, 0, 0, imageWidth, imageHeight);
+
+        if (this.menu.isCrafting()) {
+            guiGraphics.blitSprite(PROGRESS_SPRITE, 8, 26, 0, 0, x + 84, y + 30, 8, this.menu.getScaledProgress());
+        }
     }
 
     @Override

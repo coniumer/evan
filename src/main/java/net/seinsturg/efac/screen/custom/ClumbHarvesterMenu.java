@@ -44,12 +44,16 @@ public class ClumbHarvesterMenu extends AbstractContainerMenu {
         return data.get(0) > 0;
     }
 
-    public int getScaledArrowProgress() {
+    public int getProgressTicks() {
+        return data.get(0);
+    }
+
+    public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);
-        int arrowPixelSize = 24;
+        int progressArrowSize = 26;
 
-        return maxProgress != 0 && progress != 0 ? progress * arrowPixelSize / maxProgress : 0;
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
