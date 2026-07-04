@@ -30,7 +30,13 @@ public class EvansBlocks {
             () -> new ClumbHarvesterBlock(BlockBehaviour.Properties.of()));
 
     public static final DeferredBlock<Block> CACHER = registerBlock("cacher",
-            () -> new CacherBlock(BlockBehaviour.Properties.of().noOcclusion()));
+            () -> new CacherBlock(BlockBehaviour.Properties.of().noOcclusion()
+                    .mapColor(MapColor.COLOR_BLACK)
+                    .sound(SoundType.ANVIL)));
+    public static final DeferredBlock<Block> GEOCACHE = registerBlock("geocache",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_CYAN)
+                    .sound(SoundType.ANVIL)));
 
     public static final DeferredBlock<Block> CLUMB_BLOCK = registerBlock(
             "clumb_block", () -> new ClumbBlock(BlockBehaviour.Properties.of()

@@ -17,6 +17,10 @@ public class EvansBlockEntities {
             BLOCK_ENTITIES.register("clumb_harvester_be", () -> BlockEntityType.Builder.of(
                     ClumbHarvesterBlockEntity::new, EvansBlocks.CLUMB_HARVESTER.get()).build(null));
 
+    public static final Supplier<BlockEntityType<CacherBlockEntity>> CACHER_BE =
+            BLOCK_ENTITIES.register("cacher_be", () -> BlockEntityType.Builder.of(
+                    CacherBlockEntity::new, EvansBlocks.CACHER.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

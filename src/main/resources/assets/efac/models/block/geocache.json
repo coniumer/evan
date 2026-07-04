@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "efac:block/geocache",
+    "down": "efac:block/geocache",
+    "up": "efac:block/geocache",
+    "north": "efac:block/geocache_front",
+    "east": "efac:block/geocache",
+    "south": "efac:block/geocache",
+    "west": "efac:block/geocache"
+  }
+}

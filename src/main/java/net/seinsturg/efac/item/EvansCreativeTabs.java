@@ -141,6 +141,7 @@ public class EvansCreativeTabs {
                     .withTabsBefore(EFAC.res("charm_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(EvansBlocks.CACHER);
+                        output.accept(EvansBlocks.GEOCACHE);
 
                         output.accept(EvansBlocks.YES);
 

@@ -185,6 +185,7 @@ public class EvansBlockTagProvider extends BlockTagsProvider {
 
                 .add(EvansBlocks.CLUMB_HARVESTER.get())
                 .add(EvansBlocks.CACHER.get())
+                .add(EvansBlocks.GEOCACHE.get())
                 .add(EvansBlocks.YES.get())
                 .add(EvansBlocks.NILENE_BLOCK.get());
 

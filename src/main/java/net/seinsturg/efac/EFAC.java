@@ -7,9 +7,12 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.seinsturg.efac.block.EvansBlocks;
+import net.seinsturg.efac.block.entity.EvansBlockEntities;
+import net.seinsturg.efac.block.entity.renderer.CacherBlockEntityRenderer;
 import net.seinsturg.efac.entity.EvansEntities;
 import net.seinsturg.efac.entity.client.BlinkColliderRenderer;
 import net.seinsturg.efac.entity.client.ClumbProjectileRender;
@@ -72,6 +75,11 @@ public class EFAC {
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
             event.register(EvansMenuTypes.CLUMB_HARVESTER_MENU.get(), ClumbHarvesterScreen::new);
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(EvansBlockEntities.CACHER_BE.get(), CacherBlockEntityRenderer::new);
         }
     }
 }
