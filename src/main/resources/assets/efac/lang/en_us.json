@@ -5,6 +5,7 @@
 
   "block.efac.clumb_harvester": "Clumb Harvester",
   "block.efac.cacher": "Cacher",
+  "block.efac.geocache": "Geocache",
   "block.efac.clumb_block": "Clumb Block",
   "block.efac.yes": "YES!",
   "block.efac.compact_dirt": "Compact Dung Ore Materia",
@@ -82,7 +83,6 @@
 
   "container.efac.clumb_harvester": "Clumb Harvester",
   "container.efac.cacher": "Cacher",
-  "container.efac.geocache": "Geocache",
 
   "item.efac.clumb_materia": "Clumb Materia",
   "item.efac.alby_clumb_materia": "Alby Clumb Materia",

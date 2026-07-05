@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "efac:random_sauce"
+    },
+    "S": {
+      "item": "efac:slipulon_ingot"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "SSS",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:clumb_harvester"
+  }
+}

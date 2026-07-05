@@ -37,6 +37,22 @@ public class EvansRecipeProvider extends RecipeProvider implements IConditionBui
                 Blocks.BLACKSTONE,
                 Blocks.DIORITE);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, EvansBlocks.CLUMB_HARVESTER.get())
+                .pattern("RRR")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', EvansItems.SLIPULON_INGOT)
+                .define('R', EvansItems.RANDOM_SAUCE)
+                .unlockedBy("has_slipulon_ingot", has(EvansItems.SLIPULON_INGOT))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, EvansBlocks.CACHER.get())
+                .pattern("NNN")
+                .pattern(" S ")
+                .define('N', EvansBlocks.NILENE_BLOCK)
+                .define('S', EvansItems.SLIPULON_INGOT)
+                .unlockedBy("has_slipulon_ingot", has(EvansItems.SLIPULON_INGOT))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, EvansBlocks.CLUMB_BLOCK.get())
                 .pattern("CCC")
                 .pattern("CCC")

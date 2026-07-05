@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "efac:dirt_hut",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 945652244,
+    "spacing": 6,
+    "separation": 2
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "N": {
+      "item": "efac:nilene_block"
+    },
+    "S": {
+      "item": "efac:slipulon_ingot"
+    }
+  },
+  "pattern": [
+    "NNN",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "efac:cacher"
+  }
+}
