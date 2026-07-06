@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "#efac:has_structure/doorrooms",
+  "step": "underground_structures",
+  "spawn_overrides": {},
+  "start_pool": "efac:dr/dr_start_pool",
+  "size": 7,
+  "start_height": {
+    "type": "uniform",
+    "min_inclusive": { "above_bottom":  40 },
+    "max_inclusive": { "below_top":  180 }
+  },
+  "max_distance_from_center": 80,
+  "use_expansion_hack": false
+}
