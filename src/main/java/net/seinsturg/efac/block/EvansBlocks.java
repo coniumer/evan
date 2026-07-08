@@ -34,7 +34,7 @@ public class EvansBlocks {
                     .mapColor(MapColor.COLOR_BLACK)
                     .sound(SoundType.ANVIL)));
     public static final DeferredBlock<Block> GEOCACHE = registerBlock("geocache",
-            () -> new Block(BlockBehaviour.Properties.of()
+            () -> new GeocacheBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_CYAN)
                     .sound(SoundType.ANVIL)));
 

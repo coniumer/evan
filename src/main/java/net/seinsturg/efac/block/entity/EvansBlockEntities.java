@@ -21,6 +21,10 @@ public class EvansBlockEntities {
             BLOCK_ENTITIES.register("cacher_be", () -> BlockEntityType.Builder.of(
                     CacherBlockEntity::new, EvansBlocks.CACHER.get()).build(null));
 
+    public static final Supplier<BlockEntityType<GeocacheBlockEntity>> GEOCACHE_BE =
+            BLOCK_ENTITIES.register("geocache_be", () -> BlockEntityType.Builder.of(
+                    GeocacheBlockEntity::new, EvansBlocks.GEOCACHE.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }
